@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f8f5;
+      --line: #e9e7e2;
+      --text: #1a1a1a;
+      --muted: #9a9793;
+      --subtle: #c8c5bf;
+      --chip-bg: #f0eeea;
+      --chip-color: #7a7772;
+      --stat-bg: #f3f1ed;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', -apple-system, sans-serif;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 48px 64px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-left h1 {
+      font-family: 'Geist', sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .header-left h1 em {
+      font-style: normal;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .header-right {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+      text-align: right;
+      line-height: 1.7;
+      padding-bottom: 4px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 120px;
+    }
+
+    .project {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* left col */
+    .project-left {}
+
+    .project-index {
+      font-size: 11px;
+      color: var(--subtle);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      font-family: 'Geist', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: var(--chip-bg);
+      color: var(--chip-color);
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .tag.date {
+      background: none;
+      color: var(--muted);
+      padding-left: 0;
+    }
+
+    .project-count {
+      font-size: 11px;
+      color: var(--subtle);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    /* right col */
+    .project-right {}
+
+    .project-desc {
+      font-size: 13.5px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    /* stats row */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .stat {
+      background: var(--stat-bg);
+      border-radius: 6px;
+      padding: 10px 16px;
+      min-width: 90px;
+    }
+
+    .stat-val {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+
+    /* thumbnails */
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .thumb {
+      width: 200px;
+      height: 126px;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: var(--line);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .thumb:hover img { transform: scale(1.07); }
+
+    .small-text {
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--subtle);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(249,248,245,0.95);
+      backdrop-filter: blur(20px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb.open { display: flex; }
+
+    .lb-img-wrap {
+      max-width: 90vw;
+      max-height: 84vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb img {
+      max-width: 88vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 32px 96px rgba(0,0,0,0.09);
+      display: block;
+    }
+
+    .lb-prev, .lb-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      cursor: pointer;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .lb-prev { left: 20px; }
+    .lb-next { right: 20px; }
+    .lb-prev:hover, .lb-next:hover { border-color: var(--muted); color: var(--text); }
+    .lb-prev.hidden, .lb-next.hidden { opacity: 0; pointer-events: none; }
+
+    .lb-top {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lb-info { font-size: 12px; color: var(--muted); font-weight: 300; }
+    .lb-info strong { color: var(--text); font-weight: 500; }
+
+    .lb-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px 6px;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+
+    .lb-close:hover { color: var(--text); }
+
+    .lb-dots {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--line);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dot.active { background: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      header, .projects { padding-left: 28px; padding-right: 28px; }
+      .project { grid-template-columns: 1fr; gap: 24px; }
+      .header-right { display: none; }
+    }
+
+    @media (max-width: 500px) {
+      header { padding-top: 44px; padding-bottom: 40px; }
+      .header-left h1 { font-size: 30px; }
+      .thumb { width: calc(50% - 5px); height: 100px; }
+      .stat { min-width: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>My<br><em>Projects</em></h1>
+  </div>
+  <div class="header-right">
+    Data Analyst<br>
+    Power BI · SQL · Python · ETL
+  </div>
+</header>
+
+<div class="projects">
+
+  <!-- ── PROJECT 1 ── -->
+  <div class="project" data-name="PT IDEAA BI Dashboard">
+    <div class="project-left">
+      <div class="project-index">01</div>
+      <div class="project-name">PT IDEAA<br>BI Dashboard</div>
+      <div class="project-meta">
+        <span class="tag date">Dec 2024 – Feb 2025</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">ETL</span>
+      </div>
+      <div class="project-count"></div>
+    </div>
+    <div class="project-right">
+      <p class="project-desc">
+        Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement.
+        Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets,
+        and identified key business insights including customer concentration risk and product profitability.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-val">Rp15.63bn</div>
+          <div class="stat-label">Revenue analyzed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">928</div>
+          <div class="stat-label">Transactions</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">91,252</div>
+          <div class="stat-label">Units sold</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">36.82%</div>
+          <div class="stat-label">Gross margin</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">60.15%</div>
+          <div class="stat-label">Top 1 customer share</div>
+        </div>
+      </div>
+      <div class="thumbs">
+        <div class="thumb"><img src="images/ideaa-p1.png" alt="IDEAA Dashboard 1"></div>
+        <div class="thumb"><img src="images/ideaa-p2.png" alt="IDEAA Dashboard 2"></div>
+        <div class="thumb"><img src="images/ideaa-p3.png" alt="IDEAA Dashboard 3"></div>
+      </div>
+      <div class="small-text">Data has been anonymized for confidentiality purposes.</div>
+    </div>
+  </div>
+
+  <!-- ── PROJECT 2 ── -->
+  <div class="project" data-name="Northwind KPI Dashboard — On-Time Delivery Rate">
+    <div class="project-left">
+      <div class="project-index">02</div>
+      <div class="project-name">Northwind KPI<br>Dashboard</div>
+      <div class="project-meta">
+        <span class="tag date">University Project</span>
+        <span class="tag">Looker Studio</span>
+        <span class="tag">Python</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Pentaho</span>
+        <span class="tag">Data Warehouse</span>
+      </div>
+      <div class="project-count"></div>
+    </div>
+    <div class="project-right">
+      <p class="project-desc">
+        End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables)
+        to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with
+        SQL and Python transformations, incremental load strategy, and full data quality validation including
+        referential integrity checks and business logic validation across ~830 orders.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-val">95.15%</div>
+          <div class="stat-label">OTDR achieved</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">760</div>
+          <div class="stat-label">Orders tracked</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">≥ 95%</div>
+          <div class="stat-label">Target</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">1F + 4D</div>
+          <div class="stat-label">Star Schema</div>
+        </div>
+      </div>
+      <div class="thumbs">
+        <div class="thumb"><img src="images/northwind.png" alt="Northwind Dashboard"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <div class="lb-top">
+    <div class="lb-info">
+      <strong id="lb-project"></strong><span id="lb-counter"></span>
+    </div>
+    <button class="lb-close" onclick="closeLb()">×</button>
+  </div>
+  <button class="lb-prev" id="lb-prev" onclick="navigate(-1)">&#8592;</button>
+  <div class="lb-img-wrap">
+    <img id="lb-img" src="" alt="">
+  </div>
+  <button class="lb-next" id="lb-next" onclick="navigate(1)">&#8594;</button>
+  <div class="lb-dots" id="lb-dots"></div>
+</div>
+
+<script>
+  let imgs = [], cur = 0, projectName = '';
+
+  document.querySelectorAll('.project').forEach(p => {
+    const n = p.querySelectorAll('.thumb img').length;
+    const el = p.querySelector('.project-count');
+    if (el) el.textContent = n + (n === 1 ? ' screenshot' : ' screenshots');
+  });
+
+  document.querySelectorAll('.project').forEach(project => {
+    const name = project.dataset.name;
+    const thumbImgs = [...project.querySelectorAll('.thumb img')];
+    thumbImgs.forEach((img, i) => {
+      img.parentElement.addEventListener('click', () => {
+        imgs = thumbImgs.map(im => im.src);
+        projectName = name;
+        openLb(i);
+      });
+    });
+  });
+
+  function openLb(index) {
+    cur = index;
+    document.getElementById('lb').classList.add('open');
+    document.getElementById('lb-project').textContent = projectName;
+    buildDots();
+    show();
+  }
+
+  function show() {
+    document.getElementById('lb-img').src = imgs[cur];
+    document.getElementById('lb-counter').textContent = ' — ' + (cur + 1) + ' / ' + imgs.length;
+    document.getElementById('lb-prev').classList.toggle('hidden', cur === 0);
+    document.getElementById('lb-next').classList.toggle('hidden', cur === imgs.length - 1);
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+
+  function navigate(dir) {
+    cur = Math.max(0, Math.min(imgs.length - 1, cur + dir));
+    show();
+  }
+
+  function buildDots() {
+    const wrap = document.getElementById('lb-dots');
+    wrap.innerHTML = '';
+    imgs.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === cur ? ' active' : '');
+      d.onclick = () => { cur = i; show(); };
+      wrap.appendChild(d);
+    });
+  }
+
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lb').classList.contains('open')) return;
+    if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'Escape') closeLb();
+  });
+
+  document.getElementById('lb').addEventListener('click', e => {
+    if (e.target === document.getElementById('lb')) closeLb();
+  });
+</script>
+
+</body>
+</html>
