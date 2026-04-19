@@ -6,316 +6,695 @@
   <title>Projects — Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *{box-sizing:border-box;margin:0;padding:0}
 
-    :root {
-      --bg: #f9f8f5;
-      --line: #e9e7e2;
-      --text: #1a1a1a;
-      --muted: #9a9793;
-      --subtle: #c8c5bf;
-      --chip-bg: #f0eeea;
-      --chip-color: #7a7772;
-      --stat-bg: #f3f1ed;
+    :root{
+      --bg:#f9f8f5;
+      --line:#e9e7e2;
+      --text:#1a1a1a;
+      --muted:#9a9793;
+      --subtle:#c8c5bf;
+      --chip-bg:#f0eeea;
+      --chip-color:#7a7772;
+      --stat-bg:#f3f1ed;
+      --story-bg:#f5f4f0;
+      --accent:#1a1a1a;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Geist', -apple-system, sans-serif;
-      font-size: 14px;
-      -webkit-font-smoothing: antialiased;
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Geist',-apple-system,sans-serif;
+      font-size:14px;
+      -webkit-font-smoothing:antialiased;
     }
 
     /* ── HEADER ── */
-    header {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 72px 48px 64px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 32px;
-      border-bottom: 1px solid var(--line);
+    header{
+      max-width:1100px;
+      margin:0 auto;
+      padding:72px 48px 64px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:32px;
+      border-bottom:1px solid var(--line);
     }
-
-    .header-left h1 {
-      font-family: 'Geist', sans-serif;
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
+    .header-left h1{
+      font-size:36px;
+      font-weight:600;
+      line-height:1.1;
+      letter-spacing:-0.03em;
     }
-
-    .header-left h1 em {
-      font-style: normal;
-      color: var(--muted);
-      font-weight: 300;
+    .header-left h1 em{
+      font-style:normal;
+      color:var(--muted);
+      font-weight:300;
     }
-
-    .header-right {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 300;
-      text-align: right;
-      line-height: 1.7;
-      padding-bottom: 4px;
+    .header-right{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:300;
+      text-align:right;
+      line-height:1.7;
+      padding-bottom:4px;
     }
 
     /* ── PROJECTS ── */
-    .projects {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 48px 120px;
+    .projects{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 48px 120px;
     }
 
-    .project {
-      padding: 56px 0;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 56px;
-      align-items: start;
+    .project{
+      padding:56px 0;
+      border-bottom:1px solid var(--line);
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:56px;
+      align-items:start;
     }
 
-    /* left col */
-    .project-left {}
-
-    .project-index {
-      font-size: 11px;
-      color: var(--subtle);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      margin-bottom: 10px;
+    .project-index{
+      font-size:11px;
+      color:var(--subtle);
+      font-weight:300;
+      letter-spacing:.06em;
+      margin-bottom:10px;
+    }
+    .project-name{
+      font-size:16px;
+      font-weight:500;
+      line-height:1.4;
+      margin-bottom:14px;
+      letter-spacing:-0.02em;
+    }
+    .project-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:16px;
+    }
+    .tag{
+      background:var(--chip-bg);
+      color:var(--chip-color);
+      padding:3px 9px;
+      border-radius:100px;
+      font-size:10px;
+      font-weight:400;
+      letter-spacing:.02em;
+    }
+    .tag.date{
+      background:none;
+      color:var(--muted);
+      padding-left:0;
+    }
+    .project-count{
+      font-size:11px;
+      color:var(--subtle);
+      font-weight:300;
+      margin-top:4px;
     }
 
-    .project-name {
-      font-family: 'Geist', sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.4;
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
+    .project-desc{
+      font-size:13.5px;
+      color:#555;
+      font-weight:300;
+      line-height:1.75;
+      margin-bottom:20px;
     }
 
-    .project-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
+    /* ── CASE STUDY TOGGLE ── */
+    .cs-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      font-weight:400;
+      color:var(--muted);
+      cursor:pointer;
+      letter-spacing:.04em;
+      margin-bottom:24px;
+      padding:0;
+      background:none;
+      border:none;
+      transition:color .2s;
+      user-select:none;
+    }
+    .cs-toggle:hover{color:var(--text)}
+    .cs-toggle .arrow{
+      display:inline-block;
+      transition:transform .3s cubic-bezier(.16,1,.3,1);
+      font-size:10px;
+    }
+    .cs-toggle.open .arrow{transform:rotate(90deg)}
+
+    /* ── CASE STUDY BODY ── */
+    .cs-body{
+      display:none;
+      background:var(--story-bg);
+      border-radius:8px;
+      padding:28px 28px 24px;
+      margin-bottom:24px;
+      border:1px solid var(--line);
+    }
+    .cs-body.open{display:block}
+
+    .cs-section{
+      margin-bottom:22px;
+    }
+    .cs-section:last-child{margin-bottom:0}
+
+    .cs-label{
+      font-size:10px;
+      font-weight:500;
+      color:var(--subtle);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
 
-    .tag {
-      background: var(--chip-bg);
-      color: var(--chip-color);
-      padding: 3px 9px;
-      border-radius: 100px;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
+    .cs-background{
+      font-size:13px;
+      color:#555;
+      font-weight:300;
+      line-height:1.75;
     }
 
-    .tag.date {
-      background: none;
-      color: var(--muted);
-      padding-left: 0;
+    .cs-steps{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+    .cs-step{
+      display:flex;
+      gap:16px;
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .cs-step:last-child{border-bottom:none}
+    .cs-step-num{
+      font-size:10px;
+      color:var(--subtle);
+      font-weight:300;
+      min-width:18px;
+      padding-top:2px;
+    }
+    .cs-step-content{}
+    .cs-step-title{
+      font-size:13px;
+      font-weight:500;
+      color:var(--text);
+      margin-bottom:3px;
+    }
+    .cs-step-detail{
+      font-size:12.5px;
+      color:#777;
+      font-weight:300;
+      line-height:1.65;
     }
 
-    .project-count {
-      font-size: 11px;
-      color: var(--subtle);
-      font-weight: 300;
-      margin-top: 4px;
+    .cs-insights{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .cs-insight{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size:12.5px;
+      color:#555;
+      font-weight:300;
+      line-height:1.6;
+    }
+    .cs-insight::before{
+      content:'→';
+      color:var(--subtle);
+      font-size:11px;
+      padding-top:2px;
+      flex-shrink:0;
     }
 
-    /* right col */
-    .project-right {}
-
-    .project-desc {
-      font-size: 13.5px;
-      color: #555;
-      font-weight: 300;
-      line-height: 1.75;
-      margin-bottom: 24px;
+    /* ── STATS ── */
+    .stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:28px;
+    }
+    .stat{
+      background:var(--stat-bg);
+      border-radius:6px;
+      padding:10px 16px;
+      min-width:90px;
+    }
+    .stat-val{
+      font-size:16px;
+      font-weight:500;
+      letter-spacing:-0.02em;
+      color:var(--text);
+      line-height:1;
+      margin-bottom:3px;
+    }
+    .stat-label{
+      font-size:10px;
+      color:var(--muted);
+      font-weight:300;
+      letter-spacing:.02em;
+      line-height:1.3;
     }
 
-    /* stats row */
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
+    /* ── THUMBNAILS ── */
+    .thumbs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
-
-    .stat {
-      background: var(--stat-bg);
-      border-radius: 6px;
-      padding: 10px 16px;
-      min-width: 90px;
+    .thumb{
+      width:200px;
+      height:126px;
+      border-radius:6px;
+      overflow:hidden;
+      cursor:zoom-in;
+      background:var(--line);
+      flex-shrink:0;
+      position:relative;
     }
-
-    .stat-val {
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 3px;
+    .thumb img{
+      width:100%;height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .4s cubic-bezier(.16,1,.3,1);
     }
+    .thumb:hover img{transform:scale(1.07)}
 
-    .stat-label {
-      font-size: 10px;
-      color: var(--muted);
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      line-height: 1.3;
-    }
-
-    /* thumbnails */
-    .thumbs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .thumb {
-      width: 200px;
-      height: 126px;
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: zoom-in;
-      background: var(--line);
-      flex-shrink: 0;
-      position: relative;
-    }
-
-    .thumb img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-
-    .thumb:hover img { transform: scale(1.07); }
-
-    .small-text {
-      margin-top: 14px;
-      font-size: 11px;
-      color: var(--subtle);
-      font-style: italic;
-      font-weight: 300;
+    .small-text{
+      margin-top:14px;
+      font-size:11px;
+      color:var(--subtle);
+      font-style:italic;
+      font-weight:300;
     }
 
     /* ── LIGHTBOX ── */
-    .lb {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(249,248,245,0.95);
-      backdrop-filter: blur(20px);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
+    .lb{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(249,248,245,.95);
+      backdrop-filter:blur(20px);
+      z-index:200;
+      align-items:center;
+      justify-content:center;
+    }
+    .lb.open{display:flex}
+    .lb-img-wrap{
+      max-width:90vw;
+      max-height:84vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .lb img{
+      max-width:88vw;
+      max-height:82vh;
+      object-fit:contain;
+      border-radius:8px;
+      box-shadow:0 32px 96px rgba(0,0,0,.09);
+      display:block;
+    }
+    .lb-prev,.lb-next{
+      position:fixed;
+      top:50%;
+      transform:translateY(-50%);
+      background:white;
+      border:1px solid var(--line);
+      border-radius:50%;
+      width:38px;height:38px;
+      cursor:pointer;
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all .18s;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+    }
+    .lb-prev{left:20px}.lb-next{right:20px}
+    .lb-prev:hover,.lb-next:hover{border-color:var(--muted);color:var(--text)}
+    .lb-prev.hidden,.lb-next.hidden{opacity:0;pointer-events:none}
+    .lb-top{
+      position:fixed;
+      top:0;left:0;right:0;
+      padding:22px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .lb-info{font-size:12px;color:var(--muted);font-weight:300}
+    .lb-info strong{color:var(--text);font-weight:500}
+    .lb-close{
+      background:none;border:none;
+      font-size:20px;color:var(--muted);
+      cursor:pointer;padding:4px 6px;
+      line-height:1;transition:color .15s;
+    }
+    .lb-close:hover{color:var(--text)}
+    .lb-dots{
+      position:fixed;
+      bottom:24px;left:50%;
+      transform:translateX(-50%);
+      display:flex;gap:5px;
+    }
+    .dot{
+      width:5px;height:5px;
+      border-radius:50%;
+      background:var(--line);
+      cursor:pointer;
+      transition:background .2s;
+    }
+    .dot.active{background:var(--text)}
+
+    /* ── CMS PANEL ── */
+    #cms-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.3);
+      z-index:300;
+      backdrop-filter:blur(4px);
+    }
+    #cms-overlay.open{display:block}
+
+    #cms-panel{
+      position:fixed;
+      top:0;right:0;bottom:0;
+      width:min(640px,100vw);
+      background:#fff;
+      z-index:301;
+      display:flex;
+      flex-direction:column;
+      transform:translateX(100%);
+      transition:transform .35s cubic-bezier(.16,1,.3,1);
+      box-shadow:-20px 0 60px rgba(0,0,0,.1);
+    }
+    #cms-panel.open{transform:translateX(0)}
+
+    .cms-header{
+      padding:24px 28px 20px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-shrink:0;
+    }
+    .cms-header h2{
+      font-size:15px;
+      font-weight:500;
+      letter-spacing:-0.02em;
+    }
+    .cms-header-right{
+      display:flex;
+      gap:8px;
+      align-items:center;
     }
 
-    .lb.open { display: flex; }
-
-    .lb-img-wrap {
-      max-width: 90vw;
-      max-height: 84vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .cms-body{
+      display:flex;
+      flex:1;
+      overflow:hidden;
     }
 
-    .lb img {
-      max-width: 88vw;
-      max-height: 82vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 32px 96px rgba(0,0,0,0.09);
-      display: block;
+    /* project list sidebar */
+    .cms-sidebar{
+      width:180px;
+      border-right:1px solid var(--line);
+      overflow-y:auto;
+      flex-shrink:0;
+    }
+    .cms-sidebar-inner{padding:12px 0}
+    .cms-proj-item{
+      padding:10px 16px;
+      font-size:12px;
+      font-weight:300;
+      color:var(--muted);
+      cursor:pointer;
+      border-left:2px solid transparent;
+      transition:all .15s;
+      line-height:1.4;
+    }
+    .cms-proj-item:hover{color:var(--text);background:#fafaf8}
+    .cms-proj-item.active{
+      color:var(--text);
+      border-left-color:var(--text);
+      background:#f9f8f5;
+      font-weight:400;
+    }
+    .cms-add-btn{
+      display:block;
+      width:calc(100% - 24px);
+      margin:8px 12px 4px;
+      padding:8px;
+      font-size:11px;
+      color:var(--muted);
+      background:none;
+      border:1px dashed var(--line);
+      border-radius:5px;
+      cursor:pointer;
+      text-align:center;
+      font-family:'Geist',sans-serif;
+      transition:all .15s;
+    }
+    .cms-add-btn:hover{border-color:var(--muted);color:var(--text)}
+
+    /* edit form */
+    .cms-form{
+      flex:1;
+      overflow-y:auto;
+      padding:20px 24px 40px;
+    }
+    .cms-empty{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      color:var(--subtle);
+      font-weight:300;
     }
 
-    .lb-prev, .lb-next {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      width: 38px; height: 38px;
-      cursor: pointer;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.18s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    .cms-field{margin-bottom:16px}
+    .cms-label{
+      font-size:10px;
+      font-weight:500;
+      color:var(--muted);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      display:block;
+      margin-bottom:5px;
+    }
+    .cms-input,.cms-textarea,.cms-select{
+      width:100%;
+      padding:8px 10px;
+      font-size:12.5px;
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:var(--text);
+      background:#fafaf8;
+      border:1px solid var(--line);
+      border-radius:5px;
+      outline:none;
+      transition:border-color .15s;
+    }
+    .cms-input:focus,.cms-textarea:focus{border-color:#aaa}
+    .cms-textarea{resize:vertical;min-height:70px;line-height:1.6}
+
+    .cms-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+    .cms-section-title{
+      font-size:10px;
+      font-weight:500;
+      color:var(--subtle);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:16px 0 8px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:14px;
     }
 
-    .lb-prev { left: 20px; }
-    .lb-next { right: 20px; }
-    .lb-prev:hover, .lb-next:hover { border-color: var(--muted); color: var(--text); }
-    .lb-prev.hidden, .lb-next.hidden { opacity: 0; pointer-events: none; }
+    /* steps editor */
+    .step-list{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+    .step-item{
+      background:#f5f4f0;
+      border-radius:6px;
+      padding:10px 12px;
+      position:relative;
+    }
+    .step-item .cms-input{margin-bottom:6px;background:#fff}
+    .step-item .cms-textarea{background:#fff;min-height:50px}
+    .step-remove{
+      position:absolute;
+      top:8px;right:8px;
+      background:none;border:none;
+      font-size:15px;color:var(--subtle);
+      cursor:pointer;line-height:1;
+      transition:color .15s;
+    }
+    .step-remove:hover{color:#c44}
 
-    .lb-top {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      padding: 22px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* stats editor */
+    .stat-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+    .stat-item{display:flex;gap:6px;align-items:center}
+    .stat-item .cms-input{flex:1}
+    .stat-item button{
+      background:none;border:none;
+      font-size:15px;color:var(--subtle);
+      cursor:pointer;flex-shrink:0;
+      transition:color .15s;
+    }
+    .stat-item button:hover{color:#c44}
+
+    /* insights editor */
+    .insight-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+    .insight-item{display:flex;gap:6px;align-items:flex-start}
+    .insight-item .cms-textarea{flex:1;min-height:40px}
+    .insight-item button{
+      background:none;border:none;
+      font-size:15px;color:var(--subtle);
+      cursor:pointer;flex-shrink:0;margin-top:6px;
+      transition:color .15s;
+    }
+    .insight-item button:hover{color:#c44}
+
+    .cms-btn-add{
+      display:inline-block;
+      font-size:11px;
+      color:var(--muted);
+      cursor:pointer;
+      background:none;
+      border:1px dashed var(--line);
+      border-radius:4px;
+      padding:5px 10px;
+      font-family:'Geist',sans-serif;
+      transition:all .15s;
+    }
+    .cms-btn-add:hover{border-color:var(--muted);color:var(--text)}
+
+    .cms-footer{
+      padding:14px 24px;
+      border-top:1px solid var(--line);
+      display:flex;
+      gap:8px;
+      justify-content:space-between;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .cms-footer-left{display:flex;gap:8px}
+
+    .btn{
+      padding:7px 14px;
+      font-size:11.5px;
+      font-family:'Geist',sans-serif;
+      border-radius:5px;
+      cursor:pointer;
+      border:1px solid var(--line);
+      transition:all .15s;
+      font-weight:400;
+    }
+    .btn-primary{
+      background:var(--text);
+      color:#fff;
+      border-color:var(--text);
+    }
+    .btn-primary:hover{background:#333}
+    .btn-ghost{background:none;color:var(--muted)}
+    .btn-ghost:hover{background:#f5f4f0;color:var(--text)}
+    .btn-danger{background:none;color:#c44e52;border-color:#f5c1c1}
+    .btn-danger:hover{background:#fff0f0}
+
+    /* export modal */
+    #export-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.4);
+      z-index:400;
+      align-items:center;
+      justify-content:center;
+    }
+    #export-modal.open{display:flex}
+    .export-box{
+      background:#fff;
+      border-radius:10px;
+      padding:28px;
+      width:min(560px,90vw);
+      max-height:80vh;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 32px 80px rgba(0,0,0,.12);
+    }
+    .export-box h3{
+      font-size:14px;
+      font-weight:500;
+      margin-bottom:6px;
+    }
+    .export-box p{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:300;
+      margin-bottom:14px;
+      line-height:1.6;
+    }
+    .export-box textarea{
+      flex:1;
+      min-height:220px;
+      padding:12px;
+      font-size:11px;
+      font-family:monospace;
+      background:#f5f4f0;
+      border:1px solid var(--line);
+      border-radius:6px;
+      resize:none;
+      outline:none;
+      color:var(--text);
+    }
+    .export-footer{
+      display:flex;
+      gap:8px;
+      justify-content:flex-end;
+      margin-top:14px;
     }
 
-    .lb-info { font-size: 12px; color: var(--muted); font-weight: 300; }
-    .lb-info strong { color: var(--text); font-weight: 500; }
-
-    .lb-close {
-      background: none;
-      border: none;
-      font-size: 20px;
-      color: var(--muted);
-      cursor: pointer;
-      padding: 4px 6px;
-      line-height: 1;
-      transition: color 0.15s;
+    /* hint toast */
+    #cms-hint{
+      position:fixed;
+      bottom:28px;right:28px;
+      background:var(--text);
+      color:#f9f8f5;
+      font-size:11px;
+      font-weight:300;
+      padding:8px 14px;
+      border-radius:6px;
+      opacity:0;
+      transition:opacity .3s;
+      pointer-events:none;
+      z-index:50;
     }
+    #cms-hint.show{opacity:1}
 
-    .lb-close:hover { color: var(--text); }
-
-    .lb-dots {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 5px;
+    /* responsive */
+    @media(max-width:860px){
+      header,.projects{padding-left:28px;padding-right:28px}
+      .project{grid-template-columns:1fr;gap:24px}
+      .header-right{display:none}
     }
-
-    .dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--line);
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .dot.active { background: var(--text); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      header, .projects { padding-left: 28px; padding-right: 28px; }
-      .project { grid-template-columns: 1fr; gap: 24px; }
-      .header-right { display: none; }
-    }
-
-    @media (max-width: 500px) {
-      header { padding-top: 44px; padding-bottom: 40px; }
-      .header-left h1 { font-size: 30px; }
-      .thumb { width: calc(50% - 5px); height: 100px; }
-      .stat { min-width: 80px; }
+    @media(max-width:500px){
+      header{padding-top:44px;padding-bottom:40px}
+      .header-left h1{font-size:30px}
+      .thumb{width:calc(50% - 5px);height:100px}
+      .stat{min-width:80px}
+      #cms-panel{width:100vw}
     }
   </style>
 </head>
@@ -325,197 +704,599 @@
   <div class="header-left">
     <h1>My<br><em>Projects</em></h1>
   </div>
-  <div class="header-right">
+  <div class="header-right" id="header-sub">
     Data Analyst<br>
     Power BI · SQL · Python · ETL
   </div>
 </header>
 
-<div class="projects">
-
-  <!-- ── PROJECT 1 ── -->
-  <div class="project" data-name="PT IDEAA BI Dashboard">
-    <div class="project-left">
-      <div class="project-index">01</div>
-      <div class="project-name">PT IDEAA<br>BI Dashboard</div>
-      <div class="project-meta">
-        <span class="tag date">Dec 2024 – Feb 2025</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Python</span>
-        <span class="tag">ETL</span>
-      </div>
-      <div class="project-count"></div>
-    </div>
-    <div class="project-right">
-      <p class="project-desc">
-        Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement.
-        Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets,
-        and identified key business insights including customer concentration risk and product profitability.
-      </p>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-val">Rp15.63bn</div>
-          <div class="stat-label">Revenue analyzed</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">928</div>
-          <div class="stat-label">Transactions</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">91,252</div>
-          <div class="stat-label">Units sold</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">36.82%</div>
-          <div class="stat-label">Gross margin</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">60.15%</div>
-          <div class="stat-label">Top 1 customer share</div>
-        </div>
-      </div>
-      <div class="thumbs">
-        <div class="thumb"><img src="images/ideaa-p1.png" alt="IDEAA Dashboard 1"></div>
-        <div class="thumb"><img src="images/ideaa-p2.png" alt="IDEAA Dashboard 2"></div>
-        <div class="thumb"><img src="images/ideaa-p3.png" alt="IDEAA Dashboard 3"></div>
-      </div>
-      <div class="small-text">Data has been anonymized for confidentiality purposes.</div>
-    </div>
-  </div>
-
-  <!-- ── PROJECT 2 ── -->
-  <div class="project" data-name="Northwind KPI Dashboard — On-Time Delivery Rate">
-    <div class="project-left">
-      <div class="project-index">02</div>
-      <div class="project-name">Northwind KPI<br>Dashboard</div>
-      <div class="project-meta">
-        <span class="tag date">University Project</span>
-        <span class="tag">Looker Studio</span>
-        <span class="tag">Python</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Pentaho</span>
-        <span class="tag">Data Warehouse</span>
-      </div>
-      <div class="project-count"></div>
-    </div>
-    <div class="project-right">
-      <p class="project-desc">
-        End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables)
-        to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with
-        SQL and Python transformations, incremental load strategy, and full data quality validation including
-        referential integrity checks and business logic validation across ~830 orders.
-      </p>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-val">95.15%</div>
-          <div class="stat-label">OTDR achieved</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">760</div>
-          <div class="stat-label">Orders tracked</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">≥ 95%</div>
-          <div class="stat-label">Target</div>
-        </div>
-        <div class="stat">
-          <div class="stat-val">1F + 4D</div>
-          <div class="stat-label">Star Schema</div>
-        </div>
-      </div>
-      <div class="thumbs">
-        <div class="thumb"><img src="images/northwind.png" alt="Northwind Dashboard"></div>
-      </div>
-    </div>
-  </div>
-
-</div>
+<div class="projects" id="projects-container"></div>
 
 <!-- Lightbox -->
 <div class="lb" id="lb">
   <div class="lb-top">
-    <div class="lb-info">
-      <strong id="lb-project"></strong><span id="lb-counter"></span>
-    </div>
+    <div class="lb-info"><strong id="lb-project"></strong><span id="lb-counter"></span></div>
     <button class="lb-close" onclick="closeLb()">×</button>
   </div>
   <button class="lb-prev" id="lb-prev" onclick="navigate(-1)">&#8592;</button>
-  <div class="lb-img-wrap">
-    <img id="lb-img" src="" alt="">
-  </div>
+  <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
   <button class="lb-next" id="lb-next" onclick="navigate(1)">&#8594;</button>
   <div class="lb-dots" id="lb-dots"></div>
 </div>
 
-<script>
-  let imgs = [], cur = 0, projectName = '';
+<!-- CMS overlay -->
+<div id="cms-overlay" onclick="closeCms()"></div>
 
-  document.querySelectorAll('.project').forEach(p => {
-    const n = p.querySelectorAll('.thumb img').length;
-    const el = p.querySelector('.project-count');
-    if (el) el.textContent = n + (n === 1 ? ' screenshot' : ' screenshots');
+<!-- CMS panel -->
+<div id="cms-panel">
+  <div class="cms-header">
+    <h2>Edit Projects</h2>
+    <div class="cms-header-right">
+      <button class="btn btn-ghost" onclick="openExport()">Export</button>
+      <button class="btn btn-ghost" onclick="closeCms()">✕ Close</button>
+    </div>
+  </div>
+  <div class="cms-body">
+    <div class="cms-sidebar">
+      <div class="cms-sidebar-inner" id="cms-proj-list"></div>
+      <button class="cms-add-btn" onclick="addProject()">+ add project</button>
+    </div>
+    <div id="cms-form-area" class="cms-empty">Select a project to edit</div>
+  </div>
+  <div class="cms-footer">
+    <div class="cms-footer-left">
+      <button class="btn btn-danger" id="cms-delete-btn" onclick="deleteProject()" style="display:none">Delete</button>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-ghost" onclick="closeCms()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveProject()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Export modal -->
+<div id="export-modal">
+  <div class="export-box">
+    <h3>Export Project Data</h3>
+    <p>Copy the JSON below and paste it inside the <code>PROJECT_DATA</code> variable in your HTML file to update GitHub.</p>
+    <textarea id="export-textarea" readonly></textarea>
+    <div class="export-footer">
+      <button class="btn btn-ghost" onclick="closeExport()">Close</button>
+      <button class="btn btn-primary" onclick="copyExport()">Copy to clipboard</button>
+    </div>
+  </div>
+</div>
+
+<div id="cms-hint">Press Ctrl+Shift+E to edit</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// DEFAULT PROJECT DATA — paste updated export here
+// ═══════════════════════════════════════════════
+const PROJECT_DATA = [
+  {
+    id: "ideaa",
+    name: "PT IDEAA\nBI Dashboard",
+    period: "Dec 2024 – Feb 2025",
+    tags: ["Power BI","SQL","Python","ETL"],
+    description: "Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement. Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets, and identified key business insights including customer concentration risk and product profitability.",
+    story: {
+      background: "PT IDEAA needed a centralized view of business performance across three departments — sales, procurement, and inventory — which previously relied on manual Excel reports that took days to compile and were often outdated by the time they reached management.",
+      steps: [
+        {title:"Stakeholder Interview", detail:"Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers."},
+        {title:"Data Source Audit", detail:"Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders."},
+        {title:"ETL with Python", detail:"Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies."},
+        {title:"Data Modeling", detail:"Designed a star schema in Power BI with one fact table (transactions) and three dimension tables."},
+        {title:"Dashboard Build", detail:"Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters."},
+        {title:"Insight Delivery", detail:"Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue."}
+      ],
+      insights: [
+        "Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.",
+        "Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.",
+        "Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."
+      ]
+    },
+    stats: [
+      {val:"Rp15.63bn", label:"Revenue analyzed"},
+      {val:"928", label:"Transactions"},
+      {val:"91,252", label:"Units sold"},
+      {val:"36.82%", label:"Gross margin"},
+      {val:"60.15%", label:"Top 1 customer share"}
+    ],
+    images: ["images/ideaa-p1.png","images/ideaa-p2.png","images/ideaa-p3.png"],
+    note: "Data has been anonymized for confidentiality purposes."
+  },
+  {
+    id: "northwind",
+    name: "Northwind KPI\nDashboard",
+    period: "University Project",
+    tags: ["Looker Studio","Python","MySQL","Pentaho","Data Warehouse"],
+    description: "End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables) to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with SQL and Python transformations, incremental load strategy, and full data quality validation.",
+    story: {
+      background: "A university capstone project simulating a real-world business intelligence scenario using the Northwind database — a classic sample dataset representing a small trading company. The goal was to design and build a full data warehouse from scratch and surface meaningful KPIs.",
+      steps: [
+        {title:"Requirements Analysis", detail:"Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic."},
+        {title:"Star Schema Design", detail:"Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates)."},
+        {title:"ETL with Pentaho", detail:"Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run."},
+        {title:"Data Quality Validation", detail:"Implemented referential integrity checks and business logic validation across all 830 orders, including null checks and date range validation."},
+        {title:"Looker Studio Dashboard", detail:"Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee."}
+      ],
+      insights: [
+        "Achieved 95.15% OTDR — just above the 95% target threshold, indicating the business is performing at the boundary of acceptable delivery performance.",
+        "Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.",
+        "Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."
+      ]
+    },
+    stats: [
+      {val:"95.15%", label:"OTDR achieved"},
+      {val:"760", label:"Orders tracked"},
+      {val:"≥ 95%", label:"Target"},
+      {val:"1F + 4D", label:"Star Schema"}
+    ],
+    images: ["images/northwind.png"],
+    note: ""
+  }
+];
+
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+let projects = [];
+let activeProjIndex = null;
+
+function loadProjects(){
+  try{
+    const saved = localStorage.getItem('da_portfolio_projects');
+    projects = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(PROJECT_DATA));
+  } catch(e){
+    projects = JSON.parse(JSON.stringify(PROJECT_DATA));
+  }
+}
+
+function saveToStorage(){
+  localStorage.setItem('da_portfolio_projects', JSON.stringify(projects));
+}
+
+// ═══════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════
+function render(){
+  const container = document.getElementById('projects-container');
+  container.innerHTML = '';
+
+  projects.forEach((p, idx) => {
+    const numStr = String(idx+1).padStart(2,'0');
+    const nameHtml = (p.name||'').replace(/\n/g,'<br>');
+    const tagsHtml = (p.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+    const statsHtml = (p.stats||[]).map(s=>`
+      <div class="stat">
+        <div class="stat-val">${esc(s.val)}</div>
+        <div class="stat-label">${esc(s.label)}</div>
+      </div>`).join('');
+    const imgCount = (p.images||[]).length;
+    const thumbsHtml = (p.images||[]).map(src=>`
+      <div class="thumb"><img src="${esc(src)}" alt="" loading="lazy"></div>`).join('');
+
+    // case study
+    const story = p.story || {};
+    let csHtml = '';
+    if(story.background || (story.steps&&story.steps.length) || (story.insights&&story.insights.length)){
+      const stepsHtml = (story.steps||[]).map((s,i)=>`
+        <div class="cs-step">
+          <div class="cs-step-num">${String(i+1).padStart(2,'0')}</div>
+          <div class="cs-step-content">
+            <div class="cs-step-title">${esc(s.title)}</div>
+            <div class="cs-step-detail">${esc(s.detail)}</div>
+          </div>
+        </div>`).join('');
+      const insightsHtml = (story.insights||[]).map(ins=>`
+        <div class="cs-insight">${esc(ins)}</div>`).join('');
+
+      csHtml = `
+        <button class="cs-toggle" onclick="toggleStory(this)">
+          <span>View case study</span>
+          <span class="arrow">›</span>
+        </button>
+        <div class="cs-body">
+          ${story.background ? `<div class="cs-section">
+            <div class="cs-label">Background</div>
+            <div class="cs-background">${esc(story.background)}</div>
+          </div>` : ''}
+          ${stepsHtml ? `<div class="cs-section">
+            <div class="cs-label">Process</div>
+            <div class="cs-steps">${stepsHtml}</div>
+          </div>` : ''}
+          ${insightsHtml ? `<div class="cs-section">
+            <div class="cs-label">Key insights</div>
+            <div class="cs-insights">${insightsHtml}</div>
+          </div>` : ''}
+        </div>`;
+    }
+
+    const el = document.createElement('div');
+    el.className = 'project';
+    el.dataset.idx = idx;
+    el.dataset.name = p.name||'';
+    el.innerHTML = `
+      <div class="project-left">
+        <div class="project-index">${numStr}</div>
+        <div class="project-name">${nameHtml}</div>
+        <div class="project-meta">
+          <span class="tag date">${esc(p.period||'')}</span>
+          ${tagsHtml}
+        </div>
+        <div class="project-count">${imgCount} screenshot${imgCount===1?'':'s'}</div>
+      </div>
+      <div class="project-right">
+        <p class="project-desc">${esc(p.description||'')}</p>
+        ${csHtml}
+        <div class="stats">${statsHtml}</div>
+        <div class="thumbs">${thumbsHtml}</div>
+        ${p.note ? `<div class="small-text">${esc(p.note)}</div>` : ''}
+      </div>`;
+    container.appendChild(el);
   });
 
-  document.querySelectorAll('.project').forEach(project => {
-    const name = project.dataset.name;
-    const thumbImgs = [...project.querySelectorAll('.thumb img')];
-    thumbImgs.forEach((img, i) => {
-      img.parentElement.addEventListener('click', () => {
-        imgs = thumbImgs.map(im => im.src);
-        projectName = name;
+  bindLightbox();
+}
+
+function esc(str){
+  return String(str||'')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════════════
+// CASE STUDY TOGGLE
+// ═══════════════════════════════════════════════
+function toggleStory(btn){
+  const body = btn.nextElementSibling;
+  const open = body.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.querySelector('span:first-child').textContent = open ? 'Hide case study' : 'View case study';
+}
+
+// ═══════════════════════════════════════════════
+// LIGHTBOX
+// ═══════════════════════════════════════════════
+let lbImgs=[], lbCur=0, lbName='';
+
+function bindLightbox(){
+  document.querySelectorAll('.project').forEach(proj=>{
+    const name = proj.dataset.name.replace(/\n/g,' ');
+    const thumbImgs = [...proj.querySelectorAll('.thumb img')];
+    thumbImgs.forEach((img,i)=>{
+      img.parentElement.addEventListener('click',()=>{
+        lbImgs = thumbImgs.map(im=>im.src);
+        lbName = name;
         openLb(i);
       });
     });
   });
+}
 
-  function openLb(index) {
-    cur = index;
-    document.getElementById('lb').classList.add('open');
-    document.getElementById('lb-project').textContent = projectName;
-    buildDots();
-    show();
-  }
-
-  function show() {
-    document.getElementById('lb-img').src = imgs[cur];
-    document.getElementById('lb-counter').textContent = ' — ' + (cur + 1) + ' / ' + imgs.length;
-    document.getElementById('lb-prev').classList.toggle('hidden', cur === 0);
-    document.getElementById('lb-next').classList.toggle('hidden', cur === imgs.length - 1);
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === cur));
-  }
-
-  function navigate(dir) {
-    cur = Math.max(0, Math.min(imgs.length - 1, cur + dir));
-    show();
-  }
-
-  function buildDots() {
-    const wrap = document.getElementById('lb-dots');
-    wrap.innerHTML = '';
-    imgs.forEach((_, i) => {
-      const d = document.createElement('div');
-      d.className = 'dot' + (i === cur ? ' active' : '');
-      d.onclick = () => { cur = i; show(); };
-      wrap.appendChild(d);
-    });
-  }
-
-  function closeLb() {
-    document.getElementById('lb').classList.remove('open');
-  }
-
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('lb').classList.contains('open')) return;
-    if (e.key === 'ArrowRight') navigate(1);
-    if (e.key === 'ArrowLeft') navigate(-1);
-    if (e.key === 'Escape') closeLb();
+function openLb(index){
+  lbCur=index;
+  document.getElementById('lb').classList.add('open');
+  document.getElementById('lb-project').textContent=lbName;
+  buildDots();
+  showLb();
+}
+function showLb(){
+  document.getElementById('lb-img').src=lbImgs[lbCur];
+  document.getElementById('lb-counter').textContent=' — '+(lbCur+1)+' / '+lbImgs.length;
+  document.getElementById('lb-prev').classList.toggle('hidden',lbCur===0);
+  document.getElementById('lb-next').classList.toggle('hidden',lbCur===lbImgs.length-1);
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===lbCur));
+}
+function navigate(dir){
+  lbCur=Math.max(0,Math.min(lbImgs.length-1,lbCur+dir));
+  showLb();
+}
+function buildDots(){
+  const w=document.getElementById('lb-dots');
+  w.innerHTML='';
+  lbImgs.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===lbCur?' active':'');
+    d.onclick=()=>{lbCur=i;showLb();};
+    w.appendChild(d);
   });
+}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
 
-  document.getElementById('lb').addEventListener('click', e => {
-    if (e.target === document.getElementById('lb')) closeLb();
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lb').classList.contains('open')){
+    if(e.key==='ArrowRight') navigate(1);
+    if(e.key==='ArrowLeft') navigate(-1);
+    if(e.key==='Escape') closeLb();
+  }
+});
+document.getElementById('lb').addEventListener('click',e=>{
+  if(e.target===document.getElementById('lb')) closeLb();
+});
+
+// ═══════════════════════════════════════════════
+// CMS
+// ═══════════════════════════════════════════════
+function openCms(){
+  document.getElementById('cms-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('cms-panel').classList.add('open'),10);
+  renderCmsSidebar();
+  document.getElementById('cms-form-area').className='cms-empty';
+  document.getElementById('cms-form-area').innerHTML='Select a project to edit';
+  document.getElementById('cms-delete-btn').style.display='none';
+  activeProjIndex=null;
+}
+function closeCms(){
+  document.getElementById('cms-panel').classList.remove('open');
+  document.getElementById('cms-overlay').classList.remove('open');
+}
+
+function renderCmsSidebar(){
+  const list=document.getElementById('cms-proj-list');
+  list.innerHTML='';
+  projects.forEach((p,i)=>{
+    const el=document.createElement('div');
+    el.className='cms-proj-item'+(i===activeProjIndex?' active':'');
+    el.textContent=(p.name||'Untitled').replace(/\n/,' ');
+    el.onclick=()=>editProject(i);
+    list.appendChild(el);
   });
+}
+
+function editProject(idx){
+  activeProjIndex=idx;
+  renderCmsSidebar();
+  document.getElementById('cms-delete-btn').style.display='block';
+  const p=projects[idx];
+  const story=p.story||{};
+
+  const stepsHtml=(story.steps||[]).map((s,i)=>stepItemHtml(i,s.title,s.detail)).join('');
+  const insightsHtml=(story.insights||[]).map((ins,i)=>insightItemHtml(i,ins)).join('');
+  const statsHtml=(p.stats||[]).map((s,i)=>statItemHtml(i,s.val,s.label)).join('');
+  const imagesHtml=(p.images||[]).map((img,i)=>imageItemHtml(i,img)).join('');
+
+  document.getElementById('cms-form-area').className='cms-form';
+  document.getElementById('cms-form-area').innerHTML=`
+    <div class="cms-section-title">Basic Info</div>
+    <div class="cms-field">
+      <label class="cms-label">Project name (use \\n for line break)</label>
+      <input class="cms-input" id="f-name" value="${escVal(p.name||'')}">
+    </div>
+    <div class="cms-row">
+      <div class="cms-field">
+        <label class="cms-label">Period</label>
+        <input class="cms-input" id="f-period" value="${escVal(p.period||'')}">
+      </div>
+      <div class="cms-field">
+        <label class="cms-label">Tags (comma separated)</label>
+        <input class="cms-input" id="f-tags" value="${escVal((p.tags||[]).join(', '))}">
+      </div>
+    </div>
+    <div class="cms-field">
+      <label class="cms-label">Description</label>
+      <textarea class="cms-textarea" id="f-desc" rows="4">${escVal(p.description||'')}</textarea>
+    </div>
+    <div class="cms-field">
+      <label class="cms-label">Footnote (optional, e.g. data anonymized notice)</label>
+      <input class="cms-input" id="f-note" value="${escVal(p.note||'')}">
+    </div>
+
+    <div class="cms-section-title">Stats</div>
+    <div class="stat-list" id="stat-list">${statsHtml}</div>
+    <button class="cms-btn-add" onclick="addStat()">+ add stat</button>
+
+    <div class="cms-section-title">Images</div>
+    <div class="stat-list" id="image-list">${imagesHtml}</div>
+    <button class="cms-btn-add" onclick="addImage()">+ add image path</button>
+
+    <div class="cms-section-title">Case Study</div>
+    <div class="cms-field">
+      <label class="cms-label">Background</label>
+      <textarea class="cms-textarea" id="f-background" rows="3">${escVal(story.background||'')}</textarea>
+    </div>
+    <div class="cms-label" style="margin-bottom:8px">Process Steps</div>
+    <div class="step-list" id="step-list">${stepsHtml}</div>
+    <button class="cms-btn-add" onclick="addStep()">+ add step</button>
+
+    <div class="cms-label" style="margin:14px 0 8px">Key Insights</div>
+    <div class="insight-list" id="insight-list">${insightsHtml}</div>
+    <button class="cms-btn-add" onclick="addInsight()">+ add insight</button>
+  `;
+}
+
+function escVal(str){return String(str||'').replace(/"/g,'&quot;').replace(/\n/g,'\\n')}
+
+function stepItemHtml(i,title,detail){
+  return `<div class="step-item" id="step-${i}">
+    <button class="step-remove" onclick="removeItem('step-list','step-${i}')">×</button>
+    <input class="cms-input" placeholder="Step title" value="${escVal(title||'')}">
+    <textarea class="cms-textarea" placeholder="Step detail">${escVal(detail||'')}</textarea>
+  </div>`;
+}
+function insightItemHtml(i,text){
+  return `<div class="insight-item" id="insight-${i}">
+    <textarea class="cms-textarea" placeholder="Insight...">${escVal(text||'')}</textarea>
+    <button onclick="removeItem('insight-list','insight-${i}')">×</button>
+  </div>`;
+}
+function statItemHtml(i,val,label){
+  return `<div class="stat-item" id="stat-${i}">
+    <input class="cms-input" placeholder="Value" value="${escVal(val||'')}" style="max-width:110px">
+    <input class="cms-input" placeholder="Label" value="${escVal(label||'')}">
+    <button onclick="removeItem('stat-list','stat-${i}')">×</button>
+  </div>`;
+}
+function imageItemHtml(i,src){
+  return `<div class="stat-item" id="img-${i}">
+    <input class="cms-input" placeholder="images/filename.png" value="${escVal(src||'')}">
+    <button onclick="removeItem('image-list','img-${i}')">×</button>
+  </div>`;
+}
+
+function addStep(){
+  const list=document.getElementById('step-list');
+  const i=list.children.length;
+  const div=document.createElement('div');
+  div.innerHTML=stepItemHtml(i,'','');
+  list.appendChild(div.firstElementChild);
+}
+function addInsight(){
+  const list=document.getElementById('insight-list');
+  const i=list.children.length;
+  const div=document.createElement('div');
+  div.innerHTML=insightItemHtml(i,'');
+  list.appendChild(div.firstElementChild);
+}
+function addStat(){
+  const list=document.getElementById('stat-list');
+  const i=list.children.length;
+  const div=document.createElement('div');
+  div.innerHTML=statItemHtml(i,'','');
+  list.appendChild(div.firstElementChild);
+}
+function addImage(){
+  const list=document.getElementById('image-list');
+  const i=list.children.length;
+  const div=document.createElement('div');
+  div.innerHTML=imageItemHtml(i,'');
+  list.appendChild(div.firstElementChild);
+}
+function removeItem(listId,itemId){
+  const item=document.getElementById(itemId);
+  if(item) item.remove();
+}
+
+function addProject(){
+  const newProj={
+    id:'project-'+Date.now(),
+    name:'New Project',
+    period:'',
+    tags:[],
+    description:'',
+    story:{background:'',steps:[],insights:[]},
+    stats:[],
+    images:[],
+    note:''
+  };
+  projects.push(newProj);
+  editProject(projects.length-1);
+  renderCmsSidebar();
+}
+
+function deleteProject(){
+  if(activeProjIndex===null) return;
+  if(!confirm('Delete this project?')) return;
+  projects.splice(activeProjIndex,1);
+  activeProjIndex=null;
+  saveToStorage();
+  render();
+  renderCmsSidebar();
+  document.getElementById('cms-form-area').className='cms-empty';
+  document.getElementById('cms-form-area').innerHTML='Select a project to edit';
+  document.getElementById('cms-delete-btn').style.display='none';
+}
+
+function saveProject(){
+  if(activeProjIndex===null){closeCms();return;}
+
+  // read basic fields
+  const name=(document.getElementById('f-name').value||'').replace(/\\n/g,'\n');
+  const period=document.getElementById('f-period').value||'';
+  const tags=(document.getElementById('f-tags').value||'').split(',').map(t=>t.trim()).filter(Boolean);
+  const description=document.getElementById('f-desc').value||'';
+  const note=document.getElementById('f-note').value||'';
+  const background=document.getElementById('f-background').value||'';
+
+  // read steps
+  const steps=[...(document.getElementById('step-list')?.children||[])].map(el=>{
+    const inputs=el.querySelectorAll('input,textarea');
+    return {title:(inputs[0]?.value||'').replace(/\\n/g,'\n'), detail:(inputs[1]?.value||'').replace(/\\n/g,'\n')};
+  }).filter(s=>s.title||s.detail);
+
+  // read insights
+  const insights=[...(document.getElementById('insight-list')?.children||[])].map(el=>{
+    return (el.querySelector('textarea')?.value||'').replace(/\\n/g,'\n');
+  }).filter(Boolean);
+
+  // read stats
+  const stats=[...(document.getElementById('stat-list')?.children||[])].map(el=>{
+    const inputs=el.querySelectorAll('input');
+    return {val:inputs[0]?.value||'', label:inputs[1]?.value||''};
+  }).filter(s=>s.val||s.label);
+
+  // read images
+  const images=[...(document.getElementById('image-list')?.children||[])].map(el=>{
+    return (el.querySelector('input')?.value||'').trim();
+  }).filter(Boolean);
+
+  projects[activeProjIndex]={
+    ...projects[activeProjIndex],
+    name,period,tags,description,note,
+    story:{background,steps,insights},
+    stats,images
+  };
+
+  saveToStorage();
+  render();
+  renderCmsSidebar();
+  showHint('Saved!');
+}
+
+// ═══════════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════════
+function openExport(){
+  const json=JSON.stringify(projects,null,2);
+  document.getElementById('export-textarea').value=json;
+  document.getElementById('export-modal').classList.add('open');
+}
+function closeExport(){document.getElementById('export-modal').classList.remove('open')}
+function copyExport(){
+  const ta=document.getElementById('export-textarea');
+  ta.select();
+  navigator.clipboard.writeText(ta.value).then(()=>{
+    showHint('Copied!');
+    closeExport();
+  }).catch(()=>{document.execCommand('copy');showHint('Copied!')});
+}
+document.getElementById('export-modal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('export-modal')) closeExport();
+});
+
+// ═══════════════════════════════════════════════
+// HINT
+// ═══════════════════════════════════════════════
+let hintTimer;
+function showHint(msg){
+  const el=document.getElementById('cms-hint');
+  el.textContent=msg;
+  el.classList.add('show');
+  clearTimeout(hintTimer);
+  hintTimer=setTimeout(()=>el.classList.remove('show'),2000);
+}
+
+// ═══════════════════════════════════════════════
+// KEYBOARD SHORTCUT
+// ═══════════════════════════════════════════════
+document.addEventListener('keydown',e=>{
+  if(e.ctrlKey && e.shiftKey && e.key==='E'){
+    e.preventDefault();
+    openCms();
+  }
+});
+
+// hint on first load
+setTimeout(()=>showHint('Ctrl+Shift+E to edit'),1200);
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+loadProjects();
+render();
 </script>
-
 </body>
 </html>
