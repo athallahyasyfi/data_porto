@@ -1,550 +1,1540 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --bg:#f9f8f5;--line:#e9e7e2;--text:#1a1a1a;--muted:#9a9793;
-      --subtle:#c8c5bf;--chip-bg:#f0eeea;--chip-color:#7a7772;
-      --stat-bg:#f3f1ed;--story-bg:#f5f4f0;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
-    body{background:var(--bg);color:var(--text);font-family:'Geist',-apple-system,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased;}
+
+    :root {
+      --bg: #f9f8f5;
+      --line: #e9e7e2;
+      --text: #1a1a1a;
+      --muted: #9a9793;
+      --subtle: #c8c5bf;
+      --chip-bg: #f0eeea;
+      --chip-color: #7a7772;
+      --stat-bg: #f3f1ed;
+      --story-bg: #f5f4f0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Geist', -apple-system, sans-serif;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
 
     /* ── HEADER ── */
-    header{max-width:1100px;margin:0 auto;padding:72px 48px 64px;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;border-bottom:1px solid var(--line);}
-    .header-left h1{font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.03em;}
-    .header-left h1 em{font-style:normal;color:var(--muted);font-weight:300;}
-    .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;padding-bottom:4px;}
-    .header-sub{font-size:12px;color:var(--muted);font-weight:300;text-align:right;line-height:1.7;}
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 48px 64px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-left h1 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .header-left h1 em {
+      font-style: normal;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      padding-bottom: 4px;
+    }
+
+    .header-sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+      text-align: right;
+      line-height: 1.7;
+    }
 
     /* ── LANG TOGGLE ── */
-    .lang-toggle{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-shrink:0;}
-    .lang-btn{padding:5px 11px;font-size:11px;font-family:'Geist',sans-serif;font-weight:400;color:var(--muted);background:none;border:none;cursor:pointer;transition:all .15s;letter-spacing:.02em;}
-    .lang-btn.active{background:var(--text);color:#fff;}
-    .lang-btn:not(.active):hover{background:var(--chip-bg);color:var(--text);}
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      padding: 5px 11px;
+      font-size: 11px;
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all .15s;
+      letter-spacing: .02em;
+    }
+
+    .lang-btn.active {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .lang-btn:not(.active):hover {
+      background: var(--chip-bg);
+      color: var(--text);
+    }
 
     /* ── PROJECTS ── */
-    .projects{max-width:1100px;margin:0 auto;padding:0 48px 120px;}
-    .project{padding:56px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start;}
-    .project-index{font-size:11px;color:var(--subtle);font-weight:300;letter-spacing:.06em;margin-bottom:10px;}
-    .project-name{font-size:16px;font-weight:500;line-height:1.4;margin-bottom:14px;letter-spacing:-0.02em;}
-    .project-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
-    .tag{background:var(--chip-bg);color:var(--chip-color);padding:3px 9px;border-radius:100px;font-size:10px;font-weight:400;letter-spacing:.02em;}
-    .tag.date{background:none;color:var(--muted);padding-left:0;}
-    .project-count{font-size:11px;color:var(--subtle);font-weight:300;margin-top:4px;}
-    .project-desc{font-size:13.5px;color:#555;font-weight:300;line-height:1.75;margin-bottom:20px;}
+    .projects {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 120px;
+    }
+
+    .project {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .project-index {
+      font-size: 11px;
+      color: var(--subtle);
+      font-weight: 300;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: var(--chip-bg);
+      color: var(--chip-color);
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
+
+    .tag.date {
+      background: none;
+      color: var(--muted);
+      padding-left: 0;
+    }
+
+    .project-count {
+      font-size: 11px;
+      color: var(--subtle);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
 
     /* ── CASE STUDY TOGGLE ── */
-    .cs-toggle{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:400;color:var(--text);cursor:pointer;letter-spacing:.02em;margin-bottom:24px;padding:8px 14px 8px 12px;background:var(--chip-bg);border:1px solid var(--line);border-radius:6px;transition:all .2s;user-select:none;}
-    .cs-toggle:hover{border-color:#aaa;background:#ebe9e4;}
-    .cs-toggle .cs-toggle-icon{width:18px;height:18px;border-radius:50%;background:var(--text);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);}
-    .cs-toggle.open .cs-toggle-icon{transform:rotate(45deg);}
+    .cs-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--text);
+      cursor: pointer;
+      letter-spacing: .02em;
+      margin-bottom: 24px;
+      padding: 8px 14px 8px 12px;
+      background: var(--chip-bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: all .2s;
+      user-select: none;
+    }
+
+    .cs-toggle:hover {
+      border-color: #aaa;
+      background: #ebe9e4;
+    }
+
+    .cs-toggle .cs-toggle-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--text);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+      transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .cs-toggle.open .cs-toggle-icon {
+      transform: rotate(45deg);
+    }
 
     /* ── CASE STUDY BODY ── */
-    .cs-body{display:none;background:var(--story-bg);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px;border:1px solid var(--line);animation:fadeIn .25s ease;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-    .cs-body.open{display:block;}
-    .cs-section{margin-bottom:22px;}
-    .cs-section:last-child{margin-bottom:0;}
-    .cs-label{font-size:10px;font-weight:500;color:var(--subtle);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
-    .cs-background{font-size:13px;color:#555;font-weight:300;line-height:1.75;}
-    .cs-steps{display:flex;flex-direction:column;gap:0;}
-    .cs-step{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);}
-    .cs-step:last-child{border-bottom:none;}
-    .cs-step-num{font-size:10px;color:var(--subtle);font-weight:300;min-width:18px;padding-top:2px;flex-shrink:0;}
-    .cs-step-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;}
-    .cs-step-detail{font-size:12.5px;color:#777;font-weight:300;line-height:1.65;}
-    .cs-step-img{margin-top:10px;border-radius:6px;overflow:hidden;cursor:zoom-in;max-width:100%;border:1px solid var(--line);}
-    .cs-step-img img{width:100%;display:block;max-height:280px;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1);}
-    .cs-step-img:hover img{transform:scale(1.02);}
-    .cs-insights{display:flex;flex-direction:column;gap:6px;}
-    .cs-insight{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#555;font-weight:300;line-height:1.6;}
-    .cs-insight::before{content:'→';color:var(--subtle);font-size:11px;padding-top:2px;flex-shrink:0;}
+    .cs-body {
+      display: none;
+      background: var(--story-bg);
+      border-radius: 8px;
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      animation: fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-4px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .cs-body.open {
+      display: block;
+    }
+
+    .cs-section {
+      margin-bottom: 22px;
+    }
+
+    .cs-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .cs-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--subtle);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cs-background {
+      font-size: 13px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .cs-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-step {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cs-step:last-child {
+      border-bottom: none;
+    }
+
+    .cs-step-num {
+      font-size: 10px;
+      color: var(--subtle);
+      font-weight: 300;
+      min-width: 18px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .cs-step-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .cs-step-detail {
+      font-size: 12.5px;
+      color: #777;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .cs-step-img {
+      margin-top: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: zoom-in;
+      max-width: 100%;
+      border: 1px solid var(--line);
+    }
+
+    .cs-step-img img {
+      width: 100%;
+      display: block;
+      max-height: 280px;
+      object-fit: cover;
+      transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .cs-step-img:hover img {
+      transform: scale(1.02);
+    }
+
+    .cs-insights {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cs-insight {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 12.5px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .cs-insight::before {
+      content: '→';
+      color: var(--subtle);
+      font-size: 11px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
 
     /* ── STATS ── */
-    .stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
-    .stat{background:var(--stat-bg);border-radius:6px;padding:10px 16px;min-width:90px;}
-    .stat-val{font-size:16px;font-weight:500;letter-spacing:-0.02em;color:var(--text);line-height:1;margin-bottom:3px;}
-    .stat-label{font-size:10px;color:var(--muted);font-weight:300;letter-spacing:.02em;line-height:1.3;}
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .stat {
+      background: var(--stat-bg);
+      border-radius: 6px;
+      padding: 10px 16px;
+      min-width: 90px;
+    }
+
+    .stat-val {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: .02em;
+      line-height: 1.3;
+    }
 
     /* ── THUMBNAILS ── */
-    .thumbs{display:flex;gap:10px;flex-wrap:wrap;}
-    .thumb{width:200px;height:126px;border-radius:6px;overflow:hidden;cursor:zoom-in;background:var(--line);flex-shrink:0;}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.16,1,.3,1);}
-    .thumb:hover img{transform:scale(1.07);}
-    .small-text{margin-top:14px;font-size:11px;color:var(--subtle);font-style:italic;font-weight:300;}
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .thumb {
+      width: 200px;
+      height: 126px;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: var(--line);
+      flex-shrink: 0;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .thumb:hover img {
+      transform: scale(1.07);
+    }
+
+    .small-text {
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--subtle);
+      font-style: italic;
+      font-weight: 300;
+    }
 
     /* ── LIVE LINK ── */
-    .live-link{display:inline-flex;align-items:center;gap:7px;margin-bottom:22px;padding:8px 14px;font-size:11.5px;font-family:'Geist',sans-serif;font-weight:400;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;text-decoration:none;transition:all .18s;cursor:pointer;}
-    .live-link:hover{border-color:#aaa;background:var(--chip-bg);}
-    .live-link-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;box-shadow:0 0 0 2px rgba(74,222,128,.2);}
+    .live-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      font-size: 11.5px;
+      font-family: 'Geist', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all .18s;
+      cursor: pointer;
+    }
+
+    .live-link:hover {
+      border-color: #aaa;
+      background: var(--chip-bg);
+    }
+
+    .live-link-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px rgba(74, 222, 128, .2);
+    }
 
     /* ── LIGHTBOX ── */
-    .lb{display:none;position:fixed;inset:0;background:rgba(249,248,245,.95);backdrop-filter:blur(20px);z-index:200;align-items:center;justify-content:center;}
-    .lb.open{display:flex;}
-    .lb-img-wrap{max-width:90vw;max-height:84vh;display:flex;align-items:center;justify-content:center;}
-    .lb img{max-width:88vw;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 32px 96px rgba(0,0,0,.09);display:block;}
-    .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:white;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;cursor:pointer;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .18s;box-shadow:0 2px 8px rgba(0,0,0,.05);}
-    .lb-prev{left:20px;}.lb-next{right:20px;}
-    .lb-prev:hover,.lb-next:hover{border-color:var(--muted);color:var(--text);}
-    .lb-prev.hidden,.lb-next.hidden{opacity:0;pointer-events:none;}
-    .lb-top{position:fixed;top:0;left:0;right:0;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;}
-    .lb-info{font-size:12px;color:var(--muted);font-weight:300;}
-    .lb-info strong{color:var(--text);font-weight:500;}
-    .lb-close{background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;padding:4px 6px;line-height:1;transition:color .15s;}
-    .lb-close:hover{color:var(--text);}
-    .lb-dots{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:5px;}
-    .dot{width:5px;height:5px;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s;}
-    .dot.active{background:var(--text);}
+    .lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(249, 248, 245, .95);
+      backdrop-filter: blur(20px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb.open {
+      display: flex;
+    }
+
+    .lb-img-wrap {
+      max-width: 90vw;
+      max-height: 84vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb img {
+      max-width: 88vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 32px 96px rgba(0, 0, 0, .09);
+      display: block;
+    }
+
+    .lb-prev,
+    .lb-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .18s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    }
+
+    .lb-prev {
+      left: 20px;
+    }
+
+    .lb-next {
+      right: 20px;
+    }
+
+    .lb-prev:hover,
+    .lb-next:hover {
+      border-color: var(--muted);
+      color: var(--text);
+    }
+
+    .lb-prev.hidden,
+    .lb-next.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .lb-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lb-info {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .lb-info strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .lb-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px 6px;
+      line-height: 1;
+      transition: color .15s;
+    }
+
+    .lb-close:hover {
+      color: var(--text);
+    }
+
+    .lb-dots {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--line);
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .dot.active {
+      background: var(--text);
+    }
 
     /* ── CMS PANEL ── */
-    #cms-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:300;backdrop-filter:blur(4px);}
-    #cms-overlay.open{display:block;}
-    #cms-panel{position:fixed;top:0;right:0;bottom:0;width:min(680px,100vw);background:#fff;z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);box-shadow:-20px 0 60px rgba(0,0,0,.1);}
-    #cms-panel.open{transform:translateX(0);}
-    .cms-header{padding:24px 28px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-    .cms-header h2{font-size:15px;font-weight:500;letter-spacing:-0.02em;}
-    .cms-header-right{display:flex;gap:8px;align-items:center;}
-    .cms-body{display:flex;flex:1;overflow:hidden;}
+    #cms-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .3);
+      z-index: 300;
+      backdrop-filter: blur(4px);
+    }
+
+    #cms-overlay.open {
+      display: block;
+    }
+
+    #cms-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(680px, 100vw);
+      background: #fff;
+      z-index: 301;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+      box-shadow: -20px 0 60px rgba(0, 0, 0, .1);
+    }
+
+    #cms-panel.open {
+      transform: translateX(0);
+    }
+
+    .cms-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .cms-header h2 {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .cms-header-right {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .cms-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
 
     /* sidebar */
-    .cms-sidebar{width:180px;border-right:1px solid var(--line);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;}
-    .cms-sidebar-inner{padding:12px 0;flex:1;}
-    .cms-proj-item{
-      padding:10px 16px;font-size:12px;font-weight:300;color:var(--muted);
-      cursor:pointer;border-left:2px solid transparent;transition:background .12s,color .12s;
-      line-height:1.4;display:flex;align-items:center;gap:8px;user-select:none;
+    .cms-sidebar {
+      width: 180px;
+      border-right: 1px solid var(--line);
+      overflow-y: auto;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
     }
-    .cms-proj-item:hover{color:var(--text);background:#fafaf8;}
-    .cms-proj-item.active{color:var(--text);border-left-color:var(--text);background:#f9f8f5;font-weight:400;}
-    .cms-proj-item.cms-dragging{opacity:.25;background:#f5f4f0;}
-    .cms-proj-item.cms-drag-over-top{border-top:2px solid var(--text);}
-    .cms-proj-item.cms-drag-over-bot{border-bottom:2px solid var(--text);}
-    .cms-drag-grip{
-      color:var(--subtle);cursor:grab;flex-shrink:0;
-      opacity:0;transition:opacity .15s;
-      display:flex;align-items:center;padding:2px;
+
+    .cms-sidebar-inner {
+      padding: 12px 0;
+      flex: 1;
     }
-    .cms-drag-grip:active{cursor:grabbing;}
-    .cms-proj-item:hover .cms-drag-grip{opacity:1;}
-    .cms-proj-item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
-    .cms-add-btn{display:block;width:calc(100% - 24px);margin:8px 12px 12px;padding:8px;font-size:11px;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:5px;cursor:pointer;text-align:center;font-family:'Geist',sans-serif;transition:all .15s;flex-shrink:0;}
-    .cms-add-btn:hover{border-color:var(--muted);color:var(--text);}
-
-    .cms-form{flex:1;overflow-y:auto;padding:20px 24px 40px;}
-    .cms-empty{flex:1;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--subtle);font-weight:300;}
-    .cms-field{margin-bottom:16px;}
-    .cms-label{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
-    .cms-input,.cms-textarea{width:100%;padding:8px 10px;font-size:12.5px;font-family:'Geist',sans-serif;font-weight:300;color:var(--text);background:#fafaf8;border:1px solid var(--line);border-radius:5px;outline:none;transition:border-color .15s;}
-    .cms-input:focus,.cms-textarea:focus{border-color:#aaa;}
-    .cms-textarea{resize:vertical;min-height:70px;line-height:1.6;}
-    .cms-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    .cms-section-title{font-size:10px;font-weight:500;color:var(--subtle);letter-spacing:.08em;text-transform:uppercase;padding:16px 0 8px;border-bottom:1px solid var(--line);margin-bottom:14px;}
-    .cms-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:20px;margin-top:4px;}
-    .cms-tab{padding:8px 16px;font-size:12px;font-weight:300;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;font-family:'Geist',sans-serif;background:none;border-top:none;border-left:none;border-right:none;}
-    .cms-tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:400;}
-    .cms-tab-panel{display:none;}.cms-tab-panel.active{display:block;}
-
-    .step-list{display:flex;flex-direction:column;gap:8px;margin-bottom:8px;}
-    .step-item{background:#f5f4f0;border-radius:6px;padding:12px;position:relative;}
-    .step-item .cms-input{margin-bottom:6px;background:#fff;}
-    .step-item .cms-textarea{background:#fff;min-height:50px;}
-    .step-remove{position:absolute;top:8px;right:8px;background:none;border:none;font-size:15px;color:var(--subtle);cursor:pointer;line-height:1;transition:color .15s;}
-    .step-remove:hover{color:#c44;}
-    .step-img-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
-    .step-img-preview{width:48px;height:32px;border-radius:4px;object-fit:cover;border:1px solid var(--line);display:none;}
-    .step-img-preview.show{display:block;}
-    .stat-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
-    .stat-item{display:flex;gap:6px;align-items:center;}
-    .stat-item .cms-input{flex:1;}
-    .stat-item button,.insight-item button{background:none;border:none;font-size:15px;color:var(--subtle);cursor:pointer;flex-shrink:0;transition:color .15s;}
-    .stat-item button:hover,.insight-item button:hover{color:#c44;}
-    .insight-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
-    .insight-item{display:flex;gap:6px;align-items:flex-start;}
-    .insight-item .cms-textarea{flex:1;min-height:40px;}
-    .insight-item button{margin-top:6px;}
-    .cms-btn-add{display:inline-block;font-size:11px;color:var(--muted);cursor:pointer;background:none;border:1px dashed var(--line);border-radius:4px;padding:5px 10px;font-family:'Geist',sans-serif;transition:all .15s;}
-    .cms-btn-add:hover{border-color:var(--muted);color:var(--text);}
-    .i18n-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-    .i18n-pair .lang-flag{font-size:10px;color:var(--subtle);margin-bottom:3px;font-weight:400;}
-
-    .cms-footer{padding:14px 24px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:space-between;align-items:center;flex-shrink:0;}
-    .cms-footer-left{display:flex;gap:8px;}
-    .btn{padding:7px 14px;font-size:11.5px;font-family:'Geist',sans-serif;border-radius:5px;cursor:pointer;border:1px solid var(--line);transition:all .15s;font-weight:400;}
-    .btn-primary{background:var(--text);color:#fff;border-color:var(--text);}
-    .btn-primary:hover{background:#333;}
-    .btn-ghost{background:none;color:var(--muted);}
-    .btn-ghost:hover{background:#f5f4f0;color:var(--text);}
-    .btn-danger{background:none;color:#c44e52;border-color:#f5c1c1;}
-    .btn-danger:hover{background:#fff0f0;}
-
-    #export-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:400;align-items:center;justify-content:center;}
-    #export-modal.open{display:flex;}
-    .export-box{background:#fff;border-radius:10px;padding:28px;width:min(560px,90vw);max-height:80vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.12);}
-    .export-box h3{font-size:14px;font-weight:500;margin-bottom:6px;}
-    .export-box p{font-size:12px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6;}
-    .export-box textarea{flex:1;min-height:220px;padding:12px;font-size:11px;font-family:monospace;background:#f5f4f0;border:1px solid var(--line);border-radius:6px;resize:none;outline:none;color:var(--text);}
-    .export-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;}
-
-    #cms-hint{position:fixed;bottom:28px;right:28px;background:var(--text);color:#f9f8f5;font-size:11px;font-weight:300;padding:8px 14px;border-radius:6px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:500;}
-    #cms-hint.show{opacity:1;}
-
-    @media(max-width:860px){
-      header,.projects{padding-left:28px;padding-right:28px;}
-      .project{grid-template-columns:1fr;gap:24px;}
-      .header-right{flex-direction:row;align-items:center;}
-      .header-sub{display:none;}
+    .cms-proj-item {
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      cursor: pointer;
+      border-left: 2px solid transparent;
+      transition: background .12s, color .12s;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
     }
-    @media(max-width:500px){
-      header{padding-top:44px;padding-bottom:40px;}
-      .header-left h1{font-size:30px;}
-      .thumb{width:calc(50% - 5px);height:100px;}
-      .stat{min-width:80px;}
-      #cms-panel{width:100vw;}
-      .i18n-pair{grid-template-columns:1fr;}
+
+    .cms-proj-item:hover {
+      color: var(--text);
+      background: #fafaf8;
+    }
+
+    .cms-proj-item.active {
+      color: var(--text);
+      border-left-color: var(--text);
+      background: #f9f8f5;
+      font-weight: 400;
+    }
+
+    .cms-proj-item.cms-dragging {
+      opacity: .25;
+      background: #f5f4f0;
+    }
+
+    .cms-proj-item.cms-drag-over-top {
+      border-top: 2px solid var(--text);
+    }
+
+    .cms-proj-item.cms-drag-over-bot {
+      border-bottom: 2px solid var(--text);
+    }
+
+    .cms-drag-grip {
+      color: var(--subtle);
+      cursor: grab;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity .15s;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+
+    .cms-drag-grip:active {
+      cursor: grabbing;
+    }
+
+    .cms-proj-item:hover .cms-drag-grip {
+      opacity: 1;
+    }
+
+    .cms-proj-item-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .cms-add-btn {
+      display: block;
+      width: calc(100% - 24px);
+      margin: 8px 12px 12px;
+      padding: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      background: none;
+      border: 1px dashed var(--line);
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      font-family: 'Geist', sans-serif;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+
+    .cms-add-btn:hover {
+      border-color: var(--muted);
+      color: var(--text);
+    }
+
+    .cms-form {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px 40px;
+    }
+
+    .cms-empty {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--subtle);
+      font-weight: 300;
+    }
+
+    .cms-field {
+      margin-bottom: 16px;
+    }
+
+    .cms-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .cms-input,
+    .cms-textarea {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      font-family: 'Geist', sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: #fafaf8;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      outline: none;
+      transition: border-color .15s;
+    }
+
+    .cms-input:focus,
+    .cms-textarea:focus {
+      border-color: #aaa;
+    }
+
+    .cms-textarea {
+      resize: vertical;
+      min-height: 70px;
+      line-height: 1.6;
+    }
+
+    .cms-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cms-section-title {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--subtle);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 16px 0 8px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 14px;
+    }
+
+    .cms-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+      margin-top: 4px;
+    }
+
+    .cms-tab {
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all .15s;
+      font-family: 'Geist', sans-serif;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .cms-tab.active {
+      color: var(--text);
+      border-bottom-color: var(--text);
+      font-weight: 400;
+    }
+
+    .cms-tab-panel {
+      display: none;
+    }
+
+    .cms-tab-panel.active {
+      display: block;
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .step-item {
+      background: #f5f4f0;
+      border-radius: 6px;
+      padding: 12px;
+      position: relative;
+    }
+
+    .step-item .cms-input {
+      margin-bottom: 6px;
+      background: #fff;
+    }
+
+    .step-item .cms-textarea {
+      background: #fff;
+      min-height: 50px;
+    }
+
+    .step-remove {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: none;
+      border: none;
+      font-size: 15px;
+      color: var(--subtle);
+      cursor: pointer;
+      line-height: 1;
+      transition: color .15s;
+    }
+
+    .step-remove:hover {
+      color: #c44;
+    }
+
+    .step-img-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .step-img-preview {
+      width: 48px;
+      height: 32px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      display: none;
+    }
+
+    .step-img-preview.show {
+      display: block;
+    }
+
+    .stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .stat-item {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .stat-item .cms-input {
+      flex: 1;
+    }
+
+    .stat-item button,
+    .insight-item button {
+      background: none;
+      border: none;
+      font-size: 15px;
+      color: var(--subtle);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: color .15s;
+    }
+
+    .stat-item button:hover,
+    .insight-item button:hover {
+      color: #c44;
+    }
+
+    .insight-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .insight-item {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .insight-item .cms-textarea {
+      flex: 1;
+      min-height: 40px;
+    }
+
+    .insight-item button {
+      margin-top: 6px;
+    }
+
+    .cms-btn-add {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--muted);
+      cursor: pointer;
+      background: none;
+      border: 1px dashed var(--line);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-family: 'Geist', sans-serif;
+      transition: all .15s;
+    }
+
+    .cms-btn-add:hover {
+      border-color: var(--muted);
+      color: var(--text);
+    }
+
+    .i18n-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .i18n-pair .lang-flag {
+      font-size: 10px;
+      color: var(--subtle);
+      margin-bottom: 3px;
+      font-weight: 400;
+    }
+
+    .cms-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .cms-footer-left {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 7px 14px;
+      font-size: 11.5px;
+      font-family: 'Geist', sans-serif;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: all .15s;
+      font-weight: 400;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    .btn-primary:hover {
+      background: #333;
+    }
+
+    .btn-ghost {
+      background: none;
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: #f5f4f0;
+      color: var(--text);
+    }
+
+    .btn-danger {
+      background: none;
+      color: #c44e52;
+      border-color: #f5c1c1;
+    }
+
+    .btn-danger:hover {
+      background: #fff0f0;
+    }
+
+    #export-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .4);
+      z-index: 400;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #export-modal.open {
+      display: flex;
+    }
+
+    .export-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px;
+      width: min(560px, 90vw);
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .12);
+    }
+
+    .export-box h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .export-box p {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .export-box textarea {
+      flex: 1;
+      min-height: 220px;
+      padding: 12px;
+      font-size: 11px;
+      font-family: monospace;
+      background: #f5f4f0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      resize: none;
+      outline: none;
+      color: var(--text);
+    }
+
+    .export-footer {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 14px;
+    }
+
+    #cms-hint {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--text);
+      color: #f9f8f5;
+      font-size: 11px;
+      font-weight: 300;
+      padding: 8px 14px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity .3s;
+      pointer-events: none;
+      z-index: 500;
+    }
+
+    #cms-hint.show {
+      opacity: 1;
+    }
+
+    @media(max-width:860px) {
+
+      header,
+      .projects {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .header-right {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .header-sub {
+        display: none;
+      }
+    }
+
+    @media(max-width:500px) {
+      header {
+        padding-top: 44px;
+        padding-bottom: 40px;
+      }
+
+      .header-left h1 {
+        font-size: 30px;
+      }
+
+      .thumb {
+        width: calc(50% - 5px);
+        height: 100px;
+      }
+
+      .stat {
+        min-width: 80px;
+      }
+
+      #cms-panel {
+        width: 100vw;
+      }
+
+      .i18n-pair {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-left">
-    <h1>My<br><em>Projects</em></h1>
+  <header>
+    <div class="header-left">
+      <h1>My<br><em>Projects</em></h1>
+    </div>
+    <div class="header-right">
+      <div class="header-sub">Data Analyst · Power BI · SQL · Python · ETL</div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('id')">ID</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="projects" id="projects-container"></div>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <div class="lb-top">
+      <div class="lb-info"><strong id="lb-project"></strong><span id="lb-counter"></span></div>
+      <button class="lb-close" onclick="closeLb()">×</button>
+    </div>
+    <button class="lb-prev" id="lb-prev" onclick="navigate(-1)">&#8592;</button>
+    <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
+    <button class="lb-next" id="lb-next" onclick="navigate(1)">&#8594;</button>
+    <div class="lb-dots" id="lb-dots"></div>
   </div>
-  <div class="header-right">
-    <div class="header-sub">Data Analyst · Power BI · SQL · Python · ETL</div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('id')">ID</button>
+
+  <div id="cms-overlay" onclick="closeCms()"></div>
+
+  <!-- CMS Panel -->
+  <div id="cms-panel">
+    <div class="cms-header">
+      <h2>Edit Projects</h2>
+      <div class="cms-header-right">
+        <button class="btn btn-ghost" onclick="openExport()">Export</button>
+        <button class="btn btn-ghost" onclick="closeCms()">✕ Close</button>
+      </div>
+    </div>
+    <div class="cms-body">
+      <div class="cms-sidebar">
+        <div class="cms-sidebar-inner" id="cms-proj-list"></div>
+        <button class="cms-add-btn" onclick="addProject()">+ add project</button>
+      </div>
+      <div id="cms-form-area" class="cms-empty">Select a project to edit</div>
+    </div>
+    <div class="cms-footer">
+      <div class="cms-footer-left">
+        <button class="btn btn-danger" id="cms-delete-btn" onclick="deleteProject()"
+          style="display:none">Delete</button>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost" onclick="closeCms()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveProject()">Save</button>
+      </div>
     </div>
   </div>
-</header>
 
-<div class="projects" id="projects-container"></div>
-
-<!-- Lightbox -->
-<div class="lb" id="lb">
-  <div class="lb-top">
-    <div class="lb-info"><strong id="lb-project"></strong><span id="lb-counter"></span></div>
-    <button class="lb-close" onclick="closeLb()">×</button>
-  </div>
-  <button class="lb-prev" id="lb-prev" onclick="navigate(-1)">&#8592;</button>
-  <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
-  <button class="lb-next" id="lb-next" onclick="navigate(1)">&#8594;</button>
-  <div class="lb-dots" id="lb-dots"></div>
-</div>
-
-<div id="cms-overlay" onclick="closeCms()"></div>
-
-<!-- CMS Panel -->
-<div id="cms-panel">
-  <div class="cms-header">
-    <h2>Edit Projects</h2>
-    <div class="cms-header-right">
-      <button class="btn btn-ghost" onclick="openExport()">Export</button>
-      <button class="btn btn-ghost" onclick="closeCms()">✕ Close</button>
+  <!-- Export Modal -->
+  <div id="export-modal">
+    <div class="export-box">
+      <h3>Export Project Data</h3>
+      <p>Copy JSON below and paste into <code>PROJECT_DATA</code> in your HTML to update GitHub.</p>
+      <textarea id="export-textarea" readonly></textarea>
+      <div class="export-footer">
+        <button class="btn btn-ghost" onclick="closeExport()">Close</button>
+        <button class="btn btn-primary" onclick="copyExport()">Copy to clipboard</button>
+      </div>
     </div>
   </div>
-  <div class="cms-body">
-    <div class="cms-sidebar">
-      <div class="cms-sidebar-inner" id="cms-proj-list"></div>
-      <button class="cms-add-btn" onclick="addProject()">+ add project</button>
-    </div>
-    <div id="cms-form-area" class="cms-empty">Select a project to edit</div>
-  </div>
-  <div class="cms-footer">
-    <div class="cms-footer-left">
-      <button class="btn btn-danger" id="cms-delete-btn" onclick="deleteProject()" style="display:none">Delete</button>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button class="btn btn-ghost" onclick="closeCms()">Cancel</button>
-      <button class="btn btn-primary" onclick="saveProject()">Save</button>
-    </div>
-  </div>
-</div>
 
-<!-- Export Modal -->
-<div id="export-modal">
-  <div class="export-box">
-    <h3>Export Project Data</h3>
-    <p>Copy JSON below and paste into <code>PROJECT_DATA</code> in your HTML to update GitHub.</p>
-    <textarea id="export-textarea" readonly></textarea>
-    <div class="export-footer">
-      <button class="btn btn-ghost" onclick="closeExport()">Close</button>
-      <button class="btn btn-primary" onclick="copyExport()">Copy to clipboard</button>
-    </div>
-  </div>
-</div>
+  <div id="cms-hint"></div>
 
-<div id="cms-hint"></div>
-
-<script>
-// ════════════════════════════════════════════
-// DEFAULT DATA
-// ════════════════════════════════════════════
-const PROJECT_DATA = [
-  {
-    id:"ideaa",
-    name:"PT IDEAA\nBI Dashboard",
-    period:"Dec 2024 – Feb 2025",
-    tags:["Power BI","SQL","Python","ETL"],
-    description:{
-      en:"Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement. Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets, and identified key business insights including customer concentration risk and product profitability.",
-      id:"Membangun dashboard Power BI 3 halaman yang interaktif untuk pemantauan bisnis secara real-time mencakup inventaris, penjualan, dan pengadaan. Mengembangkan pipeline ETL berbasis Python untuk mengubah data ERP mentah menjadi dataset terstruktur, serta mengidentifikasi insight bisnis utama termasuk risiko konsentrasi pelanggan dan profitabilitas produk."
-    },
-    story:{
-      background:{
-        en:"PT IDEAA needed a centralized view of business performance across three departments — sales, procurement, and inventory — which previously relied on manual Excel reports that took days to compile and were often outdated by the time they reached management.",
-        id:"PT IDEAA membutuhkan tampilan terpusat performa bisnis dari tiga departemen — penjualan, pengadaan, dan inventaris — yang sebelumnya mengandalkan laporan Excel manual yang membutuhkan berhari-hari untuk disusun dan sering kali sudah usang saat sampai ke manajemen."
+  <script>
+    // ════════════════════════════════════════════
+    // DEFAULT DATA
+    // ════════════════════════════════════════════
+    const PROJECT_DATA = [
+      {
+        id: "ideaa",
+        name: "PT IDEAA\nBI Dashboard",
+        period: "Dec 2024 – Feb 2025",
+        tags: ["Power BI", "SQL", "Python", "ETL"],
+        description: {
+          en: "Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement. Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets, and identified key business insights including customer concentration risk and product profitability.",
+          id: "Membangun dashboard Power BI 3 halaman yang interaktif untuk pemantauan bisnis secara real-time mencakup inventaris, penjualan, dan pengadaan. Mengembangkan pipeline ETL berbasis Python untuk mengubah data ERP mentah menjadi dataset terstruktur, serta mengidentifikasi insight bisnis utama termasuk risiko konsentrasi pelanggan dan profitabilitas produk."
+        },
+        story: {
+          background: {
+            en: "PT IDEAA needed a centralized view of business performance across three departments — sales, procurement, and inventory — which previously relied on manual Excel reports that took days to compile and were often outdated by the time they reached management.",
+            id: "PT IDEAA membutuhkan tampilan terpusat performa bisnis dari tiga departemen — penjualan, pengadaan, dan inventaris — yang sebelumnya mengandalkan laporan Excel manual yang membutuhkan berhari-hari untuk disusun dan sering kali sudah usang saat sampai ke manajemen."
+          },
+          steps: [
+            { title: { en: "Stakeholder Interview", id: "Wawancara Stakeholder" }, detail: { en: "Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.", id: "Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan." }, image: "" },
+            { title: { en: "Data Source Audit", id: "Audit Sumber Data" }, detail: { en: "Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.", id: "Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian." }, image: "" },
+            { title: { en: "ETL with Python", id: "ETL dengan Python" }, detail: { en: "Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.", id: "Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal." }, image: "" },
+            { title: { en: "Dashboard Build", id: "Pembangunan Dashboard" }, detail: { en: "Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.", id: "Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis." }, image: "" },
+            { title: { en: "Insight Delivery", id: "Penyampaian Insight" }, detail: { en: "Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.", id: "Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan." }, image: "" }
+          ],
+          insights: {
+            en: ["Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.", "Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.", "Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."],
+            id: ["Pelanggan teratas berkontribusi 60,15% dari total pendapatan — risiko konsentrasi yang signifikan bagi bisnis.", "Gross margin 36,82% berada di bawah benchmark industri; menandai 3 kategori produk yang menekan profitabilitas.", "Perputaran inventaris 2,3x lebih rendah dari target di kategori elektronik, mengindikasikan kelebihan stok."]
+          }
+        },
+        stats: [{ val: "Rp15.63bn", label: "Revenue analyzed" }, { val: "928", label: "Transactions" }, { val: "91,252", label: "Units sold" }, { val: "36.82%", label: "Gross margin" }, { val: "60.15%", label: "Top 1 customer share" }],
+        images: ["images/ideaa-p1.png", "images/ideaa-p2.png", "images/ideaa-p3.png"],
+        note: "Data has been anonymized for confidentiality purposes."
       },
-      steps:[
-        {title:{en:"Stakeholder Interview",id:"Wawancara Stakeholder"},detail:{en:"Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.",id:"Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan."},image:""},
-        {title:{en:"Data Source Audit",id:"Audit Sumber Data"},detail:{en:"Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.",id:"Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian."},image:""},
-        {title:{en:"ETL with Python",id:"ETL dengan Python"},detail:{en:"Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.",id:"Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal."},image:""},
-        {title:{en:"Dashboard Build",id:"Pembangunan Dashboard"},detail:{en:"Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.",id:"Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis."},image:""},
-        {title:{en:"Insight Delivery",id:"Penyampaian Insight"},detail:{en:"Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.",id:"Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan."},image:""}
-      ],
-      insights:{
-        en:["Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.","Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.","Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."],
-        id:["Pelanggan teratas berkontribusi 60,15% dari total pendapatan — risiko konsentrasi yang signifikan bagi bisnis.","Gross margin 36,82% berada di bawah benchmark industri; menandai 3 kategori produk yang menekan profitabilitas.","Perputaran inventaris 2,3x lebih rendah dari target di kategori elektronik, mengindikasikan kelebihan stok."]
-      }
-    },
-    stats:[{val:"Rp15.63bn",label:"Revenue analyzed"},{val:"928",label:"Transactions"},{val:"91,252",label:"Units sold"},{val:"36.82%",label:"Gross margin"},{val:"60.15%",label:"Top 1 customer share"}],
-    images:["images/ideaa-p1.png","images/ideaa-p2.png","images/ideaa-p3.png"],
-    note:"Data has been anonymized for confidentiality purposes."
-  },
-  {
-    id:"northwind",
-    name:"Northwind KPI\nDashboard",
-    period:"University Project",
-    tags:["Looker Studio","Python","MySQL","Pentaho","Data Warehouse"],
-    description:{
-      en:"End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables) to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with SQL and Python transformations, incremental load strategy, and full data quality validation.",
-      id:"Proyek pipeline data end-to-end mulai dari desain data warehouse Star Schema (1 tabel fakta + 4 tabel dimensi) hingga dashboard Looker Studio interaktif untuk memantau On-Time Delivery Rate. Membangun pipeline ETL menggunakan Pentaho dengan transformasi SQL dan Python, strategi incremental load, dan validasi kualitas data penuh."
-    },
-    story:{
-      background:{
-        en:"A university capstone project simulating a real-world BI scenario using the Northwind database. The goal was to design and build a full data warehouse from scratch and surface meaningful KPIs around delivery performance.",
-        id:"Proyek capstone universitas yang mensimulasikan skenario BI dunia nyata menggunakan database Northwind. Tujuannya adalah merancang dan membangun data warehouse lengkap dari nol serta menampilkan KPI yang bermakna seputar performa pengiriman."
+      {
+        id: "northwind",
+        name: "Northwind KPI\nDashboard",
+        period: "University Project",
+        tags: ["Looker Studio", "Python", "MySQL", "Pentaho", "Data Warehouse"],
+        description: {
+          en: "End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables) to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with SQL and Python transformations, incremental load strategy, and full data quality validation.",
+          id: "Proyek pipeline data end-to-end mulai dari desain data warehouse Star Schema (1 tabel fakta + 4 tabel dimensi) hingga dashboard Looker Studio interaktif untuk memantau On-Time Delivery Rate. Membangun pipeline ETL menggunakan Pentaho dengan transformasi SQL dan Python, strategi incremental load, dan validasi kualitas data penuh."
+        },
+        story: {
+          background: {
+            en: "A university capstone project simulating a real-world BI scenario using the Northwind database. The goal was to design and build a full data warehouse from scratch and surface meaningful KPIs around delivery performance.",
+            id: "Proyek capstone universitas yang mensimulasikan skenario BI dunia nyata menggunakan database Northwind. Tujuannya adalah merancang dan membangun data warehouse lengkap dari nol serta menampilkan KPI yang bermakna seputar performa pengiriman."
+          },
+          steps: [
+            { title: { en: "Requirements Analysis", id: "Analisis Kebutuhan" }, detail: { en: "Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.", id: "Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas." }, image: "" },
+            { title: { en: "Star Schema Design", id: "Desain Star Schema" }, detail: { en: "Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).", id: "Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)." }, image: "" },
+            { title: { en: "ETL with Pentaho", id: "ETL dengan Pentaho" }, detail: { en: "Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.", id: "Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi." }, image: "" },
+            { title: { en: "Data Quality Validation", id: "Validasi Kualitas Data" }, detail: { en: "Implemented referential integrity checks and business logic validation across all 830 orders.", id: "Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan." }, image: "" },
+            { title: { en: "Looker Studio Dashboard", id: "Dashboard Looker Studio" }, detail: { en: "Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.", id: "Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan." }, image: "" }
+          ],
+          insights: {
+            en: ["Achieved 95.15% OTDR — just above the 95% target threshold, indicating boundary-level delivery performance.", "Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.", "Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."],
+            id: ["Mencapai OTDR 95,15% — tepat di atas ambang target 95%, mengindikasikan performa pengiriman di batas bawah.", "Keterlambatan pengiriman terkonsentrasi pada 3 perusahaan pengiriman, menunjukkan perlunya evaluasi vendor.", "Q4 secara konsisten menunjukkan tingkat keterlambatan lebih tinggi, kemungkinan karena lonjakan permintaan hari raya."]
+          }
+        },
+        stats: [{ val: "95.15%", label: "OTDR achieved" }, { val: "760", label: "Orders tracked" }, { val: "≥ 95%", label: "Target" }, { val: "1F + 4D", label: "Star Schema" }],
+        images: ["images/northwind.png"],
+        note: ""
       },
-      steps:[
-        {title:{en:"Requirements Analysis",id:"Analisis Kebutuhan"},detail:{en:"Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.",id:"Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas."},image:""},
-        {title:{en:"Star Schema Design",id:"Desain Star Schema"},detail:{en:"Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).",id:"Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)."},image:""},
-        {title:{en:"ETL with Pentaho",id:"ETL dengan Pentaho"},detail:{en:"Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.",id:"Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi."},image:""},
-        {title:{en:"Data Quality Validation",id:"Validasi Kualitas Data"},detail:{en:"Implemented referential integrity checks and business logic validation across all 830 orders.",id:"Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan."},image:""},
-        {title:{en:"Looker Studio Dashboard",id:"Dashboard Looker Studio"},detail:{en:"Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.",id:"Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan."},image:""}
-      ],
-      insights:{
-        en:["Achieved 95.15% OTDR — just above the 95% target threshold, indicating boundary-level delivery performance.","Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.","Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."],
-        id:["Mencapai OTDR 95,15% — tepat di atas ambang target 95%, mengindikasikan performa pengiriman di batas bawah.","Keterlambatan pengiriman terkonsentrasi pada 3 perusahaan pengiriman, menunjukkan perlunya evaluasi vendor.","Q4 secara konsisten menunjukkan tingkat keterlambatan lebih tinggi, kemungkinan karena lonjakan permintaan hari raya."]
+      {
+        id: "ecommerce",
+        name: "E-Commerce\nSales Analysis",
+        period: "2025",
+        tags: ["Python", "pandas", "Power BI", "Data Cleaning", "EDA"],
+        description: {
+          en: "Full data analyst workflow on a messy real-world e-commerce dataset — from diagnosing 7 types of data quality issues, through structured cleaning in Python, to an interactive Power BI management dashboard surfacing revenue trends, product performance, and operational risk signals.",
+          id: "Workflow data analyst lengkap pada dataset e-commerce dunia nyata yang berantakan — mulai dari mendiagnosis 7 jenis masalah kualitas data, pembersihan terstruktur di Python, hingga dashboard manajemen Power BI interaktif yang menampilkan tren revenue, performa produk, dan sinyal risiko operasional."
+        },
+        story: {
+          background: {
+            en: "A messy 103-row e-commerce transaction dataset with multiple data quality problems: non-numeric Price values, leading whitespace in column names, inconsistent Category capitalisation, negative values, duplicate Order_IDs, and an unparseable date.",
+            id: "Dataset transaksi e-commerce 103 baris yang berantakan dengan berbagai masalah kualitas data: nilai Price non-numerik, spasi tersembunyi di nama kolom, kapitalisasi Category inkonsisten, nilai negatif, duplikat Order_ID, dan tanggal yang tidak bisa di-parse."
+          },
+          steps: [
+            { title: { en: "Data Diagnosis", id: "Diagnosis Data" }, detail: { en: "Audited all 11 columns before touching anything. Found 7 issue types: leading whitespace, non-numeric Price, negative rows, missing values, duplicate Order_IDs, inconsistent capitalisation, and an unparseable date.", id: "Mengaudit seluruh 11 kolom sebelum mengubah apapun. Ditemukan 7 jenis masalah: spasi nama kolom, Price non-numerik, baris negatif, missing values, duplikat Order_ID, inkonsistensi kapitalisasi, dan tanggal tidak valid." }, image: "" },
+            { title: { en: "Data Cleaning (Python / pandas)", id: "Pembersihan Data (Python / pandas)" }, detail: { en: "Cleaned in deliberate order. Non-numeric Price mapped manually or imputed with per-product median. Total recalculated as Quantity × Price. Result: 103 → 98 rows, 0 missing values.", id: "Cleaning dilakukan secara terurut. Nilai Price non-numerik dipetakan manual atau imputasi median per produk. Total dihitung ulang dari Quantity × Price. Hasil: 103 → 98 baris, 0 missing values." }, image: "" },
+            { title: { en: "Exploratory Data Analysis", id: "Analisis Data Eksploratif" }, detail: { en: "Analysed revenue by category, monthly trends, payment method distribution, and cancellation/return breakdown. Home and Books dominate revenue.", id: "Menganalisis revenue per kategori, tren bulanan, distribusi metode pembayaran, dan breakdown cancellation/return. Home dan Books mendominasi revenue." }, image: "" },
+            { title: { en: "Power BI Dashboard", id: "Dashboard Power BI" }, detail: { en: "Built a management dashboard with 5 KPI cards and 6 charts. Two custom DAX measures for Cancellation Rate and Return Rate using CALCULATE and DIVIDE.", id: "Membangun dashboard manajemen dengan 5 KPI card dan 6 chart. Dua measure DAX custom menggunakan fungsi CALCULATE dan DIVIDE." }, image: "" }
+          ],
+          insights: {
+            en: ["$176.42K total revenue from 98 transactions with $1.80K average order value — mid-to-high value product range.", "Return rate (27%) significantly exceeds cancellation rate (15%) — product expectation misalignment, not a shipping issue.", "Cash on Delivery dominates at 32.65% — signals low digital payment trust, a potential conversion opportunity.", "Home category leads revenue; Blender is the #1 product (~$31K), counterintuitive vs. Electronics."],
+            id: ["Total revenue $176,42K dari 98 transaksi dengan rata-rata order value $1,80K — kisaran produk bernilai menengah hingga tinggi.", "Return rate (27%) jauh melebihi cancellation rate (15%) — ketidaksesuaian ekspektasi produk, bukan masalah pengiriman.", "Cash on Delivery mendominasi 32,65% transaksi — sinyal kepercayaan rendah terhadap pembayaran digital.", "Kategori Home memimpin revenue; Blender produk #1 (~$31K), kontradiktif vs. Electronics."]
+          }
+        },
+        stats: [{ val: "$176.42K", label: "Total revenue" }, { val: "98", label: "Orders" }, { val: "$1.80K", label: "Avg order value" }, { val: "15%", label: "Cancellation rate" }, { val: "27%", label: "Return rate" }],
+        images: [],
+        note: ""
       }
-    },
-    stats:[{val:"95.15%",label:"OTDR achieved"},{val:"760",label:"Orders tracked"},{val:"≥ 95%",label:"Target"},{val:"1F + 4D",label:"Star Schema"}],
-    images:["images/northwind.png"],
-    note:""
-  },
-  {
-    id:"ecommerce",
-    name:"E-Commerce\nSales Analysis",
-    period:"2025",
-    tags:["Python","pandas","Power BI","Data Cleaning","EDA"],
-    description:{
-      en:"Full data analyst workflow on a messy real-world e-commerce dataset — from diagnosing 7 types of data quality issues, through structured cleaning in Python, to an interactive Power BI management dashboard surfacing revenue trends, product performance, and operational risk signals.",
-      id:"Workflow data analyst lengkap pada dataset e-commerce dunia nyata yang berantakan — mulai dari mendiagnosis 7 jenis masalah kualitas data, pembersihan terstruktur di Python, hingga dashboard manajemen Power BI interaktif yang menampilkan tren revenue, performa produk, dan sinyal risiko operasional."
-    },
-    story:{
-      background:{
-        en:"A messy 103-row e-commerce transaction dataset with multiple data quality problems: non-numeric Price values, leading whitespace in column names, inconsistent Category capitalisation, negative values, duplicate Order_IDs, and an unparseable date.",
-        id:"Dataset transaksi e-commerce 103 baris yang berantakan dengan berbagai masalah kualitas data: nilai Price non-numerik, spasi tersembunyi di nama kolom, kapitalisasi Category inkonsisten, nilai negatif, duplikat Order_ID, dan tanggal yang tidak bisa di-parse."
-      },
-      steps:[
-        {title:{en:"Data Diagnosis",id:"Diagnosis Data"},detail:{en:"Audited all 11 columns before touching anything. Found 7 issue types: leading whitespace, non-numeric Price, negative rows, missing values, duplicate Order_IDs, inconsistent capitalisation, and an unparseable date.",id:"Mengaudit seluruh 11 kolom sebelum mengubah apapun. Ditemukan 7 jenis masalah: spasi nama kolom, Price non-numerik, baris negatif, missing values, duplikat Order_ID, inkonsistensi kapitalisasi, dan tanggal tidak valid."},image:""},
-        {title:{en:"Data Cleaning (Python / pandas)",id:"Pembersihan Data (Python / pandas)"},detail:{en:"Cleaned in deliberate order. Non-numeric Price mapped manually or imputed with per-product median. Total recalculated as Quantity × Price. Result: 103 → 98 rows, 0 missing values.",id:"Cleaning dilakukan secara terurut. Nilai Price non-numerik dipetakan manual atau imputasi median per produk. Total dihitung ulang dari Quantity × Price. Hasil: 103 → 98 baris, 0 missing values."},image:""},
-        {title:{en:"Exploratory Data Analysis",id:"Analisis Data Eksploratif"},detail:{en:"Analysed revenue by category, monthly trends, payment method distribution, and cancellation/return breakdown. Home and Books dominate revenue.",id:"Menganalisis revenue per kategori, tren bulanan, distribusi metode pembayaran, dan breakdown cancellation/return. Home dan Books mendominasi revenue."},image:""},
-        {title:{en:"Power BI Dashboard",id:"Dashboard Power BI"},detail:{en:"Built a management dashboard with 5 KPI cards and 6 charts. Two custom DAX measures for Cancellation Rate and Return Rate using CALCULATE and DIVIDE.",id:"Membangun dashboard manajemen dengan 5 KPI card dan 6 chart. Dua measure DAX custom menggunakan fungsi CALCULATE dan DIVIDE."},image:""}
-      ],
-      insights:{
-        en:["$176.42K total revenue from 98 transactions with $1.80K average order value — mid-to-high value product range.","Return rate (27%) significantly exceeds cancellation rate (15%) — product expectation misalignment, not a shipping issue.","Cash on Delivery dominates at 32.65% — signals low digital payment trust, a potential conversion opportunity.","Home category leads revenue; Blender is the #1 product (~$31K), counterintuitive vs. Electronics."],
-        id:["Total revenue $176,42K dari 98 transaksi dengan rata-rata order value $1,80K — kisaran produk bernilai menengah hingga tinggi.","Return rate (27%) jauh melebihi cancellation rate (15%) — ketidaksesuaian ekspektasi produk, bukan masalah pengiriman.","Cash on Delivery mendominasi 32,65% transaksi — sinyal kepercayaan rendah terhadap pembayaran digital.","Kategori Home memimpin revenue; Blender produk #1 (~$31K), kontradiktif vs. Electronics."]
-      }
-    },
-    stats:[{val:"$176.42K",label:"Total revenue"},{val:"98",label:"Orders"},{val:"$1.80K",label:"Avg order value"},{val:"15%",label:"Cancellation rate"},{val:"27%",label:"Return rate"}],
-    images:[],
-    note:""
-  }
-];
+    ];
 
-// ════════════════════════════════════════════
-// STATE
-// ════════════════════════════════════════════
-let projects=[];
-let activeProjIndex=null;
-let lang='en';
+    // ════════════════════════════════════════════
+    // STATE
+    // ════════════════════════════════════════════
+    let projects = [];
+    let activeProjIndex = null;
+    let lang = 'en';
 
-const T={
-  viewCS:{en:"View case study",id:"Lihat case study"},
-  hideCS:{en:"Hide case study",id:"Sembunyikan"},
-  background:{en:"Background",id:"Latar Belakang"},
-  process:{en:"Process",id:"Proses"},
-  keyInsights:{en:"Key insights",id:"Insight Utama"},
-  screenshot:{en:"screenshot",id:"tangkapan layar"},
-  screenshots:{en:"screenshots",id:"tangkapan layar"},
-  saved:{en:"Saved!",id:"Tersimpan!"},
-  orderSaved:{en:"Order saved!",id:"Urutan disimpan!"},
-  copied:{en:"Copied!",id:"Disalin!"},
-  viewLive:{en:"View live dashboard",id:"Lihat dashboard langsung"},
-};
-function t(key){return T[key]?.[lang]||T[key]?.en||key;}
+    const T = {
+      viewCS: { en: "View case study", id: "Lihat case study" },
+      hideCS: { en: "Hide case study", id: "Sembunyikan" },
+      background: { en: "Background", id: "Latar Belakang" },
+      process: { en: "Process", id: "Proses" },
+      keyInsights: { en: "Key insights", id: "Insight Utama" },
+      screenshot: { en: "screenshot", id: "tangkapan layar" },
+      screenshots: { en: "screenshots", id: "tangkapan layar" },
+      saved: { en: "Saved!", id: "Tersimpan!" },
+      orderSaved: { en: "Order saved!", id: "Urutan disimpan!" },
+      copied: { en: "Copied!", id: "Disalin!" },
+      viewLive: { en: "View live dashboard", id: "Lihat dashboard langsung" },
+    };
+    function t(key) { return T[key]?.[lang] || T[key]?.en || key; }
 
-function loadProjects(){
-  try{const s=localStorage.getItem('da_portfolio_v2');projects=s?JSON.parse(s):JSON.parse(JSON.stringify(PROJECT_DATA));}
-  catch(e){projects=JSON.parse(JSON.stringify(PROJECT_DATA));}
-}
-function saveToStorage(){localStorage.setItem('da_portfolio_v2',JSON.stringify(projects));}
+    function loadProjects() {
+      try { const s = localStorage.getItem('da_portfolio_v2'); projects = s ? JSON.parse(s) : JSON.parse(JSON.stringify(PROJECT_DATA)); }
+      catch (e) { projects = JSON.parse(JSON.stringify(PROJECT_DATA)); }
+    }
+    function saveToStorage() { localStorage.setItem('da_portfolio_v2', JSON.stringify(projects)); }
 
-// ════════════════════════════════════════════
-// LANG
-// ════════════════════════════════════════════
-function setLang(l){
-  lang=l;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
-  localStorage.setItem('da_lang',l);render();
-}
-function getLangVal(val){
-  if(!val) return '';if(typeof val==='string') return val;
-  return val[lang]||val.en||'';
-}
-
-// ════════════════════════════════════════════
-// RENDER
-// ════════════════════════════════════════════
-function render(){
-  const container=document.getElementById('projects-container');container.innerHTML='';
-  projects.forEach((p,idx)=>{
-    const numStr=String(idx+1).padStart(2,'0');
-    const nameHtml=(p.name||'').replace(/\n/g,'<br>');
-    const tagsHtml=(p.tags||[]).map(tg=>`<span class="tag">${esc(tg)}</span>`).join('');
-    const statsHtml=(p.stats||[]).map(s=>`<div class="stat"><div class="stat-val">${esc(s.val)}</div><div class="stat-label">${esc(s.label)}</div></div>`).join('');
-    const imgCount=(p.images||[]).length;
-    const thumbsHtml=(p.images||[]).map(src=>`<div class="thumb"><img src="${esc(src)}" alt="" loading="lazy"></div>`).join('');
-    const descText=getLangVal(p.description);
-    const liveLinkHtml=p.liveLink?`<a class="live-link" href="${esc(p.liveLink)}" target="_blank" rel="noopener"><span class="live-link-dot"></span>${t('viewLive')}</a>`:'';
-
-    const story=p.story||{};let csHtml='';
-    const bgText=getLangVal(story.background);const steps=story.steps||[];const insights=getLangVal(story.insights);
-
-    if(bgText||(steps.length>0)||(insights&&insights.length)){
-      const stepsHtml=steps.map((s,i)=>{
-        const title=getLangVal(s.title);const detail=getLangVal(s.detail);const imgSrc=s.image||'';
-        const imgHtml=imgSrc?`<div class="cs-step-img" onclick="openLbSingle('${esc(imgSrc)}')"><img src="${esc(imgSrc)}" alt="${esc(title)}" loading="lazy"></div>`:'';
-        return `<div class="cs-step"><div class="cs-step-num">${String(i+1).padStart(2,'0')}</div><div class="cs-step-content"><div class="cs-step-title">${esc(title)}</div><div class="cs-step-detail">${esc(detail)}</div>${imgHtml}</div></div>`;
-      }).join('');
-      const insightsHtml=(Array.isArray(insights)?insights:[]).map(ins=>`<div class="cs-insight">${esc(ins)}</div>`).join('');
-      csHtml=`<button class="cs-toggle" onclick="toggleStory(this)"><span class="cs-toggle-icon">+</span><span class="cs-toggle-label">${t('viewCS')}</span></button>
-        <div class="cs-body">
-          ${bgText?`<div class="cs-section"><div class="cs-label">${t('background')}</div><div class="cs-background">${esc(bgText)}</div></div>`:''}
-          ${stepsHtml?`<div class="cs-section"><div class="cs-label">${t('process')}</div><div class="cs-steps">${stepsHtml}</div></div>`:''}
-          ${insightsHtml?`<div class="cs-section"><div class="cs-label">${t('keyInsights')}</div><div class="cs-insights">${insightsHtml}</div></div>`:''}
-        </div>`;
+    // ════════════════════════════════════════════
+    // LANG
+    // ════════════════════════════════════════════
+    function setLang(l) {
+      lang = l;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
+      localStorage.setItem('da_lang', l); render();
+    }
+    function getLangVal(val) {
+      if (!val) return ''; if (typeof val === 'string') return val;
+      return val[lang] || val.en || '';
     }
 
-    const el=document.createElement('div');
-    el.className='project';el.dataset.idx=idx;el.dataset.name=p.name||'';
-    el.innerHTML=`
+    // ════════════════════════════════════════════
+    // RENDER
+    // ════════════════════════════════════════════
+    function render() {
+      const container = document.getElementById('projects-container'); container.innerHTML = '';
+      projects.forEach((p, idx) => {
+        const numStr = String(idx + 1).padStart(2, '0');
+        const nameHtml = (p.name || '').replace(/\n/g, '<br>');
+        const tagsHtml = (p.tags || []).map(tg => `<span class="tag">${esc(tg)}</span>`).join('');
+        const statsHtml = (p.stats || []).map(s => `<div class="stat"><div class="stat-val">${esc(s.val)}</div><div class="stat-label">${esc(s.label)}</div></div>`).join('');
+        const imgCount = (p.images || []).length;
+        const thumbsHtml = (p.images || []).map(src => `<div class="thumb"><img src="${esc(src)}" alt="" loading="lazy"></div>`).join('');
+        const descText = getLangVal(p.description);
+        const liveLinkHtml = p.liveLink ? `<a class="live-link" href="${esc(p.liveLink)}" target="_blank" rel="noopener"><span class="live-link-dot"></span>${t('viewLive')}</a>` : '';
+
+        const story = p.story || {}; let csHtml = '';
+        const bgText = getLangVal(story.background); const steps = story.steps || []; const insights = getLangVal(story.insights);
+
+        if (bgText || (steps.length > 0) || (insights && insights.length)) {
+          const stepsHtml = steps.map((s, i) => {
+            const title = getLangVal(s.title); const detail = getLangVal(s.detail); const imgSrc = s.image || '';
+            const imgHtml = imgSrc ? `<div class="cs-step-img" onclick="openLbSingle('${esc(imgSrc)}')"><img src="${esc(imgSrc)}" alt="${esc(title)}" loading="lazy"></div>` : '';
+            return `<div class="cs-step"><div class="cs-step-num">${String(i + 1).padStart(2, '0')}</div><div class="cs-step-content"><div class="cs-step-title">${esc(title)}</div><div class="cs-step-detail">${esc(detail)}</div>${imgHtml}</div></div>`;
+          }).join('');
+          const insightsHtml = (Array.isArray(insights) ? insights : []).map(ins => `<div class="cs-insight">${esc(ins)}</div>`).join('');
+          csHtml = `<button class="cs-toggle" onclick="toggleStory(this)"><span class="cs-toggle-icon">+</span><span class="cs-toggle-label">${t('viewCS')}</span></button>
+        <div class="cs-body">
+          ${bgText ? `<div class="cs-section"><div class="cs-label">${t('background')}</div><div class="cs-background">${esc(bgText)}</div></div>` : ''}
+          ${stepsHtml ? `<div class="cs-section"><div class="cs-label">${t('process')}</div><div class="cs-steps">${stepsHtml}</div></div>` : ''}
+          ${insightsHtml ? `<div class="cs-section"><div class="cs-label">${t('keyInsights')}</div><div class="cs-insights">${insightsHtml}</div></div>` : ''}
+        </div>`;
+        }
+
+        const el = document.createElement('div');
+        el.className = 'project'; el.dataset.idx = idx; el.dataset.name = p.name || '';
+        el.innerHTML = `
       <div class="project-left">
         <div class="project-index">${numStr}</div>
         <div class="project-name">${nameHtml}</div>
-        <div class="project-meta"><span class="tag date">${esc(p.period||'')}</span>${tagsHtml}</div>
-        <div class="project-count">${imgCount} ${imgCount===1?t('screenshot'):t('screenshots')}</div>
+        <div class="project-meta"><span class="tag date">${esc(p.period || '')}</span>${tagsHtml}</div>
+        <div class="project-count">${imgCount} ${imgCount === 1 ? t('screenshot') : t('screenshots')}</div>
       </div>
       <div class="project-right">
         <p class="project-desc">${esc(descText)}</p>
         ${liveLinkHtml}${csHtml}
         <div class="stats">${statsHtml}</div>
         <div class="thumbs">${thumbsHtml}</div>
-        ${p.note?`<div class="small-text">${esc(p.note)}</div>`:''}
+        ${p.note ? `<div class="small-text">${esc(p.note)}</div>` : ''}
       </div>`;
-    container.appendChild(el);
-  });
-  bindLightbox();
-}
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+        container.appendChild(el);
+      });
+      bindLightbox();
+    }
+    function esc(s) { return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 
-// ════════════════════════════════════════════
-// CASE STUDY TOGGLE
-// ════════════════════════════════════════════
-function toggleStory(btn){
-  const body=btn.nextElementSibling;const open=body.classList.toggle('open');
-  btn.classList.toggle('open',open);
-  btn.querySelector('.cs-toggle-label').textContent=open?t('hideCS'):t('viewCS');
-}
+    // ════════════════════════════════════════════
+    // CASE STUDY TOGGLE
+    // ════════════════════════════════════════════
+    function toggleStory(btn) {
+      const body = btn.nextElementSibling; const open = body.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.querySelector('.cs-toggle-label').textContent = open ? t('hideCS') : t('viewCS');
+    }
 
-// ════════════════════════════════════════════
-// LIGHTBOX
-// ════════════════════════════════════════════
-let lbImgs=[],lbCur=0,lbName='';
-function bindLightbox(){
-  document.querySelectorAll('.project').forEach(proj=>{
-    const name=proj.dataset.name.replace(/\n/g,' ');
-    const thumbImgs=[...proj.querySelectorAll('.thumb img')];
-    thumbImgs.forEach((img,i)=>{img.parentElement.addEventListener('click',()=>{lbImgs=thumbImgs.map(im=>im.src);lbName=name;openLb(i);});});
-  });
-}
-function openLbSingle(src){lbImgs=[src];lbName='';openLb(0);}
-function openLb(index){lbCur=index;document.getElementById('lb').classList.add('open');document.getElementById('lb-project').textContent=lbName;buildDots();showLb();}
-function showLb(){
-  document.getElementById('lb-img').src=lbImgs[lbCur];
-  document.getElementById('lb-counter').textContent=lbImgs.length>1?' — '+(lbCur+1)+' / '+lbImgs.length:'';
-  document.getElementById('lb-prev').classList.toggle('hidden',lbCur===0);
-  document.getElementById('lb-next').classList.toggle('hidden',lbCur===lbImgs.length-1);
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===lbCur));
-}
-function navigate(dir){lbCur=Math.max(0,Math.min(lbImgs.length-1,lbCur+dir));showLb();}
-function buildDots(){
-  const w=document.getElementById('lb-dots');w.innerHTML='';
-  lbImgs.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===lbCur?' active':'');d.onclick=()=>{lbCur=i;showLb();};w.appendChild(d);});
-}
-function closeLb(){document.getElementById('lb').classList.remove('open');}
-document.addEventListener('keydown',e=>{
-  if(document.getElementById('lb').classList.contains('open')){
-    if(e.key==='ArrowRight')navigate(1);if(e.key==='ArrowLeft')navigate(-1);if(e.key==='Escape')closeLb();
-  }
-  if(e.ctrlKey&&e.shiftKey&&e.key==='E'){e.preventDefault();openCms();}
-});
-document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))closeLb();});
+    // ════════════════════════════════════════════
+    // LIGHTBOX
+    // ════════════════════════════════════════════
+    let lbImgs = [], lbCur = 0, lbName = '';
+    function bindLightbox() {
+      document.querySelectorAll('.project').forEach(proj => {
+        const name = proj.dataset.name.replace(/\n/g, ' ');
+        const thumbImgs = [...proj.querySelectorAll('.thumb img')];
+        thumbImgs.forEach((img, i) => { img.parentElement.addEventListener('click', () => { lbImgs = thumbImgs.map(im => im.src); lbName = name; openLb(i); }); });
+      });
+    }
+    function openLbSingle(src) { lbImgs = [src]; lbName = ''; openLb(0); }
+    function openLb(index) { lbCur = index; document.getElementById('lb').classList.add('open'); document.getElementById('lb-project').textContent = lbName; buildDots(); showLb(); }
+    function showLb() {
+      document.getElementById('lb-img').src = lbImgs[lbCur];
+      document.getElementById('lb-counter').textContent = lbImgs.length > 1 ? ' — ' + (lbCur + 1) + ' / ' + lbImgs.length : '';
+      document.getElementById('lb-prev').classList.toggle('hidden', lbCur === 0);
+      document.getElementById('lb-next').classList.toggle('hidden', lbCur === lbImgs.length - 1);
+      document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === lbCur));
+    }
+    function navigate(dir) { lbCur = Math.max(0, Math.min(lbImgs.length - 1, lbCur + dir)); showLb(); }
+    function buildDots() {
+      const w = document.getElementById('lb-dots'); w.innerHTML = '';
+      lbImgs.forEach((_, i) => { const d = document.createElement('div'); d.className = 'dot' + (i === lbCur ? ' active' : ''); d.onclick = () => { lbCur = i; showLb(); }; w.appendChild(d); });
+    }
+    function closeLb() { document.getElementById('lb').classList.remove('open'); }
+    document.addEventListener('keydown', e => {
+      if (document.getElementById('lb').classList.contains('open')) {
+        if (e.key === 'ArrowRight') navigate(1); if (e.key === 'ArrowLeft') navigate(-1); if (e.key === 'Escape') closeLb();
+      }
+      if (e.ctrlKey && e.shiftKey && e.key === 'E') { e.preventDefault(); openCms(); }
+    });
+    document.getElementById('lb').addEventListener('click', e => { if (e.target === document.getElementById('lb')) closeLb(); });
 
-// ════════════════════════════════════════════
-// CMS — sidebar with drag-and-drop reorder
-// ════════════════════════════════════════════
-let cmsDragSrc=null;
+    // ════════════════════════════════════════════
+    // CMS — sidebar with drag-and-drop reorder
+    // ════════════════════════════════════════════
+    let cmsDragSrc = null;
 
-function openCms(){
-  document.getElementById('cms-overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('cms-panel').classList.add('open'),10);
-  renderCmsSidebar();
-  document.getElementById('cms-form-area').className='cms-empty';
-  document.getElementById('cms-form-area').innerHTML='Select a project to edit';
-  document.getElementById('cms-delete-btn').style.display='none';
-  activeProjIndex=null;
-}
-function closeCms(){
-  document.getElementById('cms-panel').classList.remove('open');
-  document.getElementById('cms-overlay').classList.remove('open');
-}
+    function openCms() {
+      document.getElementById('cms-overlay').classList.add('open');
+      setTimeout(() => document.getElementById('cms-panel').classList.add('open'), 10);
+      renderCmsSidebar();
+      document.getElementById('cms-form-area').className = 'cms-empty';
+      document.getElementById('cms-form-area').innerHTML = 'Select a project to edit';
+      document.getElementById('cms-delete-btn').style.display = 'none';
+      activeProjIndex = null;
+    }
+    function closeCms() {
+      document.getElementById('cms-panel').classList.remove('open');
+      document.getElementById('cms-overlay').classList.remove('open');
+    }
 
-function renderCmsSidebar(){
-  const list=document.getElementById('cms-proj-list');list.innerHTML='';
-  projects.forEach((p,i)=>{
-    const el=document.createElement('div');
-    el.className='cms-proj-item'+(i===activeProjIndex?' active':'');
-    el.draggable=true;
-    el.dataset.idx=i;
-    el.innerHTML=`
+    function renderCmsSidebar() {
+      const list = document.getElementById('cms-proj-list'); list.innerHTML = '';
+      projects.forEach((p, i) => {
+        const el = document.createElement('div');
+        el.className = 'cms-proj-item' + (i === activeProjIndex ? ' active' : '');
+        el.draggable = true;
+        el.dataset.idx = i;
+        el.innerHTML = `
       <span class="cms-drag-grip" title="Drag to reorder">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
           <line x1="1" y1="2" x2="9" y2="2"/>
@@ -552,76 +1542,76 @@ function renderCmsSidebar(){
           <line x1="1" y1="8" x2="9" y2="8"/>
         </svg>
       </span>
-      <span class="cms-proj-item-name">${esc((p.name||'Untitled').replace(/\n/,' '))}</span>`;
+      <span class="cms-proj-item-name">${esc((p.name || 'Untitled').replace(/\n/, ' '))}</span>`;
 
-    el.addEventListener('click',e=>{if(!e.target.closest('.cms-drag-grip')) editProject(i);});
+        el.addEventListener('click', e => { if (!e.target.closest('.cms-drag-grip')) editProject(i); });
 
-    el.addEventListener('dragstart',e=>{
-      cmsDragSrc=i;
-      setTimeout(()=>el.classList.add('cms-dragging'),0);
-      e.dataTransfer.effectAllowed='move';
-    });
-    el.addEventListener('dragend',()=>{
-      el.classList.remove('cms-dragging');
-      document.querySelectorAll('.cms-proj-item').forEach(it=>it.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
-      cmsDragSrc=null;
-    });
-    el.addEventListener('dragover',e=>{
-      e.preventDefault();
-      if(cmsDragSrc===null||cmsDragSrc===i) return;
-      document.querySelectorAll('.cms-proj-item').forEach(it=>it.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
-      const rect=el.getBoundingClientRect();
-      el.classList.add(e.clientY<rect.top+rect.height/2?'cms-drag-over-top':'cms-drag-over-bot');
-    });
-    el.addEventListener('dragleave',()=>el.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
-    el.addEventListener('drop',e=>{
-      e.preventDefault();
-      el.classList.remove('cms-drag-over-top','cms-drag-over-bot');
-      if(cmsDragSrc===null||cmsDragSrc===i) return;
-      const rect=el.getBoundingClientRect();
-      const after=e.clientY>=rect.top+rect.height/2;
-      let targetIdx=after?i+1:i;
-      const moved=projects.splice(cmsDragSrc,1)[0];
-      const insertAt=cmsDragSrc<targetIdx?targetIdx-1:targetIdx;
-      projects.splice(insertAt,0,moved);
-      if(activeProjIndex===cmsDragSrc) activeProjIndex=insertAt;
-      else if(activeProjIndex!==null){
-        if(cmsDragSrc<activeProjIndex&&insertAt>=activeProjIndex) activeProjIndex--;
-        else if(cmsDragSrc>activeProjIndex&&insertAt<=activeProjIndex) activeProjIndex++;
-      }
-      saveToStorage();render();renderCmsSidebar();showHint(t('orderSaved'));
-    });
+        el.addEventListener('dragstart', e => {
+          cmsDragSrc = i;
+          setTimeout(() => el.classList.add('cms-dragging'), 0);
+          e.dataTransfer.effectAllowed = 'move';
+        });
+        el.addEventListener('dragend', () => {
+          el.classList.remove('cms-dragging');
+          document.querySelectorAll('.cms-proj-item').forEach(it => it.classList.remove('cms-drag-over-top', 'cms-drag-over-bot'));
+          cmsDragSrc = null;
+        });
+        el.addEventListener('dragover', e => {
+          e.preventDefault();
+          if (cmsDragSrc === null || cmsDragSrc === i) return;
+          document.querySelectorAll('.cms-proj-item').forEach(it => it.classList.remove('cms-drag-over-top', 'cms-drag-over-bot'));
+          const rect = el.getBoundingClientRect();
+          el.classList.add(e.clientY < rect.top + rect.height / 2 ? 'cms-drag-over-top' : 'cms-drag-over-bot');
+        });
+        el.addEventListener('dragleave', () => el.classList.remove('cms-drag-over-top', 'cms-drag-over-bot'));
+        el.addEventListener('drop', e => {
+          e.preventDefault();
+          el.classList.remove('cms-drag-over-top', 'cms-drag-over-bot');
+          if (cmsDragSrc === null || cmsDragSrc === i) return;
+          const rect = el.getBoundingClientRect();
+          const after = e.clientY >= rect.top + rect.height / 2;
+          let targetIdx = after ? i + 1 : i;
+          const moved = projects.splice(cmsDragSrc, 1)[0];
+          const insertAt = cmsDragSrc < targetIdx ? targetIdx - 1 : targetIdx;
+          projects.splice(insertAt, 0, moved);
+          if (activeProjIndex === cmsDragSrc) activeProjIndex = insertAt;
+          else if (activeProjIndex !== null) {
+            if (cmsDragSrc < activeProjIndex && insertAt >= activeProjIndex) activeProjIndex--;
+            else if (cmsDragSrc > activeProjIndex && insertAt <= activeProjIndex) activeProjIndex++;
+          }
+          saveToStorage(); render(); renderCmsSidebar(); showHint(t('orderSaved'));
+        });
 
-    list.appendChild(el);
-  });
-}
+        list.appendChild(el);
+      });
+    }
 
-function editProject(idx){
-  activeProjIndex=idx;renderCmsSidebar();
-  document.getElementById('cms-delete-btn').style.display='block';
-  const p=projects[idx];const story=p.story||{};
-  const stepsHtml=(story.steps||[]).map((s,i)=>stepItemHtml(i,s)).join('');
-  const insightsEnHtml=((story.insights?.en)||[]).map((ins,i)=>insightItemHtml('en',i,ins)).join('');
-  const insightsIdHtml=((story.insights?.id)||[]).map((ins,i)=>insightItemHtml('id',i,ins)).join('');
-  const statsHtml=(p.stats||[]).map((s,i)=>statItemHtml(i,s.val,s.label)).join('');
-  const imagesHtml=(p.images||[]).map((img,i)=>imageItemHtml(i,img)).join('');
-  const bgEn=typeof story.background==='object'?story.background.en||'':story.background||'';
-  const bgId=typeof story.background==='object'?story.background.id||'':'';
-  const descEn=typeof p.description==='object'?p.description.en||'':p.description||'';
-  const descId=typeof p.description==='object'?p.description.id||'':'';
+    function editProject(idx) {
+      activeProjIndex = idx; renderCmsSidebar();
+      document.getElementById('cms-delete-btn').style.display = 'block';
+      const p = projects[idx]; const story = p.story || {};
+      const stepsHtml = (story.steps || []).map((s, i) => stepItemHtml(i, s)).join('');
+      const insightsEnHtml = ((story.insights?.en) || []).map((ins, i) => insightItemHtml('en', i, ins)).join('');
+      const insightsIdHtml = ((story.insights?.id) || []).map((ins, i) => insightItemHtml('id', i, ins)).join('');
+      const statsHtml = (p.stats || []).map((s, i) => statItemHtml(i, s.val, s.label)).join('');
+      const imagesHtml = (p.images || []).map((img, i) => imageItemHtml(i, img)).join('');
+      const bgEn = typeof story.background === 'object' ? story.background.en || '' : story.background || '';
+      const bgId = typeof story.background === 'object' ? story.background.id || '' : '';
+      const descEn = typeof p.description === 'object' ? p.description.en || '' : p.description || '';
+      const descId = typeof p.description === 'object' ? p.description.id || '' : '';
 
-  document.getElementById('cms-form-area').className='cms-form';
-  document.getElementById('cms-form-area').innerHTML=`
+      document.getElementById('cms-form-area').className = 'cms-form';
+      document.getElementById('cms-form-area').innerHTML = `
     <div class="cms-tabs">
       <button class="cms-tab active" onclick="switchTab(this,'tab-basic')">Basic</button>
       <button class="cms-tab" onclick="switchTab(this,'tab-story')">Case Study</button>
       <button class="cms-tab" onclick="switchTab(this,'tab-stats')">Stats & Images</button>
     </div>
     <div class="cms-tab-panel active" id="tab-basic">
-      <div class="cms-field"><label class="cms-label">Project name (\\n = line break)</label><input class="cms-input" id="f-name" value="${escVal(p.name||'')}"></div>
+      <div class="cms-field"><label class="cms-label">Project name (\\n = line break)</label><input class="cms-input" id="f-name" value="${escVal(p.name || '')}"></div>
       <div class="cms-row">
-        <div class="cms-field"><label class="cms-label">Period</label><input class="cms-input" id="f-period" value="${escVal(p.period||'')}"></div>
-        <div class="cms-field"><label class="cms-label">Tags (comma separated)</label><input class="cms-input" id="f-tags" value="${escVal((p.tags||[]).join(', '))}"></div>
+        <div class="cms-field"><label class="cms-label">Period</label><input class="cms-input" id="f-period" value="${escVal(p.period || '')}"></div>
+        <div class="cms-field"><label class="cms-label">Tags (comma separated)</label><input class="cms-input" id="f-tags" value="${escVal((p.tags || []).join(', '))}"></div>
       </div>
       <div class="cms-field">
         <label class="cms-label">Description</label>
@@ -630,8 +1620,8 @@ function editProject(idx){
           <div><div class="lang-flag">🇮🇩 Indonesia</div><textarea class="cms-textarea" id="f-desc-id" rows="4">${escVal(descId)}</textarea></div>
         </div>
       </div>
-      <div class="cms-field"><label class="cms-label">Footnote</label><input class="cms-input" id="f-note" value="${escVal(p.note||'')}"></div>
-      <div class="cms-field"><label class="cms-label">Live dashboard link (optional)</label><input class="cms-input" id="f-livelink" placeholder="https://app.powerbi.com/..." value="${escVal(p.liveLink||'')}"></div>
+      <div class="cms-field"><label class="cms-label">Footnote</label><input class="cms-input" id="f-note" value="${escVal(p.note || '')}"></div>
+      <div class="cms-field"><label class="cms-label">Live dashboard link (optional)</label><input class="cms-input" id="f-livelink" placeholder="https://app.powerbi.com/..." value="${escVal(p.liveLink || '')}"></div>
     </div>
     <div class="cms-tab-panel" id="tab-story">
       <div class="cms-field">
@@ -661,19 +1651,19 @@ function editProject(idx){
       <div class="stat-list" id="image-list">${imagesHtml}</div>
       <button class="cms-btn-add" onclick="addImage()">+ add image path</button>
     </div>`;
-}
+    }
 
-function switchTab(btn,panelId){
-  btn.closest('.cms-form').querySelectorAll('.cms-tab').forEach(t=>t.classList.remove('active'));
-  btn.closest('.cms-form').querySelectorAll('.cms-tab-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');document.getElementById(panelId).classList.add('active');
-}
-function escVal(s){return String(s||'').replace(/"/g,'&quot;').replace(/\n/g,'\\n');}
-function stepItemHtml(i,s){
-  const titleEn=typeof s.title==='object'?s.title.en||'':s.title||'';const titleId=typeof s.title==='object'?s.title.id||'':'';
-  const detailEn=typeof s.detail==='object'?s.detail.en||'':s.detail||'';const detailId=typeof s.detail==='object'?s.detail.id||'':'';
-  const img=s.image||'';
-  return `<div class="step-item" id="step-${i}">
+    function switchTab(btn, panelId) {
+      btn.closest('.cms-form').querySelectorAll('.cms-tab').forEach(t => t.classList.remove('active'));
+      btn.closest('.cms-form').querySelectorAll('.cms-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active'); document.getElementById(panelId).classList.add('active');
+    }
+    function escVal(s) { return String(s || '').replace(/"/g, '&quot;').replace(/\n/g, '\\n'); }
+    function stepItemHtml(i, s) {
+      const titleEn = typeof s.title === 'object' ? s.title.en || '' : s.title || ''; const titleId = typeof s.title === 'object' ? s.title.id || '' : '';
+      const detailEn = typeof s.detail === 'object' ? s.detail.en || '' : s.detail || ''; const detailId = typeof s.detail === 'object' ? s.detail.id || '' : '';
+      const img = s.image || '';
+      return `<div class="step-item" id="step-${i}">
     <button class="step-remove" onclick="removeItem('step-list','step-${i}')">×</button>
     <div class="i18n-pair" style="margin-bottom:6px">
       <div><div class="lang-flag">🇬🇧 Title</div><input class="cms-input" placeholder="Step title EN" value="${escVal(titleEn)}"></div>
@@ -686,81 +1676,82 @@ function stepItemHtml(i,s){
     <div class="step-img-row" style="margin-top:8px">
       <div class="lang-flag" style="flex-shrink:0">Step image (optional)</div>
       <input class="cms-input" placeholder="images/step.png" value="${escVal(img)}" oninput="previewStepImg(this,${i})" style="flex:1">
-      <img class="step-img-preview${img?' show':''}" id="step-img-prev-${i}" src="${esc(img)}" alt="">
+      <img class="step-img-preview${img ? ' show' : ''}" id="step-img-prev-${i}" src="${esc(img)}" alt="">
     </div>
   </div>`;
-}
-function previewStepImg(input,i){const prev=document.getElementById('step-img-prev-'+i);if(prev){prev.src=input.value;prev.classList.toggle('show',!!input.value);}}
-function insightItemHtml(l,i,text){return `<div class="insight-item" id="insight-${l}-${i}"><textarea class="cms-textarea" placeholder="Insight...">${escVal(text||'')}</textarea><button onclick="removeItem('insight-list-${l}','insight-${l}-${i}')">×</button></div>`;}
-function statItemHtml(i,val,label){return `<div class="stat-item" id="stat-${i}"><input class="cms-input" placeholder="Value" value="${escVal(val||'')}" style="max-width:110px"><input class="cms-input" placeholder="Label" value="${escVal(label||'')}"><button onclick="removeItem('stat-list','stat-${i}')">×</button></div>`;}
-function imageItemHtml(i,src){return `<div class="stat-item" id="img-${i}"><input class="cms-input" placeholder="images/filename.png" value="${escVal(src||'')}"><button onclick="removeItem('image-list','img-${i}')">×</button></div>`;}
-function addStep(){const list=document.getElementById('step-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=stepItemHtml(i,{title:{en:'',id:''},detail:{en:'',id:''},image:''});list.appendChild(div.firstElementChild);}
-function addInsight(l){const list=document.getElementById('insight-list-'+l);const i=list.children.length;const div=document.createElement('div');div.innerHTML=insightItemHtml(l,i,'');list.appendChild(div.firstElementChild);}
-function addStat(){const list=document.getElementById('stat-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=statItemHtml(i,'','');list.appendChild(div.firstElementChild);}
-function addImage(){const list=document.getElementById('image-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=imageItemHtml(i,'');list.appendChild(div.firstElementChild);}
-function removeItem(listId,itemId){const item=document.getElementById(itemId);if(item)item.remove();}
-function addProject(){
-  projects.push({id:'proj-'+Date.now(),name:'New Project',period:'',tags:[],description:{en:'',id:''},story:{background:{en:'',id:''},steps:[],insights:{en:[],id:[]}},stats:[],images:[],note:'',liveLink:''});
-  editProject(projects.length-1);renderCmsSidebar();
-}
-function deleteProject(){
-  if(activeProjIndex===null)return;if(!confirm('Delete this project?'))return;
-  projects.splice(activeProjIndex,1);activeProjIndex=null;
-  saveToStorage();render();renderCmsSidebar();
-  document.getElementById('cms-form-area').className='cms-empty';
-  document.getElementById('cms-form-area').innerHTML='Select a project to edit';
-  document.getElementById('cms-delete-btn').style.display='none';
-}
-function saveProject(){
-  if(activeProjIndex===null){closeCms();return;}
-  const name=(document.getElementById('f-name').value||'').replace(/\\n/g,'\n');
-  const period=document.getElementById('f-period').value||'';
-  const tags=(document.getElementById('f-tags').value||'').split(',').map(tg=>tg.trim()).filter(Boolean);
-  const descEn=(document.getElementById('f-desc-en')?.value||'').replace(/\\n/g,'\n');
-  const descId=(document.getElementById('f-desc-id')?.value||'').replace(/\\n/g,'\n');
-  const note=document.getElementById('f-note')?.value||'';
-  const liveLink=document.getElementById('f-livelink')?.value.trim()||'';
-  const bgEn=(document.getElementById('f-bg-en')?.value||'').replace(/\\n/g,'\n');
-  const bgId=(document.getElementById('f-bg-id')?.value||'').replace(/\\n/g,'\n');
-  const steps=[...(document.getElementById('step-list')?.children||[])].map(el=>{
-    const inputs=el.querySelectorAll('input[type!=button],input:not([type])');
-    const textareas=el.querySelectorAll('textarea');const imgInput=el.querySelector('.step-img-row input');
-    return{title:{en:(inputs[0]?.value||'').replace(/\\n/g,'\n'),id:(inputs[1]?.value||'').replace(/\\n/g,'\n')},detail:{en:(textareas[0]?.value||'').replace(/\\n/g,'\n'),id:(textareas[1]?.value||'').replace(/\\n/g,'\n')},image:imgInput?.value||''};
-  }).filter(s=>s.title.en||s.title.id);
-  const insightsEn=[...(document.getElementById('insight-list-en')?.children||[])].map(el=>(el.querySelector('textarea')?.value||'').replace(/\\n/g,'\n')).filter(Boolean);
-  const insightsId=[...(document.getElementById('insight-list-id')?.children||[])].map(el=>(el.querySelector('textarea')?.value||'').replace(/\\n/g,'\n')).filter(Boolean);
-  const stats=[...(document.getElementById('stat-list')?.children||[])].map(el=>{const ins=el.querySelectorAll('input');return{val:ins[0]?.value||'',label:ins[1]?.value||''};}).filter(s=>s.val||s.label);
-  const images=[...(document.getElementById('image-list')?.children||[])].map(el=>(el.querySelector('input')?.value||'').trim()).filter(Boolean);
-  projects[activeProjIndex]={...projects[activeProjIndex],name,period,tags,note,liveLink,description:{en:descEn,id:descId},story:{background:{en:bgEn,id:bgId},steps,insights:{en:insightsEn,id:insightsId}},stats,images};
-  saveToStorage();render();renderCmsSidebar();showHint(t('saved'));
-}
+    }
+    function previewStepImg(input, i) { const prev = document.getElementById('step-img-prev-' + i); if (prev) { prev.src = input.value; prev.classList.toggle('show', !!input.value); } }
+    function insightItemHtml(l, i, text) { return `<div class="insight-item" id="insight-${l}-${i}"><textarea class="cms-textarea" placeholder="Insight...">${escVal(text || '')}</textarea><button onclick="removeItem('insight-list-${l}','insight-${l}-${i}')">×</button></div>`; }
+    function statItemHtml(i, val, label) { return `<div class="stat-item" id="stat-${i}"><input class="cms-input" placeholder="Value" value="${escVal(val || '')}" style="max-width:110px"><input class="cms-input" placeholder="Label" value="${escVal(label || '')}"><button onclick="removeItem('stat-list','stat-${i}')">×</button></div>`; }
+    function imageItemHtml(i, src) { return `<div class="stat-item" id="img-${i}"><input class="cms-input" placeholder="images/filename.png" value="${escVal(src || '')}"><button onclick="removeItem('image-list','img-${i}')">×</button></div>`; }
+    function addStep() { const list = document.getElementById('step-list'); const i = list.children.length; const div = document.createElement('div'); div.innerHTML = stepItemHtml(i, { title: { en: '', id: '' }, detail: { en: '', id: '' }, image: '' }); list.appendChild(div.firstElementChild); }
+    function addInsight(l) { const list = document.getElementById('insight-list-' + l); const i = list.children.length; const div = document.createElement('div'); div.innerHTML = insightItemHtml(l, i, ''); list.appendChild(div.firstElementChild); }
+    function addStat() { const list = document.getElementById('stat-list'); const i = list.children.length; const div = document.createElement('div'); div.innerHTML = statItemHtml(i, '', ''); list.appendChild(div.firstElementChild); }
+    function addImage() { const list = document.getElementById('image-list'); const i = list.children.length; const div = document.createElement('div'); div.innerHTML = imageItemHtml(i, ''); list.appendChild(div.firstElementChild); }
+    function removeItem(listId, itemId) { const item = document.getElementById(itemId); if (item) item.remove(); }
+    function addProject() {
+      projects.push({ id: 'proj-' + Date.now(), name: 'New Project', period: '', tags: [], description: { en: '', id: '' }, story: { background: { en: '', id: '' }, steps: [], insights: { en: [], id: [] } }, stats: [], images: [], note: '', liveLink: '' });
+      editProject(projects.length - 1); renderCmsSidebar();
+    }
+    function deleteProject() {
+      if (activeProjIndex === null) return; if (!confirm('Delete this project?')) return;
+      projects.splice(activeProjIndex, 1); activeProjIndex = null;
+      saveToStorage(); render(); renderCmsSidebar();
+      document.getElementById('cms-form-area').className = 'cms-empty';
+      document.getElementById('cms-form-area').innerHTML = 'Select a project to edit';
+      document.getElementById('cms-delete-btn').style.display = 'none';
+    }
+    function saveProject() {
+      if (activeProjIndex === null) { closeCms(); return; }
+      const name = (document.getElementById('f-name').value || '').replace(/\\n/g, '\n');
+      const period = document.getElementById('f-period').value || '';
+      const tags = (document.getElementById('f-tags').value || '').split(',').map(tg => tg.trim()).filter(Boolean);
+      const descEn = (document.getElementById('f-desc-en')?.value || '').replace(/\\n/g, '\n');
+      const descId = (document.getElementById('f-desc-id')?.value || '').replace(/\\n/g, '\n');
+      const note = document.getElementById('f-note')?.value || '';
+      const liveLink = document.getElementById('f-livelink')?.value.trim() || '';
+      const bgEn = (document.getElementById('f-bg-en')?.value || '').replace(/\\n/g, '\n');
+      const bgId = (document.getElementById('f-bg-id')?.value || '').replace(/\\n/g, '\n');
+      const steps = [...(document.getElementById('step-list')?.children || [])].map(el => {
+        const inputs = el.querySelectorAll('input:not([type="button"])');
+        const textareas = el.querySelectorAll('textarea'); const imgInput = el.querySelector('.step-img-row input');
+        return { title: { en: (inputs[0]?.value || '').replace(/\\n/g, '\n'), id: (inputs[1]?.value || '').replace(/\\n/g, '\n') }, detail: { en: (textareas[0]?.value || '').replace(/\\n/g, '\n'), id: (textareas[1]?.value || '').replace(/\\n/g, '\n') }, image: imgInput?.value || '' };
+      }).filter(s => s.title.en || s.title.id);
+      const insightsEn = [...(document.getElementById('insight-list-en')?.children || [])].map(el => (el.querySelector('textarea')?.value || '').replace(/\\n/g, '\n')).filter(Boolean);
+      const insightsId = [...(document.getElementById('insight-list-id')?.children || [])].map(el => (el.querySelector('textarea')?.value || '').replace(/\\n/g, '\n')).filter(Boolean);
+      const stats = [...(document.getElementById('stat-list')?.children || [])].map(el => { const ins = el.querySelectorAll('input'); return { val: ins[0]?.value || '', label: ins[1]?.value || '' }; }).filter(s => s.val || s.label);
+      const images = [...(document.getElementById('image-list')?.children || [])].map(el => (el.querySelector('input')?.value || '').trim()).filter(Boolean);
+      projects[activeProjIndex] = { ...projects[activeProjIndex], name, period, tags, note, liveLink, description: { en: descEn, id: descId }, story: { background: { en: bgEn, id: bgId }, steps, insights: { en: insightsEn, id: insightsId } }, stats, images };
+      saveToStorage(); render(); renderCmsSidebar(); showHint(t('saved'));
+    }
 
-// ════════════════════════════════════════════
-// EXPORT
-// ════════════════════════════════════════════
-function openExport(){document.getElementById('export-textarea').value=JSON.stringify(projects,null,2);document.getElementById('export-modal').classList.add('open');}
-function closeExport(){document.getElementById('export-modal').classList.remove('open');}
-function copyExport(){
-  const ta=document.getElementById('export-textarea');ta.select();
-  navigator.clipboard.writeText(ta.value).then(()=>{showHint(t('copied'));closeExport();}).catch(()=>{document.execCommand('copy');showHint(t('copied'));});
-}
-document.getElementById('export-modal').addEventListener('click',e=>{if(e.target===document.getElementById('export-modal'))closeExport();});
+    // ════════════════════════════════════════════
+    // EXPORT
+    // ════════════════════════════════════════════
+    function openExport() { document.getElementById('export-textarea').value = JSON.stringify(projects, null, 2); document.getElementById('export-modal').classList.add('open'); }
+    function closeExport() { document.getElementById('export-modal').classList.remove('open'); }
+    function copyExport() {
+      const ta = document.getElementById('export-textarea'); ta.select();
+      navigator.clipboard.writeText(ta.value).then(() => { showHint(t('copied')); closeExport(); }).catch(() => { document.execCommand('copy'); showHint(t('copied')); });
+    }
+    document.getElementById('export-modal').addEventListener('click', e => { if (e.target === document.getElementById('export-modal')) closeExport(); });
 
-// ════════════════════════════════════════════
-// HINT
-// ════════════════════════════════════════════
-let hintTimer;
-function showHint(msg){
-  const el=document.getElementById('cms-hint');el.textContent=msg;el.classList.add('show');
-  clearTimeout(hintTimer);hintTimer=setTimeout(()=>el.classList.remove('show'),2200);
-}
+    // ════════════════════════════════════════════
+    // HINT
+    // ════════════════════════════════════════════
+    let hintTimer;
+    function showHint(msg) {
+      const el = document.getElementById('cms-hint'); el.textContent = msg; el.classList.add('show');
+      clearTimeout(hintTimer); hintTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    }
 
-// ════════════════════════════════════════════
-// INIT
-// ════════════════════════════════════════════
-lang=localStorage.getItem('da_lang')||'en';
-document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
-loadProjects();render();
-</script>
+    // ════════════════════════════════════════════
+    // INIT
+    // ════════════════════════════════════════════
+    lang = localStorage.getItem('da_lang') || 'en';
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+    loadProjects(); render();
+  </script>
 </body>
+
 </html>
