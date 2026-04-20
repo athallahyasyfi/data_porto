@@ -22,16 +22,8 @@
     .header-sub{font-size:12px;color:var(--muted);font-weight:300;text-align:right;line-height:1.7;}
 
     /* ── LANG TOGGLE ── */
-    .lang-toggle{
-      display:flex;align-items:center;gap:0;
-      border:1px solid var(--line);border-radius:6px;overflow:hidden;
-      flex-shrink:0;
-    }
-    .lang-btn{
-      padding:5px 11px;font-size:11px;font-family:'Geist',sans-serif;
-      font-weight:400;color:var(--muted);background:none;border:none;
-      cursor:pointer;transition:all .15s;letter-spacing:.02em;
-    }
+    .lang-toggle{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .lang-btn{padding:5px 11px;font-size:11px;font-family:'Geist',sans-serif;font-weight:400;color:var(--muted);background:none;border:none;cursor:pointer;transition:all .15s;letter-spacing:.02em;}
     .lang-btn.active{background:var(--text);color:#fff;}
     .lang-btn:not(.active):hover{background:var(--chip-bg);color:var(--text);}
 
@@ -46,61 +38,29 @@
     .project-count{font-size:11px;color:var(--subtle);font-weight:300;margin-top:4px;}
     .project-desc{font-size:13.5px;color:#555;font-weight:300;line-height:1.75;margin-bottom:20px;}
 
-    /* ── CASE STUDY TOGGLE — prominent ── */
-    .cs-toggle{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:11.5px;font-weight:400;
-      color:var(--text);
-      cursor:pointer;letter-spacing:.02em;
-      margin-bottom:24px;padding:8px 14px 8px 12px;
-      background:var(--chip-bg);
-      border:1px solid var(--line);
-      border-radius:6px;
-      transition:all .2s;
-      user-select:none;
-    }
+    /* ── CASE STUDY TOGGLE ── */
+    .cs-toggle{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:400;color:var(--text);cursor:pointer;letter-spacing:.02em;margin-bottom:24px;padding:8px 14px 8px 12px;background:var(--chip-bg);border:1px solid var(--line);border-radius:6px;transition:all .2s;user-select:none;}
     .cs-toggle:hover{border-color:#aaa;background:#ebe9e4;}
-    .cs-toggle .cs-toggle-icon{
-      width:18px;height:18px;border-radius:50%;
-      background:var(--text);color:#fff;
-      display:flex;align-items:center;justify-content:center;
-      font-size:10px;flex-shrink:0;
-      transition:transform .3s cubic-bezier(.16,1,.3,1);
-    }
+    .cs-toggle .cs-toggle-icon{width:18px;height:18px;border-radius:50%;background:var(--text);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);}
     .cs-toggle.open .cs-toggle-icon{transform:rotate(45deg);}
-    .cs-toggle-label{transition:color .2s;}
 
     /* ── CASE STUDY BODY ── */
-    .cs-body{
-      display:none;
-      background:var(--story-bg);border-radius:8px;
-      padding:28px 28px 24px;margin-bottom:24px;
-      border:1px solid var(--line);
-      animation:fadeIn .25s ease;
-    }
+    .cs-body{display:none;background:var(--story-bg);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px;border:1px solid var(--line);animation:fadeIn .25s ease;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
     .cs-body.open{display:block;}
     .cs-section{margin-bottom:22px;}
     .cs-section:last-child{margin-bottom:0;}
     .cs-label{font-size:10px;font-weight:500;color:var(--subtle);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
     .cs-background{font-size:13px;color:#555;font-weight:300;line-height:1.75;}
-
-    /* process steps */
     .cs-steps{display:flex;flex-direction:column;gap:0;}
     .cs-step{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);}
     .cs-step:last-child{border-bottom:none;}
     .cs-step-num{font-size:10px;color:var(--subtle);font-weight:300;min-width:18px;padding-top:2px;flex-shrink:0;}
     .cs-step-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;}
     .cs-step-detail{font-size:12.5px;color:#777;font-weight:300;line-height:1.65;}
-    .cs-step-img{
-      margin-top:10px;border-radius:6px;overflow:hidden;
-      cursor:zoom-in;max-width:100%;
-      border:1px solid var(--line);
-    }
+    .cs-step-img{margin-top:10px;border-radius:6px;overflow:hidden;cursor:zoom-in;max-width:100%;border:1px solid var(--line);}
     .cs-step-img img{width:100%;display:block;max-height:280px;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1);}
     .cs-step-img:hover img{transform:scale(1.02);}
-
-    /* insights */
     .cs-insights{display:flex;flex-direction:column;gap:6px;}
     .cs-insight{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#555;font-weight:300;line-height:1.6;}
     .cs-insight::before{content:'→';color:var(--subtle);font-size:11px;padding-top:2px;flex-shrink:0;}
@@ -118,27 +78,10 @@
     .thumb:hover img{transform:scale(1.07);}
     .small-text{margin-top:14px;font-size:11px;color:var(--subtle);font-style:italic;font-weight:300;}
 
-    /* ── LIVE LINK BUTTON ── */
-    .live-link{
-      display:inline-flex;align-items:center;gap:7px;
-      margin-bottom:22px;
-      padding:8px 14px;
-      font-size:11.5px;font-family:'Geist',sans-serif;font-weight:400;
-      color:var(--text);
-      background:var(--bg);
-      border:1px solid var(--line);
-      border-radius:6px;
-      text-decoration:none;
-      transition:all .18s;
-      cursor:pointer;
-    }
+    /* ── LIVE LINK ── */
+    .live-link{display:inline-flex;align-items:center;gap:7px;margin-bottom:22px;padding:8px 14px;font-size:11.5px;font-family:'Geist',sans-serif;font-weight:400;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;text-decoration:none;transition:all .18s;cursor:pointer;}
     .live-link:hover{border-color:#aaa;background:var(--chip-bg);}
-    .live-link-dot{
-      width:6px;height:6px;border-radius:50%;
-      background:#4ade80;
-      flex-shrink:0;
-      box-shadow:0 0 0 2px rgba(74,222,128,.2);
-    }
+    .live-link-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0;box-shadow:0 0 0 2px rgba(74,222,128,.2);}
 
     /* ── LIGHTBOX ── */
     .lb{display:none;position:fixed;inset:0;background:rgba(249,248,245,.95);backdrop-filter:blur(20px);z-index:200;align-items:center;justify-content:center;}
@@ -167,13 +110,32 @@
     .cms-header h2{font-size:15px;font-weight:500;letter-spacing:-0.02em;}
     .cms-header-right{display:flex;gap:8px;align-items:center;}
     .cms-body{display:flex;flex:1;overflow:hidden;}
-    .cms-sidebar{width:180px;border-right:1px solid var(--line);overflow-y:auto;flex-shrink:0;}
-    .cms-sidebar-inner{padding:12px 0;}
-    .cms-proj-item{padding:10px 16px;font-size:12px;font-weight:300;color:var(--muted);cursor:pointer;border-left:2px solid transparent;transition:all .15s;line-height:1.4;}
+
+    /* sidebar */
+    .cms-sidebar{width:180px;border-right:1px solid var(--line);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;}
+    .cms-sidebar-inner{padding:12px 0;flex:1;}
+    .cms-proj-item{
+      padding:10px 16px;font-size:12px;font-weight:300;color:var(--muted);
+      cursor:pointer;border-left:2px solid transparent;transition:background .12s,color .12s;
+      line-height:1.4;display:flex;align-items:center;gap:8px;user-select:none;
+    }
     .cms-proj-item:hover{color:var(--text);background:#fafaf8;}
     .cms-proj-item.active{color:var(--text);border-left-color:var(--text);background:#f9f8f5;font-weight:400;}
-    .cms-add-btn{display:block;width:calc(100% - 24px);margin:8px 12px 4px;padding:8px;font-size:11px;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:5px;cursor:pointer;text-align:center;font-family:'Geist',sans-serif;transition:all .15s;}
+    .cms-proj-item.cms-dragging{opacity:.25;background:#f5f4f0;}
+    .cms-proj-item.cms-drag-over-top{border-top:2px solid var(--text);}
+    .cms-proj-item.cms-drag-over-bot{border-bottom:2px solid var(--text);}
+    .cms-drag-grip{
+      color:var(--subtle);cursor:grab;flex-shrink:0;
+      opacity:0;transition:opacity .15s;
+      display:flex;align-items:center;padding:2px;
+    }
+    .cms-drag-grip:active{cursor:grabbing;}
+    .cms-proj-item:hover .cms-drag-grip{opacity:1;}
+    .cms-proj-item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+    .cms-add-btn{display:block;width:calc(100% - 24px);margin:8px 12px 12px;padding:8px;font-size:11px;color:var(--muted);background:none;border:1px dashed var(--line);border-radius:5px;cursor:pointer;text-align:center;font-family:'Geist',sans-serif;transition:all .15s;flex-shrink:0;}
     .cms-add-btn:hover{border-color:var(--muted);color:var(--text);}
+
     .cms-form{flex:1;overflow-y:auto;padding:20px 24px 40px;}
     .cms-empty{flex:1;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--subtle);font-weight:300;}
     .cms-field{margin-bottom:16px;}
@@ -188,7 +150,6 @@
     .cms-tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:400;}
     .cms-tab-panel{display:none;}.cms-tab-panel.active{display:block;}
 
-    /* step editor */
     .step-list{display:flex;flex-direction:column;gap:8px;margin-bottom:8px;}
     .step-item{background:#f5f4f0;border-radius:6px;padding:12px;position:relative;}
     .step-item .cms-input{margin-bottom:6px;background:#fff;}
@@ -198,9 +159,6 @@
     .step-img-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
     .step-img-preview{width:48px;height:32px;border-radius:4px;object-fit:cover;border:1px solid var(--line);display:none;}
     .step-img-preview.show{display:block;}
-    .step-img-label{font-size:10px;color:var(--subtle);white-space:nowrap;}
-
-    /* stat / insight / image editors */
     .stat-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
     .stat-item{display:flex;gap:6px;align-items:center;}
     .stat-item .cms-input{flex:1;}
@@ -212,8 +170,6 @@
     .insight-item button{margin-top:6px;}
     .cms-btn-add{display:inline-block;font-size:11px;color:var(--muted);cursor:pointer;background:none;border:1px dashed var(--line);border-radius:4px;padding:5px 10px;font-family:'Geist',sans-serif;transition:all .15s;}
     .cms-btn-add:hover{border-color:var(--muted);color:var(--text);}
-
-    /* i18n field pair */
     .i18n-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
     .i18n-pair .lang-flag{font-size:10px;color:var(--subtle);margin-bottom:3px;font-weight:400;}
 
@@ -227,7 +183,6 @@
     .btn-danger{background:none;color:#c44e52;border-color:#f5c1c1;}
     .btn-danger:hover{background:#fff0f0;}
 
-    /* export modal */
     #export-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:400;align-items:center;justify-content:center;}
     #export-modal.open{display:flex;}
     .export-box{background:#fff;border-radius:10px;padding:28px;width:min(560px,90vw);max-height:80vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.12);}
@@ -236,7 +191,7 @@
     .export-box textarea{flex:1;min-height:220px;padding:12px;font-size:11px;font-family:monospace;background:#f5f4f0;border:1px solid var(--line);border-radius:6px;resize:none;outline:none;color:var(--text);}
     .export-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;}
 
-    #cms-hint{position:fixed;bottom:28px;right:28px;background:var(--text);color:#f9f8f5;font-size:11px;font-weight:300;padding:8px 14px;border-radius:6px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:50;}
+    #cms-hint{position:fixed;bottom:28px;right:28px;background:var(--text);color:#f9f8f5;font-size:11px;font-weight:300;padding:8px 14px;border-radius:6px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:500;}
     #cms-hint.show{opacity:1;}
 
     @media(max-width:860px){
@@ -262,7 +217,7 @@
     <h1>My<br><em>Projects</em></h1>
   </div>
   <div class="header-right">
-    <div class="header-sub" id="header-sub">Data Analyst · Power BI · SQL · Python · ETL</div>
+    <div class="header-sub">Data Analyst · Power BI · SQL · Python · ETL</div>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('id')">ID</button>
@@ -348,52 +303,18 @@ const PROJECT_DATA = [
         id:"PT IDEAA membutuhkan tampilan terpusat performa bisnis dari tiga departemen — penjualan, pengadaan, dan inventaris — yang sebelumnya mengandalkan laporan Excel manual yang membutuhkan berhari-hari untuk disusun dan sering kali sudah usang saat sampai ke manajemen."
       },
       steps:[
-        {
-          title:{en:"Stakeholder Interview",id:"Wawancara Stakeholder"},
-          detail:{en:"Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.",id:"Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan."},
-          image:""
-        },
-        {
-          title:{en:"Data Source Audit",id:"Audit Sumber Data"},
-          detail:{en:"Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.",id:"Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian."},
-          image:""
-        },
-        {
-          title:{en:"ETL with Python",id:"ETL dengan Python"},
-          detail:{en:"Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.",id:"Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal."},
-          image:""
-        },
-        {
-          title:{en:"Dashboard Build",id:"Pembangunan Dashboard"},
-          detail:{en:"Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.",id:"Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis."},
-          image:""
-        },
-        {
-          title:{en:"Insight Delivery",id:"Penyampaian Insight"},
-          detail:{en:"Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.",id:"Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan."},
-          image:""
-        }
+        {title:{en:"Stakeholder Interview",id:"Wawancara Stakeholder"},detail:{en:"Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.",id:"Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan."},image:""},
+        {title:{en:"Data Source Audit",id:"Audit Sumber Data"},detail:{en:"Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.",id:"Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian."},image:""},
+        {title:{en:"ETL with Python",id:"ETL dengan Python"},detail:{en:"Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.",id:"Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal."},image:""},
+        {title:{en:"Dashboard Build",id:"Pembangunan Dashboard"},detail:{en:"Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.",id:"Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis."},image:""},
+        {title:{en:"Insight Delivery",id:"Penyampaian Insight"},detail:{en:"Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.",id:"Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan."},image:""}
       ],
       insights:{
-        en:[
-          "Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.",
-          "Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.",
-          "Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."
-        ],
-        id:[
-          "Pelanggan teratas berkontribusi 60,15% dari total pendapatan — risiko konsentrasi yang signifikan bagi bisnis.",
-          "Gross margin 36,82% berada di bawah benchmark industri; menandai 3 kategori produk yang menekan profitabilitas.",
-          "Perputaran inventaris 2,3x lebih rendah dari target di kategori elektronik, mengindikasikan kelebihan stok."
-        ]
+        en:["Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.","Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.","Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."],
+        id:["Pelanggan teratas berkontribusi 60,15% dari total pendapatan — risiko konsentrasi yang signifikan bagi bisnis.","Gross margin 36,82% berada di bawah benchmark industri; menandai 3 kategori produk yang menekan profitabilitas.","Perputaran inventaris 2,3x lebih rendah dari target di kategori elektronik, mengindikasikan kelebihan stok."]
       }
     },
-    stats:[
-      {val:"Rp15.63bn",label:"Revenue analyzed"},
-      {val:"928",label:"Transactions"},
-      {val:"91,252",label:"Units sold"},
-      {val:"36.82%",label:"Gross margin"},
-      {val:"60.15%",label:"Top 1 customer share"}
-    ],
+    stats:[{val:"Rp15.63bn",label:"Revenue analyzed"},{val:"928",label:"Transactions"},{val:"91,252",label:"Units sold"},{val:"36.82%",label:"Gross margin"},{val:"60.15%",label:"Top 1 customer share"}],
     images:["images/ideaa-p1.png","images/ideaa-p2.png","images/ideaa-p3.png"],
     note:"Data has been anonymized for confidentiality purposes."
   },
@@ -412,51 +333,18 @@ const PROJECT_DATA = [
         id:"Proyek capstone universitas yang mensimulasikan skenario BI dunia nyata menggunakan database Northwind. Tujuannya adalah merancang dan membangun data warehouse lengkap dari nol serta menampilkan KPI yang bermakna seputar performa pengiriman."
       },
       steps:[
-        {
-          title:{en:"Requirements Analysis",id:"Analisis Kebutuhan"},
-          detail:{en:"Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.",id:"Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas."},
-          image:""
-        },
-        {
-          title:{en:"Star Schema Design",id:"Desain Star Schema"},
-          detail:{en:"Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).",id:"Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)."},
-          image:""
-        },
-        {
-          title:{en:"ETL with Pentaho",id:"ETL dengan Pentaho"},
-          detail:{en:"Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.",id:"Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi."},
-          image:""
-        },
-        {
-          title:{en:"Data Quality Validation",id:"Validasi Kualitas Data"},
-          detail:{en:"Implemented referential integrity checks and business logic validation across all 830 orders.",id:"Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan."},
-          image:""
-        },
-        {
-          title:{en:"Looker Studio Dashboard",id:"Dashboard Looker Studio"},
-          detail:{en:"Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.",id:"Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan."},
-          image:""
-        }
+        {title:{en:"Requirements Analysis",id:"Analisis Kebutuhan"},detail:{en:"Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.",id:"Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas."},image:""},
+        {title:{en:"Star Schema Design",id:"Desain Star Schema"},detail:{en:"Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).",id:"Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)."},image:""},
+        {title:{en:"ETL with Pentaho",id:"ETL dengan Pentaho"},detail:{en:"Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.",id:"Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi."},image:""},
+        {title:{en:"Data Quality Validation",id:"Validasi Kualitas Data"},detail:{en:"Implemented referential integrity checks and business logic validation across all 830 orders.",id:"Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan."},image:""},
+        {title:{en:"Looker Studio Dashboard",id:"Dashboard Looker Studio"},detail:{en:"Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.",id:"Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan."},image:""}
       ],
       insights:{
-        en:[
-          "Achieved 95.15% OTDR — just above the 95% target threshold, indicating boundary-level delivery performance.",
-          "Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.",
-          "Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."
-        ],
-        id:[
-          "Mencapai OTDR 95,15% — tepat di atas ambang target 95%, mengindikasikan performa pengiriman di batas bawah.",
-          "Keterlambatan pengiriman terkonsentrasi pada 3 perusahaan pengiriman, menunjukkan perlunya evaluasi vendor.",
-          "Q4 secara konsisten menunjukkan tingkat keterlambatan lebih tinggi, kemungkinan karena lonjakan permintaan hari raya."
-        ]
+        en:["Achieved 95.15% OTDR — just above the 95% target threshold, indicating boundary-level delivery performance.","Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.","Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."],
+        id:["Mencapai OTDR 95,15% — tepat di atas ambang target 95%, mengindikasikan performa pengiriman di batas bawah.","Keterlambatan pengiriman terkonsentrasi pada 3 perusahaan pengiriman, menunjukkan perlunya evaluasi vendor.","Q4 secara konsisten menunjukkan tingkat keterlambatan lebih tinggi, kemungkinan karena lonjakan permintaan hari raya."]
       }
     },
-    stats:[
-      {val:"95.15%",label:"OTDR achieved"},
-      {val:"760",label:"Orders tracked"},
-      {val:"≥ 95%",label:"Target"},
-      {val:"1F + 4D",label:"Star Schema"}
-    ],
+    stats:[{val:"95.15%",label:"OTDR achieved"},{val:"760",label:"Orders tracked"},{val:"≥ 95%",label:"Target"},{val:"1F + 4D",label:"Star Schema"}],
     images:["images/northwind.png"],
     note:""
   },
@@ -471,53 +359,21 @@ const PROJECT_DATA = [
     },
     story:{
       background:{
-        en:"A messy 103-row e-commerce transaction dataset with multiple data quality problems: non-numeric Price values ('abd', 'four hundred', '300$'), leading whitespace in column names, inconsistent Category capitalisation, negative Quantity and Total values, duplicate Order_IDs, and an unparseable date — designed to simulate realistic dirty data scenarios.",
-        id:"Dataset transaksi e-commerce 103 baris yang berantakan dengan berbagai masalah kualitas data: nilai Price non-numerik ('abd', 'four hundred', '300$'), spasi tersembunyi di nama kolom, kapitalisasi Category yang inkonsisten, nilai Quantity dan Total negatif, duplikat Order_ID, dan tanggal yang tidak bisa di-parse — dirancang untuk mensimulasikan skenario data kotor yang realistis."
+        en:"A messy 103-row e-commerce transaction dataset with multiple data quality problems: non-numeric Price values, leading whitespace in column names, inconsistent Category capitalisation, negative values, duplicate Order_IDs, and an unparseable date.",
+        id:"Dataset transaksi e-commerce 103 baris yang berantakan dengan berbagai masalah kualitas data: nilai Price non-numerik, spasi tersembunyi di nama kolom, kapitalisasi Category inkonsisten, nilai negatif, duplikat Order_ID, dan tanggal yang tidak bisa di-parse."
       },
       steps:[
-        {
-          title:{en:"Data Diagnosis",id:"Diagnosis Data"},
-          detail:{en:"Audited all 11 columns before touching anything. Found 7 issue types: leading whitespace in column names, 4 non-numeric Price values, 3 rows with negative Quantity/Price, 27 missing values across 4 columns, 3 duplicate Order_IDs, inconsistent Category capitalisation, and 1 unparseable date. Mapping issues first — before cleaning — determines the correct order of operations.",id:"Mengaudit seluruh 11 kolom sebelum mengubah apapun. Ditemukan 7 jenis masalah: spasi di nama kolom, 4 nilai Price non-numerik, 3 baris Quantity/Price negatif, 27 missing values di 4 kolom, 3 duplikat Order_ID, inkonsistensi kapitalisasi Category, dan 1 tanggal tidak valid. Memetakan masalah terlebih dahulu menentukan urutan cleaning yang tepat."},
-          image:""
-        },
-        {
-          title:{en:"Data Cleaning (Python / pandas)",id:"Pembersihan Data (Python / pandas)"},
-          detail:{en:"Cleaned in deliberate order: strip column name whitespace first, then normalise Category capitalisation before building the product→category mapping — a critical sequencing decision. Non-numeric Price values mapped manually or imputed with per-product median (chosen over mean for outlier robustness). Total recalculated from scratch as Quantity × Price. Result: 103 → 98 rows, 0 missing values.",id:"Cleaning dilakukan secara terurut: strip whitespace nama kolom dulu, lalu normalisasi kapitalisasi Category sebelum membuat peta produk→kategori — keputusan urutan yang kritis. Nilai Price non-numerik dipetakan manual atau diimputasi dengan median per produk (dipilih karena lebih robust terhadap outlier). Total dihitung ulang dari Quantity × Price. Hasil: 103 → 98 baris, 0 missing values."},
-          image:""
-        },
-        {
-          title:{en:"Exploratory Data Analysis",id:"Analisis Data Eksploratif"},
-          detail:{en:"Analysed revenue by category and product, monthly trends, payment method distribution, and cancellation/return breakdown by category. Identified that Home and Books dominate revenue, while the 27% return rate — higher than the 15% cancellation rate — signals a product expectation mismatch rather than a delivery problem.",id:"Menganalisis revenue per kategori dan produk, tren bulanan, distribusi metode pembayaran, dan breakdown cancellation/return per kategori. Ditemukan bahwa Home dan Books mendominasi revenue, sementara return rate 27% yang lebih tinggi dari cancellation rate 15% mengindikasikan ketidaksesuaian ekspektasi produk, bukan masalah pengiriman."},
-          image:""
-        },
-        {
-          title:{en:"Power BI Dashboard",id:"Dashboard Power BI"},
-          detail:{en:"Built a management dashboard with 5 KPI cards (Total Revenue, Total Orders, Avg Order Value, Cancellation Rate, Return Rate) and 6 charts. Two custom DAX measures created for Cancellation Rate and Return Rate using CALCULATE and DIVIDE functions.",id:"Membangun dashboard manajemen dengan 5 KPI card (Total Revenue, Total Orders, Avg Order Value, Cancellation Rate, Return Rate) dan 6 chart. Dua measure DAX custom dibuat untuk Cancellation Rate dan Return Rate menggunakan fungsi CALCULATE dan DIVIDE."},
-          image:""
-        }
+        {title:{en:"Data Diagnosis",id:"Diagnosis Data"},detail:{en:"Audited all 11 columns before touching anything. Found 7 issue types: leading whitespace, non-numeric Price, negative rows, missing values, duplicate Order_IDs, inconsistent capitalisation, and an unparseable date.",id:"Mengaudit seluruh 11 kolom sebelum mengubah apapun. Ditemukan 7 jenis masalah: spasi nama kolom, Price non-numerik, baris negatif, missing values, duplikat Order_ID, inkonsistensi kapitalisasi, dan tanggal tidak valid."},image:""},
+        {title:{en:"Data Cleaning (Python / pandas)",id:"Pembersihan Data (Python / pandas)"},detail:{en:"Cleaned in deliberate order. Non-numeric Price mapped manually or imputed with per-product median. Total recalculated as Quantity × Price. Result: 103 → 98 rows, 0 missing values.",id:"Cleaning dilakukan secara terurut. Nilai Price non-numerik dipetakan manual atau imputasi median per produk. Total dihitung ulang dari Quantity × Price. Hasil: 103 → 98 baris, 0 missing values."},image:""},
+        {title:{en:"Exploratory Data Analysis",id:"Analisis Data Eksploratif"},detail:{en:"Analysed revenue by category, monthly trends, payment method distribution, and cancellation/return breakdown. Home and Books dominate revenue.",id:"Menganalisis revenue per kategori, tren bulanan, distribusi metode pembayaran, dan breakdown cancellation/return. Home dan Books mendominasi revenue."},image:""},
+        {title:{en:"Power BI Dashboard",id:"Dashboard Power BI"},detail:{en:"Built a management dashboard with 5 KPI cards and 6 charts. Two custom DAX measures for Cancellation Rate and Return Rate using CALCULATE and DIVIDE.",id:"Membangun dashboard manajemen dengan 5 KPI card dan 6 chart. Dua measure DAX custom menggunakan fungsi CALCULATE dan DIVIDE."},image:""}
       ],
       insights:{
-        en:[
-          "$176.42K total revenue from 98 transactions with $1.80K average order value — indicates a mid-to-high value product range.",
-          "Return rate (27%) significantly exceeds cancellation rate (15%) — customers receive items but are dissatisfied, pointing to product expectation misalignment rather than shipping issues.",
-          "Cash on Delivery dominates at 32.65% of transactions — signals low digital payment trust, a potential conversion opportunity with incentive campaigns.",
-          "Home category leads revenue driven by Blender as the #1 product (~$31K) — counterintuitive given Electronics is typically the high-value category."
-        ],
-        id:[
-          "Total revenue $176,42K dari 98 transaksi dengan rata-rata order value $1,80K — mengindikasikan kisaran produk bernilai menengah hingga tinggi.",
-          "Return rate (27%) jauh melebihi cancellation rate (15%) — pelanggan menerima barang namun tidak puas, mengarah pada ketidaksesuaian ekspektasi produk bukan masalah pengiriman.",
-          "Cash on Delivery mendominasi dengan 32,65% transaksi — sinyal kepercayaan rendah terhadap pembayaran digital, peluang konversi dengan kampanye insentif.",
-          "Kategori Home memimpin revenue didorong Blender sebagai produk #1 (~$31K) — kontradiktif mengingat Electronics biasanya jadi kategori bernilai tinggi."
-        ]
+        en:["$176.42K total revenue from 98 transactions with $1.80K average order value — mid-to-high value product range.","Return rate (27%) significantly exceeds cancellation rate (15%) — product expectation misalignment, not a shipping issue.","Cash on Delivery dominates at 32.65% — signals low digital payment trust, a potential conversion opportunity.","Home category leads revenue; Blender is the #1 product (~$31K), counterintuitive vs. Electronics."],
+        id:["Total revenue $176,42K dari 98 transaksi dengan rata-rata order value $1,80K — kisaran produk bernilai menengah hingga tinggi.","Return rate (27%) jauh melebihi cancellation rate (15%) — ketidaksesuaian ekspektasi produk, bukan masalah pengiriman.","Cash on Delivery mendominasi 32,65% transaksi — sinyal kepercayaan rendah terhadap pembayaran digital.","Kategori Home memimpin revenue; Blender produk #1 (~$31K), kontradiktif vs. Electronics."]
       }
     },
-    stats:[
-      {val:"$176.42K",label:"Total revenue"},
-      {val:"98",label:"Orders"},
-      {val:"$1.80K",label:"Avg order value"},
-      {val:"15%",label:"Cancellation rate"},
-      {val:"27%",label:"Return rate"}
-    ],
+    stats:[{val:"$176.42K",label:"Total revenue"},{val:"98",label:"Orders"},{val:"$1.80K",label:"Avg order value"},{val:"15%",label:"Cancellation rate"},{val:"27%",label:"Return rate"}],
     images:[],
     note:""
   }
@@ -538,19 +394,16 @@ const T={
   keyInsights:{en:"Key insights",id:"Insight Utama"},
   screenshot:{en:"screenshot",id:"tangkapan layar"},
   screenshots:{en:"screenshots",id:"tangkapan layar"},
-  hint:{en:"Ctrl+Shift+E to edit",id:"Ctrl+Shift+E untuk edit"},
   saved:{en:"Saved!",id:"Tersimpan!"},
+  orderSaved:{en:"Order saved!",id:"Urutan disimpan!"},
   copied:{en:"Copied!",id:"Disalin!"},
   viewLive:{en:"View live dashboard",id:"Lihat dashboard langsung"},
 };
-
 function t(key){return T[key]?.[lang]||T[key]?.en||key;}
 
 function loadProjects(){
-  try{
-    const s=localStorage.getItem('da_portfolio_v2');
-    projects=s?JSON.parse(s):JSON.parse(JSON.stringify(PROJECT_DATA));
-  }catch(e){projects=JSON.parse(JSON.stringify(PROJECT_DATA));}
+  try{const s=localStorage.getItem('da_portfolio_v2');projects=s?JSON.parse(s):JSON.parse(JSON.stringify(PROJECT_DATA));}
+  catch(e){projects=JSON.parse(JSON.stringify(PROJECT_DATA));}
 }
 function saveToStorage(){localStorage.setItem('da_portfolio_v2',JSON.stringify(projects));}
 
@@ -560,13 +413,10 @@ function saveToStorage(){localStorage.setItem('da_portfolio_v2',JSON.stringify(p
 function setLang(l){
   lang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
-  localStorage.setItem('da_lang',l);
-  render();
+  localStorage.setItem('da_lang',l);render();
 }
-
 function getLangVal(val){
-  if(!val) return '';
-  if(typeof val==='string') return val;
+  if(!val) return '';if(typeof val==='string') return val;
   return val[lang]||val.en||'';
 }
 
@@ -574,47 +424,28 @@ function getLangVal(val){
 // RENDER
 // ════════════════════════════════════════════
 function render(){
-  const container=document.getElementById('projects-container');
-  container.innerHTML='';
+  const container=document.getElementById('projects-container');container.innerHTML='';
   projects.forEach((p,idx)=>{
     const numStr=String(idx+1).padStart(2,'0');
     const nameHtml=(p.name||'').replace(/\n/g,'<br>');
-    const tagsHtml=(p.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+    const tagsHtml=(p.tags||[]).map(tg=>`<span class="tag">${esc(tg)}</span>`).join('');
     const statsHtml=(p.stats||[]).map(s=>`<div class="stat"><div class="stat-val">${esc(s.val)}</div><div class="stat-label">${esc(s.label)}</div></div>`).join('');
     const imgCount=(p.images||[]).length;
     const thumbsHtml=(p.images||[]).map(src=>`<div class="thumb"><img src="${esc(src)}" alt="" loading="lazy"></div>`).join('');
     const descText=getLangVal(p.description);
     const liveLinkHtml=p.liveLink?`<a class="live-link" href="${esc(p.liveLink)}" target="_blank" rel="noopener"><span class="live-link-dot"></span>${t('viewLive')}</a>`:'';
 
-    const story=p.story||{};
-    let csHtml='';
-    const bgText=getLangVal(story.background);
-    const steps=story.steps||[];
-    const insights=getLangVal(story.insights);
+    const story=p.story||{};let csHtml='';
+    const bgText=getLangVal(story.background);const steps=story.steps||[];const insights=getLangVal(story.insights);
 
     if(bgText||(steps.length>0)||(insights&&insights.length)){
       const stepsHtml=steps.map((s,i)=>{
-        const title=getLangVal(s.title);
-        const detail=getLangVal(s.detail);
-        const imgSrc=s.image||'';
+        const title=getLangVal(s.title);const detail=getLangVal(s.detail);const imgSrc=s.image||'';
         const imgHtml=imgSrc?`<div class="cs-step-img" onclick="openLbSingle('${esc(imgSrc)}')"><img src="${esc(imgSrc)}" alt="${esc(title)}" loading="lazy"></div>`:'';
-        return `<div class="cs-step">
-          <div class="cs-step-num">${String(i+1).padStart(2,'0')}</div>
-          <div class="cs-step-content">
-            <div class="cs-step-title">${esc(title)}</div>
-            <div class="cs-step-detail">${esc(detail)}</div>
-            ${imgHtml}
-          </div>
-        </div>`;
+        return `<div class="cs-step"><div class="cs-step-num">${String(i+1).padStart(2,'0')}</div><div class="cs-step-content"><div class="cs-step-title">${esc(title)}</div><div class="cs-step-detail">${esc(detail)}</div>${imgHtml}</div></div>`;
       }).join('');
-
       const insightsHtml=(Array.isArray(insights)?insights:[]).map(ins=>`<div class="cs-insight">${esc(ins)}</div>`).join('');
-
-      csHtml=`
-        <button class="cs-toggle" onclick="toggleStory(this)">
-          <span class="cs-toggle-icon">+</span>
-          <span class="cs-toggle-label">${t('viewCS')}</span>
-        </button>
+      csHtml=`<button class="cs-toggle" onclick="toggleStory(this)"><span class="cs-toggle-icon">+</span><span class="cs-toggle-label">${t('viewCS')}</span></button>
         <div class="cs-body">
           ${bgText?`<div class="cs-section"><div class="cs-label">${t('background')}</div><div class="cs-background">${esc(bgText)}</div></div>`:''}
           ${stepsHtml?`<div class="cs-section"><div class="cs-label">${t('process')}</div><div class="cs-steps">${stepsHtml}</div></div>`:''}
@@ -623,23 +454,17 @@ function render(){
     }
 
     const el=document.createElement('div');
-    el.className='project';
-    el.dataset.idx=idx;
-    el.dataset.name=p.name||'';
+    el.className='project';el.dataset.idx=idx;el.dataset.name=p.name||'';
     el.innerHTML=`
       <div class="project-left">
         <div class="project-index">${numStr}</div>
         <div class="project-name">${nameHtml}</div>
-        <div class="project-meta">
-          <span class="tag date">${esc(p.period||'')}</span>
-          ${tagsHtml}
-        </div>
+        <div class="project-meta"><span class="tag date">${esc(p.period||'')}</span>${tagsHtml}</div>
         <div class="project-count">${imgCount} ${imgCount===1?t('screenshot'):t('screenshots')}</div>
       </div>
       <div class="project-right">
         <p class="project-desc">${esc(descText)}</p>
-        ${liveLinkHtml}
-        ${csHtml}
+        ${liveLinkHtml}${csHtml}
         <div class="stats">${statsHtml}</div>
         <div class="thumbs">${thumbsHtml}</div>
         ${p.note?`<div class="small-text">${esc(p.note)}</div>`:''}
@@ -648,15 +473,13 @@ function render(){
   });
   bindLightbox();
 }
-
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 // ════════════════════════════════════════════
 // CASE STUDY TOGGLE
 // ════════════════════════════════════════════
 function toggleStory(btn){
-  const body=btn.nextElementSibling;
-  const open=body.classList.toggle('open');
+  const body=btn.nextElementSibling;const open=body.classList.toggle('open');
   btn.classList.toggle('open',open);
   btn.querySelector('.cs-toggle-label').textContent=open?t('hideCS'):t('viewCS');
 }
@@ -665,27 +488,15 @@ function toggleStory(btn){
 // LIGHTBOX
 // ════════════════════════════════════════════
 let lbImgs=[],lbCur=0,lbName='';
-
 function bindLightbox(){
   document.querySelectorAll('.project').forEach(proj=>{
     const name=proj.dataset.name.replace(/\n/g,' ');
     const thumbImgs=[...proj.querySelectorAll('.thumb img')];
-    thumbImgs.forEach((img,i)=>{
-      img.parentElement.addEventListener('click',()=>{
-        lbImgs=thumbImgs.map(im=>im.src);lbName=name;openLb(i);
-      });
-    });
+    thumbImgs.forEach((img,i)=>{img.parentElement.addEventListener('click',()=>{lbImgs=thumbImgs.map(im=>im.src);lbName=name;openLb(i);});});
   });
 }
-
 function openLbSingle(src){lbImgs=[src];lbName='';openLb(0);}
-
-function openLb(index){
-  lbCur=index;
-  document.getElementById('lb').classList.add('open');
-  document.getElementById('lb-project').textContent=lbName;
-  buildDots();showLb();
-}
+function openLb(index){lbCur=index;document.getElementById('lb').classList.add('open');document.getElementById('lb-project').textContent=lbName;buildDots();showLb();}
 function showLb(){
   document.getElementById('lb-img').src=lbImgs[lbCur];
   document.getElementById('lb-counter').textContent=lbImgs.length>1?' — '+(lbCur+1)+' / '+lbImgs.length:'';
@@ -703,12 +514,15 @@ document.addEventListener('keydown',e=>{
   if(document.getElementById('lb').classList.contains('open')){
     if(e.key==='ArrowRight')navigate(1);if(e.key==='ArrowLeft')navigate(-1);if(e.key==='Escape')closeLb();
   }
+  if(e.ctrlKey&&e.shiftKey&&e.key==='E'){e.preventDefault();openCms();}
 });
 document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))closeLb();});
 
 // ════════════════════════════════════════════
-// CMS
+// CMS — sidebar with drag-and-drop reorder
 // ════════════════════════════════════════════
+let cmsDragSrc=null;
+
 function openCms(){
   document.getElementById('cms-overlay').classList.add('open');
   setTimeout(()=>document.getElementById('cms-panel').classList.add('open'),10);
@@ -722,13 +536,63 @@ function closeCms(){
   document.getElementById('cms-panel').classList.remove('open');
   document.getElementById('cms-overlay').classList.remove('open');
 }
+
 function renderCmsSidebar(){
   const list=document.getElementById('cms-proj-list');list.innerHTML='';
   projects.forEach((p,i)=>{
     const el=document.createElement('div');
     el.className='cms-proj-item'+(i===activeProjIndex?' active':'');
-    el.textContent=(p.name||'Untitled').replace(/\n/,' ');
-    el.onclick=()=>editProject(i);list.appendChild(el);
+    el.draggable=true;
+    el.dataset.idx=i;
+    el.innerHTML=`
+      <span class="cms-drag-grip" title="Drag to reorder">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="1" y1="2" x2="9" y2="2"/>
+          <line x1="1" y1="5" x2="9" y2="5"/>
+          <line x1="1" y1="8" x2="9" y2="8"/>
+        </svg>
+      </span>
+      <span class="cms-proj-item-name">${esc((p.name||'Untitled').replace(/\n/,' '))}</span>`;
+
+    el.addEventListener('click',e=>{if(!e.target.closest('.cms-drag-grip')) editProject(i);});
+
+    el.addEventListener('dragstart',e=>{
+      cmsDragSrc=i;
+      setTimeout(()=>el.classList.add('cms-dragging'),0);
+      e.dataTransfer.effectAllowed='move';
+    });
+    el.addEventListener('dragend',()=>{
+      el.classList.remove('cms-dragging');
+      document.querySelectorAll('.cms-proj-item').forEach(it=>it.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
+      cmsDragSrc=null;
+    });
+    el.addEventListener('dragover',e=>{
+      e.preventDefault();
+      if(cmsDragSrc===null||cmsDragSrc===i) return;
+      document.querySelectorAll('.cms-proj-item').forEach(it=>it.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
+      const rect=el.getBoundingClientRect();
+      el.classList.add(e.clientY<rect.top+rect.height/2?'cms-drag-over-top':'cms-drag-over-bot');
+    });
+    el.addEventListener('dragleave',()=>el.classList.remove('cms-drag-over-top','cms-drag-over-bot'));
+    el.addEventListener('drop',e=>{
+      e.preventDefault();
+      el.classList.remove('cms-drag-over-top','cms-drag-over-bot');
+      if(cmsDragSrc===null||cmsDragSrc===i) return;
+      const rect=el.getBoundingClientRect();
+      const after=e.clientY>=rect.top+rect.height/2;
+      let targetIdx=after?i+1:i;
+      const moved=projects.splice(cmsDragSrc,1)[0];
+      const insertAt=cmsDragSrc<targetIdx?targetIdx-1:targetIdx;
+      projects.splice(insertAt,0,moved);
+      if(activeProjIndex===cmsDragSrc) activeProjIndex=insertAt;
+      else if(activeProjIndex!==null){
+        if(cmsDragSrc<activeProjIndex&&insertAt>=activeProjIndex) activeProjIndex--;
+        else if(cmsDragSrc>activeProjIndex&&insertAt<=activeProjIndex) activeProjIndex++;
+      }
+      saveToStorage();render();renderCmsSidebar();showHint(t('orderSaved'));
+    });
+
+    list.appendChild(el);
   });
 }
 
@@ -736,13 +600,11 @@ function editProject(idx){
   activeProjIndex=idx;renderCmsSidebar();
   document.getElementById('cms-delete-btn').style.display='block';
   const p=projects[idx];const story=p.story||{};
-
   const stepsHtml=(story.steps||[]).map((s,i)=>stepItemHtml(i,s)).join('');
   const insightsEnHtml=((story.insights?.en)||[]).map((ins,i)=>insightItemHtml('en',i,ins)).join('');
   const insightsIdHtml=((story.insights?.id)||[]).map((ins,i)=>insightItemHtml('id',i,ins)).join('');
   const statsHtml=(p.stats||[]).map((s,i)=>statItemHtml(i,s.val,s.label)).join('');
   const imagesHtml=(p.images||[]).map((img,i)=>imageItemHtml(i,img)).join('');
-
   const bgEn=typeof story.background==='object'?story.background.en||'':story.background||'';
   const bgId=typeof story.background==='object'?story.background.id||'':'';
   const descEn=typeof p.description==='object'?p.description.en||'':p.description||'';
@@ -755,21 +617,11 @@ function editProject(idx){
       <button class="cms-tab" onclick="switchTab(this,'tab-story')">Case Study</button>
       <button class="cms-tab" onclick="switchTab(this,'tab-stats')">Stats & Images</button>
     </div>
-
     <div class="cms-tab-panel active" id="tab-basic">
-      <div class="cms-field">
-        <label class="cms-label">Project name (\\n = line break)</label>
-        <input class="cms-input" id="f-name" value="${escVal(p.name||'')}">
-      </div>
+      <div class="cms-field"><label class="cms-label">Project name (\\n = line break)</label><input class="cms-input" id="f-name" value="${escVal(p.name||'')}"></div>
       <div class="cms-row">
-        <div class="cms-field">
-          <label class="cms-label">Period</label>
-          <input class="cms-input" id="f-period" value="${escVal(p.period||'')}">
-        </div>
-        <div class="cms-field">
-          <label class="cms-label">Tags (comma separated)</label>
-          <input class="cms-input" id="f-tags" value="${escVal((p.tags||[]).join(', '))}">
-        </div>
+        <div class="cms-field"><label class="cms-label">Period</label><input class="cms-input" id="f-period" value="${escVal(p.period||'')}"></div>
+        <div class="cms-field"><label class="cms-label">Tags (comma separated)</label><input class="cms-input" id="f-tags" value="${escVal((p.tags||[]).join(', '))}"></div>
       </div>
       <div class="cms-field">
         <label class="cms-label">Description</label>
@@ -778,16 +630,9 @@ function editProject(idx){
           <div><div class="lang-flag">🇮🇩 Indonesia</div><textarea class="cms-textarea" id="f-desc-id" rows="4">${escVal(descId)}</textarea></div>
         </div>
       </div>
-      <div class="cms-field">
-        <label class="cms-label">Footnote</label>
-        <input class="cms-input" id="f-note" value="${escVal(p.note||'')}">
-      </div>
-      <div class="cms-field">
-        <label class="cms-label">Live dashboard link (optional)</label>
-        <input class="cms-input" id="f-livelink" placeholder="https://app.powerbi.com/..." value="${escVal(p.liveLink||'')}">
-      </div>
+      <div class="cms-field"><label class="cms-label">Footnote</label><input class="cms-input" id="f-note" value="${escVal(p.note||'')}"></div>
+      <div class="cms-field"><label class="cms-label">Live dashboard link (optional)</label><input class="cms-input" id="f-livelink" placeholder="https://app.powerbi.com/..." value="${escVal(p.liveLink||'')}"></div>
     </div>
-
     <div class="cms-tab-panel" id="tab-story">
       <div class="cms-field">
         <label class="cms-label">Background</label>
@@ -808,7 +653,6 @@ function editProject(idx){
       <div class="insight-list" id="insight-list-id">${insightsIdHtml}</div>
       <button class="cms-btn-add" onclick="addInsight('id')">+ add insight (ID)</button>
     </div>
-
     <div class="cms-tab-panel" id="tab-stats">
       <div class="cms-section-title">Stats</div>
       <div class="stat-list" id="stat-list">${statsHtml}</div>
@@ -822,17 +666,12 @@ function editProject(idx){
 function switchTab(btn,panelId){
   btn.closest('.cms-form').querySelectorAll('.cms-tab').forEach(t=>t.classList.remove('active'));
   btn.closest('.cms-form').querySelectorAll('.cms-tab-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');document.getElementById(panelId).classList.add('active');
 }
-
 function escVal(s){return String(s||'').replace(/"/g,'&quot;').replace(/\n/g,'\\n');}
-
 function stepItemHtml(i,s){
-  const titleEn=typeof s.title==='object'?s.title.en||'':s.title||'';
-  const titleId=typeof s.title==='object'?s.title.id||'':'';
-  const detailEn=typeof s.detail==='object'?s.detail.en||'':s.detail||'';
-  const detailId=typeof s.detail==='object'?s.detail.id||'':'';
+  const titleEn=typeof s.title==='object'?s.title.en||'':s.title||'';const titleId=typeof s.title==='object'?s.title.id||'':'';
+  const detailEn=typeof s.detail==='object'?s.detail.en||'':s.detail||'';const detailId=typeof s.detail==='object'?s.detail.id||'':'';
   const img=s.image||'';
   return `<div class="step-item" id="step-${i}">
     <button class="step-remove" onclick="removeItem('step-list','step-${i}')">×</button>
@@ -851,112 +690,48 @@ function stepItemHtml(i,s){
     </div>
   </div>`;
 }
-
-function previewStepImg(input,i){
-  const prev=document.getElementById('step-img-prev-'+i);
-  if(prev){prev.src=input.value;prev.classList.toggle('show',!!input.value);}
-}
-
-function insightItemHtml(lang,i,text){
-  return `<div class="insight-item" id="insight-${lang}-${i}">
-    <textarea class="cms-textarea" placeholder="Insight...">${escVal(text||'')}</textarea>
-    <button onclick="removeItem('insight-list-${lang}','insight-${lang}-${i}')">×</button>
-  </div>`;
-}
-function statItemHtml(i,val,label){
-  return `<div class="stat-item" id="stat-${i}">
-    <input class="cms-input" placeholder="Value" value="${escVal(val||'')}" style="max-width:110px">
-    <input class="cms-input" placeholder="Label" value="${escVal(label||'')}">
-    <button onclick="removeItem('stat-list','stat-${i}')">×</button>
-  </div>`;
-}
-function imageItemHtml(i,src){
-  return `<div class="stat-item" id="img-${i}">
-    <input class="cms-input" placeholder="images/filename.png" value="${escVal(src||'')}">
-    <button onclick="removeItem('image-list','img-${i}')">×</button>
-  </div>`;
-}
-
-function addStep(){
-  const list=document.getElementById('step-list');
-  const i=list.children.length;
-  const div=document.createElement('div');
-  div.innerHTML=stepItemHtml(i,{title:{en:'',id:''},detail:{en:'',id:''},image:''});
-  list.appendChild(div.firstElementChild);
-}
-function addInsight(l){
-  const list=document.getElementById('insight-list-'+l);
-  const i=list.children.length;
-  const div=document.createElement('div');
-  div.innerHTML=insightItemHtml(l,i,'');
-  list.appendChild(div.firstElementChild);
-}
-function addStat(){
-  const list=document.getElementById('stat-list');
-  const i=list.children.length;
-  const div=document.createElement('div');
-  div.innerHTML=statItemHtml(i,'','');
-  list.appendChild(div.firstElementChild);
-}
-function addImage(){
-  const list=document.getElementById('image-list');
-  const i=list.children.length;
-  const div=document.createElement('div');
-  div.innerHTML=imageItemHtml(i,'');
-  list.appendChild(div.firstElementChild);
-}
-function removeItem(listId,itemId){
-  const item=document.getElementById(itemId);if(item)item.remove();
-}
+function previewStepImg(input,i){const prev=document.getElementById('step-img-prev-'+i);if(prev){prev.src=input.value;prev.classList.toggle('show',!!input.value);}}
+function insightItemHtml(l,i,text){return `<div class="insight-item" id="insight-${l}-${i}"><textarea class="cms-textarea" placeholder="Insight...">${escVal(text||'')}</textarea><button onclick="removeItem('insight-list-${l}','insight-${l}-${i}')">×</button></div>`;}
+function statItemHtml(i,val,label){return `<div class="stat-item" id="stat-${i}"><input class="cms-input" placeholder="Value" value="${escVal(val||'')}" style="max-width:110px"><input class="cms-input" placeholder="Label" value="${escVal(label||'')}"><button onclick="removeItem('stat-list','stat-${i}')">×</button></div>`;}
+function imageItemHtml(i,src){return `<div class="stat-item" id="img-${i}"><input class="cms-input" placeholder="images/filename.png" value="${escVal(src||'')}"><button onclick="removeItem('image-list','img-${i}')">×</button></div>`;}
+function addStep(){const list=document.getElementById('step-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=stepItemHtml(i,{title:{en:'',id:''},detail:{en:'',id:''},image:''});list.appendChild(div.firstElementChild);}
+function addInsight(l){const list=document.getElementById('insight-list-'+l);const i=list.children.length;const div=document.createElement('div');div.innerHTML=insightItemHtml(l,i,'');list.appendChild(div.firstElementChild);}
+function addStat(){const list=document.getElementById('stat-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=statItemHtml(i,'','');list.appendChild(div.firstElementChild);}
+function addImage(){const list=document.getElementById('image-list');const i=list.children.length;const div=document.createElement('div');div.innerHTML=imageItemHtml(i,'');list.appendChild(div.firstElementChild);}
+function removeItem(listId,itemId){const item=document.getElementById(itemId);if(item)item.remove();}
 function addProject(){
   projects.push({id:'proj-'+Date.now(),name:'New Project',period:'',tags:[],description:{en:'',id:''},story:{background:{en:'',id:''},steps:[],insights:{en:[],id:[]}},stats:[],images:[],note:'',liveLink:''});
   editProject(projects.length-1);renderCmsSidebar();
 }
 function deleteProject(){
-  if(activeProjIndex===null)return;
-  if(!confirm('Delete this project?'))return;
+  if(activeProjIndex===null)return;if(!confirm('Delete this project?'))return;
   projects.splice(activeProjIndex,1);activeProjIndex=null;
   saveToStorage();render();renderCmsSidebar();
   document.getElementById('cms-form-area').className='cms-empty';
   document.getElementById('cms-form-area').innerHTML='Select a project to edit';
   document.getElementById('cms-delete-btn').style.display='none';
 }
-
 function saveProject(){
   if(activeProjIndex===null){closeCms();return;}
   const name=(document.getElementById('f-name').value||'').replace(/\\n/g,'\n');
   const period=document.getElementById('f-period').value||'';
-  const tags=(document.getElementById('f-tags').value||'').split(',').map(t=>t.trim()).filter(Boolean);
+  const tags=(document.getElementById('f-tags').value||'').split(',').map(tg=>tg.trim()).filter(Boolean);
   const descEn=(document.getElementById('f-desc-en')?.value||'').replace(/\\n/g,'\n');
   const descId=(document.getElementById('f-desc-id')?.value||'').replace(/\\n/g,'\n');
   const note=document.getElementById('f-note')?.value||'';
   const liveLink=document.getElementById('f-livelink')?.value.trim()||'';
   const bgEn=(document.getElementById('f-bg-en')?.value||'').replace(/\\n/g,'\n');
   const bgId=(document.getElementById('f-bg-id')?.value||'').replace(/\\n/g,'\n');
-
-  const steps=[...(document.getElementById('step-list')?.children||[])].map((el,i)=>{
-    const inputs=el.querySelectorAll('input[type!=button], input:not([type])');
-    const textareas=el.querySelectorAll('textarea');
-    const imgInput=el.querySelector('.step-img-row input');
-    return {
-      title:{en:(inputs[0]?.value||'').replace(/\\n/g,'\n'),id:(inputs[1]?.value||'').replace(/\\n/g,'\n')},
-      detail:{en:(textareas[0]?.value||'').replace(/\\n/g,'\n'),id:(textareas[1]?.value||'').replace(/\\n/g,'\n')},
-      image:imgInput?.value||''
-    };
+  const steps=[...(document.getElementById('step-list')?.children||[])].map(el=>{
+    const inputs=el.querySelectorAll('input[type!=button],input:not([type])');
+    const textareas=el.querySelectorAll('textarea');const imgInput=el.querySelector('.step-img-row input');
+    return{title:{en:(inputs[0]?.value||'').replace(/\\n/g,'\n'),id:(inputs[1]?.value||'').replace(/\\n/g,'\n')},detail:{en:(textareas[0]?.value||'').replace(/\\n/g,'\n'),id:(textareas[1]?.value||'').replace(/\\n/g,'\n')},image:imgInput?.value||''};
   }).filter(s=>s.title.en||s.title.id);
-
   const insightsEn=[...(document.getElementById('insight-list-en')?.children||[])].map(el=>(el.querySelector('textarea')?.value||'').replace(/\\n/g,'\n')).filter(Boolean);
   const insightsId=[...(document.getElementById('insight-list-id')?.children||[])].map(el=>(el.querySelector('textarea')?.value||'').replace(/\\n/g,'\n')).filter(Boolean);
   const stats=[...(document.getElementById('stat-list')?.children||[])].map(el=>{const ins=el.querySelectorAll('input');return{val:ins[0]?.value||'',label:ins[1]?.value||''};}).filter(s=>s.val||s.label);
   const images=[...(document.getElementById('image-list')?.children||[])].map(el=>(el.querySelector('input')?.value||'').trim()).filter(Boolean);
-
-  projects[activeProjIndex]={
-    ...projects[activeProjIndex],
-    name,period,tags,note,liveLink,
-    description:{en:descEn,id:descId},
-    story:{background:{en:bgEn,id:bgId},steps,insights:{en:insightsEn,id:insightsId}},
-    stats,images
-  };
+  projects[activeProjIndex]={...projects[activeProjIndex],name,period,tags,note,liveLink,description:{en:descEn,id:descId},story:{background:{en:bgEn,id:bgId},steps,insights:{en:insightsEn,id:insightsId}},stats,images};
   saveToStorage();render();renderCmsSidebar();showHint(t('saved'));
 }
 
@@ -977,23 +752,15 @@ document.getElementById('export-modal').addEventListener('click',e=>{if(e.target
 let hintTimer;
 function showHint(msg){
   const el=document.getElementById('cms-hint');el.textContent=msg;el.classList.add('show');
-  clearTimeout(hintTimer);hintTimer=setTimeout(()=>el.classList.remove('show'),2000);
+  clearTimeout(hintTimer);hintTimer=setTimeout(()=>el.classList.remove('show'),2200);
 }
-
-// ════════════════════════════════════════════
-// KEYBOARD
-// ════════════════════════════════════════════
-document.addEventListener('keydown',e=>{
-  if(e.ctrlKey&&e.shiftKey&&e.key==='E'){e.preventDefault();openCms();}
-});
 
 // ════════════════════════════════════════════
 // INIT
 // ════════════════════════════════════════════
 lang=localStorage.getItem('da_lang')||'en';
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
-loadProjects();
-render();
+loadProjects();render();
 </script>
 </body>
 </html>
