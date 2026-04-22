@@ -1278,17 +1278,11 @@
     // DEFAULT DATA
     // ════════════════════════════════════════════
     const PROJECT_DATA = [
-      {
+  {
     "id": "ecommerce",
     "name": "E-Commerce\nSales Analysis",
     "period": "2026",
-    "tags": [
-      "Python",
-      "pandas",
-      "Power BI",
-      "Data Cleaning",
-      "EDA"
-    ],
+    "tags": ["Python", "pandas", "Power BI", "Data Cleaning", "EDA"],
     "description": {
       "en": "Full data analyst workflow on a messy real-world e-commerce dataset — from diagnosing 7 types of data quality issues, through structured cleaning in Python, to an interactive Power BI management dashboard surfacing revenue trends, product performance, and operational risk signals.",
       "id": "Workflow data analyst lengkap pada dataset e-commerce dunia nyata yang berantakan — mulai dari mendiagnosis 7 jenis masalah kualitas data, pembersihan terstruktur di Python, hingga dashboard manajemen Power BI interaktif yang menampilkan tren revenue, performa produk, dan sinyal risiko operasional."
@@ -1300,10 +1294,7 @@
       },
       "steps": [
         {
-          "title": {
-            "en": "Data Diagnosis",
-            "id": "Diagnosis Data"
-          },
+          "title": { "en": "Data Diagnosis", "id": "Diagnosis Data" },
           "detail": {
             "en": "Audited all 11 columns before touching anything. Found 7 issue types: leading whitespace in column names, 4 non-numeric Price values, 3 rows with negative Quantity/Price, 27 missing values across 4 columns, 3 duplicate Order_IDs, inconsistent Category capitalisation, and 1 unparseable date. Mapping issues first — before cleaning — determines the correct order of operations.",
             "id": "Mengaudit seluruh 11 kolom sebelum mengubah apapun. Ditemukan 7 jenis masalah: spasi di nama kolom, 4 nilai Price non-numerik, 3 baris Quantity/Price negatif, 27 missing values di 4 kolom, 3 duplikat Order_ID, inkonsistensi kapitalisasi Category, dan 1 tanggal tidak valid. Memetakan masalah terlebih dahulu menentukan urutan cleaning yang tepat."
@@ -1311,10 +1302,7 @@
           "image": "images/ecom-diag.png"
         },
         {
-          "title": {
-            "en": "Data Cleaning (Python / pandas)",
-            "id": "Pembersihan Data (Python / pandas)"
-          },
+          "title": { "en": "Data Cleaning (Python / pandas)", "id": "Pembersihan Data (Python / pandas)" },
           "detail": {
             "en": "Cleaned in deliberate order: strip column name whitespace first, then normalise Category capitalisation before building the product→category mapping — a critical sequencing decision. Non-numeric Price values mapped manually or imputed with per-product median (chosen over mean for outlier robustness). Total recalculated from scratch as Quantity × Price. Result: 103 → 98 rows, 0 missing values.",
             "id": "Cleaning dilakukan secara terurut: strip whitespace nama kolom dulu, lalu normalisasi kapitalisasi Category sebelum membuat peta produk→kategori — keputusan urutan yang kritis. Nilai Price non-numerik dipetakan manual atau diimputasi dengan median per produk (dipilih karena lebih robust terhadap outlier). Total dihitung ulang dari Quantity × Price. Hasil: 103 → 98 baris, 0 missing values."
@@ -1322,10 +1310,7 @@
           "image": "images/ecom-cleaning.png"
         },
         {
-          "title": {
-            "en": "Exploratory Data Analysis",
-            "id": "Analisis Data Eksploratif"
-          },
+          "title": { "en": "Exploratory Data Analysis", "id": "Analisis Data Eksploratif" },
           "detail": {
             "en": "Analysed revenue by category and product, monthly trends, payment method distribution, and cancellation/return breakdown by category. Identified that Home and Books dominate revenue, while the 27% return rate — higher than the 15% cancellation rate — signals a product expectation mismatch rather than a delivery problem.",
             "id": "Menganalisis revenue per kategori dan produk, tren bulanan, distribusi metode pembayaran, dan breakdown cancellation/return per kategori. Ditemukan bahwa Home dan Books mendominasi revenue, sementara return rate 27% yang lebih tinggi dari cancellation rate 15% mengindikasikan ketidaksesuaian ekspektasi produk, bukan masalah pengiriman."
@@ -1333,10 +1318,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Power BI Dashboard",
-            "id": "Dashboard Power BI"
-          },
+          "title": { "en": "Power BI Dashboard", "id": "Dashboard Power BI" },
           "detail": {
             "en": "Built a management dashboard with 5 KPI cards (Total Revenue, Total Orders, Avg Order Value, Cancellation Rate, Return Rate) and 6 charts. Two custom DAX measures created for Cancellation Rate and Return Rate using CALCULATE and DIVIDE functions.",
             "id": "Membangun dashboard manajemen dengan 5 KPI card (Total Revenue, Total Orders, Avg Order Value, Cancellation Rate, Return Rate) dan 6 chart. Dua measure DAX custom dibuat untuk Cancellation Rate dan Return Rate menggunakan fungsi CALCULATE dan DIVIDE."
@@ -1360,33 +1342,13 @@
       }
     },
     "stats": [
-      {
-        "val": "$176.42K",
-        "label": "Total revenue"
-      },
-      {
-        "val": "98",
-        "label": "Orders"
-      },
-      {
-        "val": "$1.80K",
-        "label": "Avg order value"
-      },
-      {
-        "val": "15%",
-        "label": "Cancellation rate"
-      },
-      {
-        "val": "27%",
-        "label": "Return rate"
-      }
+      { "val": "$176.42K", "label": "Total revenue" },
+      { "val": "98", "label": "Orders" },
+      { "val": "$1.80K", "label": "Avg order value" },
+      { "val": "15%", "label": "Cancellation rate" },
+      { "val": "27%", "label": "Return rate" }
     ],
-    "images": [
-      "images/ecom-rawdata.png",
-      "images/ecom-diag.png",
-      "images/ecom-cleaning.png",
-      "images/ecom-dashboard.png"
-    ],
+    "images": ["images/ecom-rawdata.png", "images/ecom-diag.png", "images/ecom-cleaning.png", "images/ecom-dashboard.png"],
     "note": "",
     "liveLink": ""
   },
@@ -1394,13 +1356,7 @@
     "id": "proj-1776736695360",
     "name": "Walmart Sales MySQL Analysis",
     "period": "2026",
-    "tags": [
-      "MySQL",
-      "phpMyAdmin",
-      "Data Cleaning",
-      "SQL",
-      "EDA"
-    ],
+    "tags": ["MySQL", "phpMyAdmin", "Data Cleaning", "SQL", "EDA"],
     "description": {
       "en": "End-to-end MySQL project analyzing 6,435 weekly sales records from 45 Walmart stores across 2010–2012. Covered full data pipeline from CSV import and date format cleaning, through 10 structured SQL queries using aggregate functions, window functions, and CTEs, to extract business insights around holiday impact, store performance, and external factor correlations.",
       "id": "Project MySQL end-to-end menganalisis 6.435 catatan penjualan mingguan dari 45 toko Walmart sepanjang 2010–2012. Mencakup pipeline data lengkap mulai dari import CSV dan pembersihan format tanggal, hingga 10 query SQL terstruktur menggunakan aggregate functions, window functions, dan CTE, untuk menghasilkan insight bisnis seputar dampak hari libur, performa toko, dan korelasi faktor eksternal."
@@ -1412,10 +1368,7 @@
       },
       "steps": [
         {
-          "title": {
-            "en": "Data Import & Cleaning",
-            "id": "Import & Pembersihan Data"
-          },
+          "title": { "en": "Data Import & Cleaning", "id": "Import & Pembersihan Data" },
           "detail": {
             "en": "Imported 6,435 rows from CSV into phpMyAdmin. Fixed date format mismatch from DD-MM-YYYY to MySQL standard YYYY-MM-DD using STR_TO_DATE, then verified zero null values across all 8 columns.",
             "id": "Mengimpor 6.435 baris dari CSV ke phpMyAdmin. Memperbaiki ketidaksesuaian format tanggal dari DD-MM-YYYY ke standar MySQL YYYY-MM-DD menggunakan STR_TO_DATE, lalu memverifikasi tidak ada nilai null di seluruh 8 kolom."
@@ -1423,10 +1376,7 @@
           "image": "images/step1-wm.png"
         },
         {
-          "title": {
-            "en": "Descriptive Statistics",
-            "id": "Statistik Deskriptif"
-          },
+          "title": { "en": "Descriptive Statistics", "id": "Statistik Deskriptif" },
           "detail": {
             "en": "Calculated overall dataset statistics — total records, number of distinct stores, minimum, maximum, average, and total weekly sales — to establish a baseline understanding before deeper analysis.",
             "id": "Menghitung statistik keseluruhan dataset — total baris, jumlah toko unik, minimum, maksimum, rata-rata, dan total penjualan mingguan — untuk membangun pemahaman dasar sebelum analisis lebih dalam."
@@ -1434,10 +1384,7 @@
           "image": "images/step2-wm.png"
         },
         {
-          "title": {
-            "en": "Holiday vs Non-Holiday Analysis",
-            "id": "Analisis Hari Libur vs Hari Biasa"
-          },
+          "title": { "en": "Holiday vs Non-Holiday Analysis", "id": "Analisis Hari Libur vs Hari Biasa" },
           "detail": {
             "en": "Compared average and total weekly sales between holiday weeks (holiday_flag = 1) and regular weeks using CASE WHEN and GROUP BY to determine whether holiday promotions genuinely drove higher revenue.",
             "id": "Membandingkan rata-rata dan total penjualan mingguan antara minggu libur (holiday_flag = 1) dan minggu biasa menggunakan CASE WHEN dan GROUP BY untuk menentukan apakah promosi hari libur benar-benar mendorong pendapatan lebih tinggi."
@@ -1445,10 +1392,7 @@
           "image": "images/step3-wm.png"
         },
         {
-          "title": {
-            "en": "Store Performance Ranking",
-            "id": "Ranking Performa Toko"
-          },
+          "title": { "en": "Store Performance Ranking", "id": "Ranking Performa Toko" },
           "detail": {
             "en": "Ranked all 45 stores by total and average weekly sales using RANK() window function, identifying top performers and consistently underperforming stores across the full observation period.",
             "id": "Meranking seluruh 45 toko berdasarkan total dan rata-rata penjualan mingguan menggunakan window function RANK(), mengidentifikasi toko dengan performa terbaik dan toko yang konsisten underperform sepanjang periode observasi."
@@ -1456,10 +1400,7 @@
           "image": "images/step4-wm.png"
         },
         {
-          "title": {
-            "en": "Trend & Advanced Analysis",
-            "id": "Analisis Tren & Lanjutan"
-          },
+          "title": { "en": "Trend & Advanced Analysis", "id": "Analisis Tren & Lanjutan" },
           "detail": {
             "en": "Applied window functions LAG() for week-over-week change detection, AVG() OVER with ROWS BETWEEN for 4-week moving average smoothing, and a CTE to isolate above-average performing weeks. Bucketed temperature and unemployment into categories to analyze correlation with sales behavior.",
             "id": "Menerapkan window function LAG() untuk deteksi perubahan minggu ke minggu, AVG() OVER dengan ROWS BETWEEN untuk moving average 4 minggu, dan CTE untuk mengisolasi minggu dengan performa di atas rata-rata. Membuat kategori suhu dan unemployment untuk menganalisis korelasi dengan perilaku penjualan."
@@ -1485,34 +1426,13 @@
       }
     },
     "stats": [
-      {
-        "val": "6,435",
-        "label": "Rows analyzed"
-      },
-      {
-        "val": "45",
-        "label": "Walmart stores"
-      },
-      {
-        "val": "2010–2012",
-        "label": "Period"
-      },
-      {
-        "val": "10",
-        "label": "SQL queries"
-      },
-      {
-        "val": "0",
-        "label": "Null values"
-      }
+      { "val": "6,435", "label": "Rows analyzed" },
+      { "val": "45", "label": "Walmart stores" },
+      { "val": "2010–2012", "label": "Period" },
+      { "val": "10", "label": "SQL queries" },
+      { "val": "0", "label": "Null values" }
     ],
-    "images": [
-      "images/step1-wm.png",
-      "images/step2-wm.png",
-      "images/step3-wm.png",
-      "images/step4-wm.png",
-      "images/step5-wm.png"
-    ],
+    "images": ["images/step1-wm.png", "images/step2-wm.png", "images/step3-wm.png", "images/step4-wm.png", "images/step5-wm.png"],
     "note": "Dataset sourced from Kaggle — Walmart Sales Forecasting. Analysis conducted using MySQL 8 via phpMyAdmin.",
     "liveLink": ""
   },
@@ -1520,13 +1440,7 @@
     "id": "proj-1776757703889",
     "name": "HR Employee Attrition Analysis",
     "period": "2026",
-    "tags": [
-      "Excel",
-      "Pivot Table",
-      "Data Cleaning",
-      "HR Analytics",
-      "Dashboard"
-    ],
+    "tags": ["Excel", "Pivot Table", "Data Cleaning", "HR Analytics", "Dashboard"],
     "description": {
       "en": "End-to-end HR analytics project analyzing 4,653 employee records to identify resignation risk factors across demographics, salary tiers, and work history. Built 7 pivot tables and an interactive dashboard in Excel surfacing key attrition drivers including city, education level, payment tier, bench history, age group, and domain experience.",
       "id": "Project HR analytics end-to-end menganalisis 4.653 data karyawan untuk mengidentifikasi faktor risiko resign berdasarkan demografi, tier gaji, dan riwayat kerja. Membangun 7 pivot table dan dashboard interaktif di Excel yang mengungkap faktor-faktor utama attrition termasuk kota, tingkat pendidikan, tier pembayaran, riwayat bench, kelompok usia, dan pengalaman domain."
@@ -1538,10 +1452,7 @@
       },
       "steps": [
         {
-          "title": {
-            "en": "Data Preparation & Feature Engineering",
-            "id": "Persiapan Data & Feature Engineering"
-          },
+          "title": { "en": "Data Preparation & Feature Engineering", "id": "Persiapan Data & Feature Engineering" },
           "detail": {
             "en": "Imported raw CSV into Excel and converted to structured Table format using Ctrl+T for stable pivot references. Engineered 2 new columns using nested IF formula — Age_Group to bucket employees into 5 age ranges (<25, 25-29, 30-34, 35-39, 40+), and Leave_Label to convert binary 0/1 into readable Resign/Tetap labels for cleaner pivot output.",
             "id": "Mengimpor CSV mentah ke Excel dan mengubah ke format Table menggunakan Ctrl+T untuk referensi pivot yang stabil. Membuat 2 kolom baru menggunakan rumus nested IF — Age_Group untuk mengelompokkan karyawan ke dalam 5 rentang usia (<25, 25-29, 30-34, 35-39, 40+), dan Leave_Label untuk mengubah nilai biner 0/1 menjadi label Resign/Tetap yang lebih mudah dibaca di pivot."
@@ -1549,10 +1460,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Attrition Overview",
-            "id": "Overview Attrisi"
-          },
+          "title": { "en": "Attrition Overview", "id": "Overview Attrisi" },
           "detail": {
             "en": "Built the first PivotTable using Leave_Label as Rows and COUNT of LeaveOrNot as Values to establish overall attrition numbers. Added manual Resign Rate column outside the pivot using a simple division formula (Resign ÷ Grand Total), formatted as percentage. Result: 1,600 resignations out of 4,653 employees — 34% overall attrition rate.",
             "id": "Membuat PivotTable pertama menggunakan Leave_Label sebagai Rows dan COUNT of LeaveOrNot sebagai Values untuk menghitung total attrisi secara keseluruhan. Menambahkan kolom Resign Rate secara manual di luar pivot menggunakan rumus pembagian sederhana (Resign ÷ Grand Total), diformat sebagai persentase. Hasil: 1.600 resign dari 4.653 karyawan — tingkat attrisi 34%."
@@ -1560,10 +1468,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "City & Salary Tier Analysis",
-            "id": "Analisis Kota & Tier Gaji"
-          },
+          "title": { "en": "City & Salary Tier Analysis", "id": "Analisis Kota & Tier Gaji" },
           "detail": {
             "en": "Built 2 PivotTables — City and PaymentTier as Rows, Leave_Label as Columns, COUNT of LeaveOrNot as Values. Added Resign Rate column manually outside each pivot. Visualized with Clustered Bar Chart for city comparison and Clustered Column Chart for payment tier. Key finding: Pune 50%, and Payment Tier 2 at 60% resign rate — the highest of any segment.",
             "id": "Membuat 2 PivotTable — City dan PaymentTier sebagai Rows, Leave_Label sebagai Columns, COUNT of LeaveOrNot sebagai Values. Menambahkan kolom Resign Rate secara manual di luar setiap pivot. Divisualisasikan dengan Clustered Bar Chart untuk perbandingan kota dan Clustered Column Chart untuk tier pembayaran. Temuan utama: Pune 50%, dan Payment Tier 2 dengan resign rate 60% — tertinggi dari semua segmen."
@@ -1571,10 +1476,7 @@
           "image": "images/excel-step3.png"
         },
         {
-          "title": {
-            "en": "Bench History & Education Analysis",
-            "id": "Analisis Riwayat Bench & Pendidikan"
-          },
+          "title": { "en": "Bench History & Education Analysis", "id": "Analisis Riwayat Bench & Pendidikan" },
           "detail": {
             "en": "Built 2 PivotTables — EverBenched and Education as Rows, Leave_Label as Columns, COUNT as Values. Added Resign Rate column for each. Visualized with Clustered Bar Charts. Used CASE logic insight: benched employees resign at 45% vs 33%, and Masters holders at 49% vs PHD at 25% — both analyzed using pivot cross-tabulation without additional formulas.",
             "id": "Membuat 2 PivotTable — EverBenched dan Education sebagai Rows, Leave_Label sebagai Columns, COUNT sebagai Values. Menambahkan kolom Resign Rate untuk masing-masing. Divisualisasikan dengan Clustered Bar Chart. Insight dari cross-tabulation pivot: karyawan yang pernah di-bench resign 45% vs 33%, dan pemegang Masters 49% vs PHD 25% — keduanya dianalisis menggunakan cross-tabulation pivot tanpa rumus tambahan."
@@ -1582,10 +1484,7 @@
           "image": "images/excel-step4.png"
         },
         {
-          "title": {
-            "en": "Age Group & Experience Analysis",
-            "id": "Analisis Kelompok Usia & Pengalaman"
-          },
+          "title": { "en": "Age Group & Experience Analysis", "id": "Analisis Kelompok Usia & Pengalaman" },
           "detail": {
             "en": "Built 2 PivotTables — Age_Group (derived column from nested IF) and ExperienceInCurrentDomain as Rows, Leave_Label as Columns, COUNT as Values. Visualized Age_Group with Clustered Column Chart and Experience with Line Chart to show trend across years. Resign Rate column added manually outside each pivot. Result reveals a clear resignation peak at age under 25 (39%) and at 2-3 years domain experience.",
             "id": "Membuat 2 PivotTable — Age_Group (kolom turunan dari nested IF) dan ExperienceInCurrentDomain sebagai Rows, Leave_Label sebagai Columns, COUNT sebagai Values. Divisualisasikan Age_Group dengan Clustered Column Chart dan Experience dengan Line Chart untuk menampilkan tren per tahun pengalaman. Kolom Resign Rate ditambahkan secara manual di luar setiap pivot. Hasilnya menunjukkan puncak resign yang jelas di usia di bawah 25 tahun (39%) dan di tahun ke 2-3 pengalaman domain."
@@ -1611,30 +1510,13 @@
       }
     },
     "stats": [
-      {
-        "val": "4,653",
-        "label": "Employees analyzed"
-      },
-      {
-        "val": "34%",
-        "label": "Overall attrition rate"
-      },
-      {
-        "val": "7",
-        "label": "Pivot tables"
-      },
-      {
-        "val": "3",
-        "label": "Cities"
-      },
-      {
-        "val": "60%",
-        "label": "Highest resign rate (Tier 2)"
-      }
+      { "val": "4,653", "label": "Employees analyzed" },
+      { "val": "34%", "label": "Overall attrition rate" },
+      { "val": "7", "label": "Pivot tables" },
+      { "val": "3", "label": "Cities" },
+      { "val": "60%", "label": "Highest resign rate (Tier 2)" }
     ],
-    "images": [
-      "images/excel-dbd.png"
-    ],
+    "images": ["images/excel-dbd.png"],
     "note": "Dataset sourced from Kaggle — HR Employee Attrition. Analysis conducted using Microsoft Excel with Pivot Tables and Dashboard visualization.",
     "liveLink": ""
   },
@@ -1642,12 +1524,7 @@
     "id": "ideaa",
     "name": "PT IDEAA\nBI Dashboard",
     "period": "Dec 2024 – Feb 2025",
-    "tags": [
-      "Power BI",
-      "SQL",
-      "Python",
-      "ETL"
-    ],
+    "tags": ["Power BI", "SQL", "Python", "ETL"],
     "description": {
       "en": "Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement. Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets, and identified key business insights including customer concentration risk and product profitability.",
       "id": "Membangun dashboard Power BI 3 halaman yang interaktif untuk pemantauan bisnis secara real-time mencakup inventaris, penjualan, dan pengadaan. Mengembangkan pipeline ETL berbasis Python untuk mengubah data ERP mentah menjadi dataset terstruktur, serta mengidentifikasi insight bisnis utama termasuk risiko konsentrasi pelanggan dan profitabilitas produk."
@@ -1659,10 +1536,7 @@
       },
       "steps": [
         {
-          "title": {
-            "en": "Stakeholder Interview",
-            "id": "Wawancara Stakeholder"
-          },
+          "title": { "en": "Stakeholder Interview", "id": "Wawancara Stakeholder" },
           "detail": {
             "en": "Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.",
             "id": "Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan."
@@ -1670,10 +1544,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Data Source Audit",
-            "id": "Audit Sumber Data"
-          },
+          "title": { "en": "Data Source Audit", "id": "Audit Sumber Data" },
           "detail": {
             "en": "Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.",
             "id": "Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian."
@@ -1681,10 +1552,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "ETL with Python",
-            "id": "ETL dengan Python"
-          },
+          "title": { "en": "ETL with Python", "id": "ETL dengan Python" },
           "detail": {
             "en": "Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.",
             "id": "Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal."
@@ -1692,10 +1560,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Dashboard Build",
-            "id": "Pembangunan Dashboard"
-          },
+          "title": { "en": "Dashboard Build", "id": "Pembangunan Dashboard" },
           "detail": {
             "en": "Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.",
             "id": "Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis."
@@ -1703,10 +1568,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Insight Delivery",
-            "id": "Penyampaian Insight"
-          },
+          "title": { "en": "Insight Delivery", "id": "Penyampaian Insight" },
           "detail": {
             "en": "Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.",
             "id": "Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan."
@@ -1728,45 +1590,21 @@
       }
     },
     "stats": [
-      {
-        "val": "Rp15.63bn",
-        "label": "Revenue analyzed"
-      },
-      {
-        "val": "928",
-        "label": "Transactions"
-      },
-      {
-        "val": "91,252",
-        "label": "Units sold"
-      },
-      {
-        "val": "36.82%",
-        "label": "Gross margin"
-      },
-      {
-        "val": "60.15%",
-        "label": "Top 1 customer share"
-      }
+      { "val": "Rp15.63bn", "label": "Revenue analyzed" },
+      { "val": "928", "label": "Transactions" },
+      { "val": "91,252", "label": "Units sold" },
+      { "val": "36.82%", "label": "Gross margin" },
+      { "val": "60.15%", "label": "Top 1 customer share" }
     ],
-    "images": [
-      "images/ideaa-p1.png",
-      "images/ideaa-p2.png",
-      "images/ideaa-p3.png"
-    ],
-    "note": "Data has been anonymized for confidentiality purposes."
+    "images": ["images/ideaa-p1.png", "images/ideaa-p2.png", "images/ideaa-p3.png"],
+    "note": "Data has been anonymized for confidentiality purposes.",
+    "liveLink": ""
   },
   {
     "id": "northwind",
     "name": "Northwind KPI\nDashboard",
     "period": "University Project",
-    "tags": [
-      "Looker Studio",
-      "Python",
-      "MySQL",
-      "Pentaho",
-      "Data Warehouse"
-    ],
+    "tags": ["Looker Studio", "Python", "MySQL", "Pentaho", "Data Warehouse"],
     "description": {
       "en": "End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables) to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with SQL and Python transformations, incremental load strategy, and full data quality validation.",
       "id": "Proyek pipeline data end-to-end mulai dari desain data warehouse Star Schema (1 tabel fakta + 4 tabel dimensi) hingga dashboard Looker Studio interaktif untuk memantau On-Time Delivery Rate. Membangun pipeline ETL menggunakan Pentaho dengan transformasi SQL dan Python, strategi incremental load, dan validasi kualitas data penuh."
@@ -1778,10 +1616,7 @@
       },
       "steps": [
         {
-          "title": {
-            "en": "Requirements Analysis",
-            "id": "Analisis Kebutuhan"
-          },
+          "title": { "en": "Requirements Analysis", "id": "Analisis Kebutuhan" },
           "detail": {
             "en": "Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.",
             "id": "Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas."
@@ -1789,10 +1624,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Star Schema Design",
-            "id": "Desain Star Schema"
-          },
+          "title": { "en": "Star Schema Design", "id": "Desain Star Schema" },
           "detail": {
             "en": "Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).",
             "id": "Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)."
@@ -1800,10 +1632,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "ETL with Pentaho",
-            "id": "ETL dengan Pentaho"
-          },
+          "title": { "en": "ETL with Pentaho", "id": "ETL dengan Pentaho" },
           "detail": {
             "en": "Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.",
             "id": "Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi."
@@ -1811,10 +1640,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Data Quality Validation",
-            "id": "Validasi Kualitas Data"
-          },
+          "title": { "en": "Data Quality Validation", "id": "Validasi Kualitas Data" },
           "detail": {
             "en": "Implemented referential integrity checks and business logic validation across all 830 orders.",
             "id": "Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan."
@@ -1822,10 +1648,7 @@
           "image": ""
         },
         {
-          "title": {
-            "en": "Looker Studio Dashboard",
-            "id": "Dashboard Looker Studio"
-          },
+          "title": { "en": "Looker Studio Dashboard", "id": "Dashboard Looker Studio" },
           "detail": {
             "en": "Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.",
             "id": "Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan."
@@ -1847,89 +1670,16 @@
       }
     },
     "stats": [
-      {
-        "val": "95.15%",
-        "label": "OTDR achieved"
-      },
-      {
-        "val": "760",
-        "label": "Orders tracked"
-      },
-      {
-        "val": "≥ 95%",
-        "label": "Target"
-      },
-      {
-        "val": "1F + 4D",
-        "label": "Star Schema"
-      }
+      { "val": "95.15%", "label": "OTDR achieved" },
+      { "val": "760", "label": "Orders tracked" },
+      { "val": "≥ 95%", "label": "Target" },
+      { "val": "1F + 4D", "label": "Star Schema" }
     ],
-    "images": [
-      "images/northwind.png"
-    ],
-    "note": ""
+    "images": ["images/northwind.png"],
+    "note": "",
+    "liveLink": ""
   }
-      {
-        id: "ideaa",
-        name: "PT IDEAA\nBI Dashboard",
-        period: "Dec 2024 – Feb 2025",
-        tags: ["Power BI", "SQL", "Python", "ETL"],
-        description: {
-          en: "Built a 3-page interactive Power BI dashboard for real-time business monitoring across inventory, sales, and procurement. Developed a Python-based ETL pipeline to transform raw ERP data into structured datasets, and identified key business insights including customer concentration risk and product profitability.",
-          id: "Membangun dashboard Power BI 3 halaman yang interaktif untuk pemantauan bisnis secara real-time mencakup inventaris, penjualan, dan pengadaan. Mengembangkan pipeline ETL berbasis Python untuk mengubah data ERP mentah menjadi dataset terstruktur, serta mengidentifikasi insight bisnis utama termasuk risiko konsentrasi pelanggan dan profitabilitas produk."
-        },
-        story: {
-          background: {
-            en: "PT IDEAA needed a centralized view of business performance across three departments — sales, procurement, and inventory — which previously relied on manual Excel reports that took days to compile and were often outdated by the time they reached management.",
-            id: "PT IDEAA membutuhkan tampilan terpusat performa bisnis dari tiga departemen — penjualan, pengadaan, dan inventaris — yang sebelumnya mengandalkan laporan Excel manual yang membutuhkan berhari-hari untuk disusun dan sering kali sudah usang saat sampai ke manajemen."
-          },
-          steps: [
-            { title: { en: "Stakeholder Interview", id: "Wawancara Stakeholder" }, detail: { en: "Mapped reporting needs from each department head to understand KPIs that actually mattered to decision makers.", id: "Memetakan kebutuhan pelaporan dari setiap kepala departemen untuk memahami KPI yang benar-benar penting bagi pengambil keputusan." }, image: "" },
-            { title: { en: "Data Source Audit", id: "Audit Sumber Data" }, detail: { en: "Identified and connected 4 tables from the ERP system: transactions, products, customers, and purchase orders.", id: "Mengidentifikasi dan menghubungkan 4 tabel dari sistem ERP: transaksi, produk, pelanggan, dan pesanan pembelian." }, image: "" },
-            { title: { en: "ETL with Python", id: "ETL dengan Python" }, detail: { en: "Built a pandas pipeline to clean, merge, and reshape raw ERP exports — handling duplicate entries, currency formatting, and date inconsistencies.", id: "Membangun pipeline pandas untuk membersihkan, menggabungkan, dan membentuk ulang ekspor ERP mentah — menangani entri duplikat, format mata uang, dan inkonsistensi tanggal." }, image: "" },
-            { title: { en: "Dashboard Build", id: "Pembangunan Dashboard" }, detail: { en: "Developed 3 pages: Sales Overview, Inventory Health, and Procurement Analysis — each with drill-down capability and dynamic filters.", id: "Mengembangkan 3 halaman: Ringkasan Penjualan, Kesehatan Inventaris, dan Analisis Pengadaan — masing-masing dengan kemampuan drill-down dan filter dinamis." }, image: "" },
-            { title: { en: "Insight Delivery", id: "Penyampaian Insight" }, detail: { en: "Presented findings to management with recommendations, including diversifying from the top customer who contributed 60% of revenue.", id: "Mempresentasikan temuan kepada manajemen beserta rekomendasi, termasuk diversifikasi dari pelanggan utama yang berkontribusi 60% pendapatan." }, image: "" }
-          ],
-          insights: {
-            en: ["Top 1 customer contributed 60.15% of total revenue — significant concentration risk for the business.", "Gross margin of 36.82% was below industry benchmark; flagged 3 product categories dragging down profitability.", "Inventory turnover was 2.3x lower than target in the electronics category, indicating overstock."],
-            id: ["Pelanggan teratas berkontribusi 60,15% dari total pendapatan — risiko konsentrasi yang signifikan bagi bisnis.", "Gross margin 36,82% berada di bawah benchmark industri; menandai 3 kategori produk yang menekan profitabilitas.", "Perputaran inventaris 2,3x lebih rendah dari target di kategori elektronik, mengindikasikan kelebihan stok."]
-          }
-        },
-        stats: [{ val: "Rp15.63bn", label: "Revenue analyzed" }, { val: "928", label: "Transactions" }, { val: "91,252", label: "Units sold" }, { val: "36.82%", label: "Gross margin" }, { val: "60.15%", label: "Top 1 customer share" }],
-        images: ["images/ideaa-p1.png", "images/ideaa-p2.png", "images/ideaa-p3.png"],
-        note: "Data has been anonymized for confidentiality purposes."
-      },
-      {
-        id: "northwind",
-        name: "Northwind KPI\nDashboard",
-        period: "University Project",
-        tags: ["Looker Studio", "Python", "MySQL", "Pentaho", "Data Warehouse"],
-        description: {
-          en: "End-to-end data pipeline project starting from Star Schema data warehouse design (1 fact + 4 dimension tables) to an interactive Looker Studio dashboard tracking On-Time Delivery Rate. Built ETL pipeline using Pentaho with SQL and Python transformations, incremental load strategy, and full data quality validation.",
-          id: "Proyek pipeline data end-to-end mulai dari desain data warehouse Star Schema (1 tabel fakta + 4 tabel dimensi) hingga dashboard Looker Studio interaktif untuk memantau On-Time Delivery Rate. Membangun pipeline ETL menggunakan Pentaho dengan transformasi SQL dan Python, strategi incremental load, dan validasi kualitas data penuh."
-        },
-        story: {
-          background: {
-            en: "A university capstone project simulating a real-world BI scenario using the Northwind database. The goal was to design and build a full data warehouse from scratch and surface meaningful KPIs around delivery performance.",
-            id: "Proyek capstone universitas yang mensimulasikan skenario BI dunia nyata menggunakan database Northwind. Tujuannya adalah merancang dan membangun data warehouse lengkap dari nol serta menampilkan KPI yang bermakna seputar performa pengiriman."
-          },
-          steps: [
-            { title: { en: "Requirements Analysis", id: "Analisis Kebutuhan" }, detail: { en: "Defined the business question: 'Are we delivering on time?' and broke it down into measurable KPIs with clear calculation logic.", id: "Mendefinisikan pertanyaan bisnis: 'Apakah kita tepat waktu dalam pengiriman?' dan menguraikannya menjadi KPI terukur dengan logika kalkulasi yang jelas." }, image: "" },
-            { title: { en: "Star Schema Design", id: "Desain Star Schema" }, detail: { en: "Designed a dimensional model: 1 fact table (shipments) + 4 dimension tables (customers, products, employees, dates).", id: "Merancang model dimensi: 1 tabel fakta (pengiriman) + 4 tabel dimensi (pelanggan, produk, karyawan, tanggal)." }, image: "" },
-            { title: { en: "ETL with Pentaho", id: "ETL dengan Pentaho" }, detail: { en: "Built transformation jobs in Pentaho Data Integration with incremental load strategy — only processing new/changed records on each run.", id: "Membangun job transformasi di Pentaho Data Integration dengan strategi incremental load — hanya memproses rekord baru/berubah pada setiap eksekusi." }, image: "" },
-            { title: { en: "Data Quality Validation", id: "Validasi Kualitas Data" }, detail: { en: "Implemented referential integrity checks and business logic validation across all 830 orders.", id: "Mengimplementasikan pengecekan integritas referensial dan validasi logika bisnis di seluruh 830 pesanan." }, image: "" },
-            { title: { en: "Looker Studio Dashboard", id: "Dashboard Looker Studio" }, detail: { en: "Connected the MySQL data warehouse to Looker Studio and built an interactive dashboard with filters by date, region, and employee.", id: "Menghubungkan data warehouse MySQL ke Looker Studio dan membangun dashboard interaktif dengan filter berdasarkan tanggal, wilayah, dan karyawan." }, image: "" }
-          ],
-          insights: {
-            en: ["Achieved 95.15% OTDR — just above the 95% target threshold, indicating boundary-level delivery performance.", "Late deliveries were concentrated among 3 shipping companies, suggesting vendor evaluation is needed.", "Q4 consistently showed higher late delivery rates, likely due to holiday demand spikes."],
-            id: ["Mencapai OTDR 95,15% — tepat di atas ambang target 95%, mengindikasikan performa pengiriman di batas bawah.", "Keterlambatan pengiriman terkonsentrasi pada 3 perusahaan pengiriman, menunjukkan perlunya evaluasi vendor.", "Q4 secara konsisten menunjukkan tingkat keterlambatan lebih tinggi, kemungkinan karena lonjakan permintaan hari raya."]
-          }
-        },
-        stats: [{ val: "95.15%", label: "OTDR achieved" }, { val: "760", label: "Orders tracked" }, { val: "≥ 95%", label: "Target" }, { val: "1F + 4D", label: "Star Schema" }],
-        images: ["images/northwind.png"],
-        note: ""
-      },
-    ];
+];
 
     // ════════════════════════════════════════════
     // STATE
